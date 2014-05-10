@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iBRPModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="iBRPModelStoreContainer">
+    <EntitySet Name="AD_USER" EntityType="iBRPModel.Store.AD_USER" store:Type="Tables" store:Schema="dbo" store:Name="AD_USER">
+      <DefiningQuery>SELECT 
+      [AD_USER].[ID] AS [ID], 
+      [AD_USER].[USERNAME] AS [USERNAME], 
+      [AD_USER].[FULLNAME] AS [FULLNAME], 
+      [AD_USER].[EMAIL] AS [EMAIL], 
+      [AD_USER].[PASS] AS [PASS]
+      FROM [dbo].[AD_USER] AS [AD_USER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DS_DOITAC" EntityType="iBRPModel.Store.DS_DOITAC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_KHAC" EntityType="iBRPModel.Store.DS_KHAC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_KHAC_CT" EntityType="iBRPModel.Store.DS_KHAC_CT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_KHO" EntityType="iBRPModel.Store.DS_KHO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_MAU" EntityType="iBRPModel.Store.DS_MAU" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_NGANH" EntityType="iBRPModel.Store.DS_NGANH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_NHOM" EntityType="iBRPModel.Store.DS_NHOM" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_NHOM_1" EntityType="iBRPModel.Store.DS_NHOM_1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_NV" EntityType="iBRPModel.Store.DS_NV" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_SIZE" EntityType="iBRPModel.Store.DS_SIZE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="dtproperties" EntityType="iBRPModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="iBRPModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DS_NHOM_DS_NGANH" Association="iBRPModel.Store.FK_DS_NHOM_DS_NGANH">
+      <End Role="DS_NGANH" EntitySet="DS_NGANH" />
+      <End Role="DS_NHOM" EntitySet="DS_NHOM" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.AD_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="AD_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="FULLNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASS" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DS_DOITAC">
+    <Key>
+      <PropertyRef Name="MADT" />
+    </Key>
+    <Property Name="MADT" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="TENDT" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="MST" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="MANV" Type="nvarchar" MaxLength="5" />
+    <Property Name="CN_DAUKY_TIEN" Type="float" />
+    <Property Name="CN_DAUKY_NGAY" Type="datetime" />
+    <Property Name="CN_SONGAY" Type="int" />
+    <Property Name="CN_SOTIEN" Type="datetime" />
+    <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_KHAC">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+    </Key>
+    <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENKKHAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PLOAI" Type="int" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_KHAC_CT">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+    </Key>
+    <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="MAKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_KHO">
+    <Key>
+      <PropertyRef Name="MAKHO" />
+    </Key>
+    <Property Name="MAKHO" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENKHO" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="50" />
+    <Property Name="THUKHO" Type="nvarchar" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_MAU">
+    <Key>
+      <PropertyRef Name="MAMAU" />
+    </Key>
+    <Property Name="MAMAU" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENMAU" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_NGANH">
+    <Key>
+      <PropertyRef Name="MANGANH" />
+    </Key>
+    <Property Name="MANGANH" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENNGANH" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_NHOM">
+    <Key>
+      <PropertyRef Name="MANHOM" />
+    </Key>
+    <Property Name="MANHOM" Type="nvarchar" Nullable="false" MaxLength="6" />
+    <Property Name="MA" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="MANGANH" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENNHOM" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PLU" Type="bit" />
+    <Property Name="N1" Type="bit" />
+    <Property Name="N2" Type="bit" />
+    <Property Name="N3" Type="bit" />
+    <Property Name="N4" Type="bit" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_NHOM_1">
+    <Key>
+      <PropertyRef Name="MANHOM1" />
+    </Key>
+    <Property Name="MANHOM1" Type="nvarchar" Nullable="false" MaxLength="9" />
+    <Property Name="MANGANH" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="MANHOM" Type="nvarchar" Nullable="false" MaxLength="6" />
+    <Property Name="MA" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENNHOM1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_NV">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="TENNV" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BIDANH" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="100" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="CN_GIOIHAN" Type="float" />
+    <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_SIZE">
+    <Key>
+      <PropertyRef Name="MASIZE" />
+    </Key>
+    <Property Name="MASIZE" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENSIZE" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_DS_NHOM_DS_NGANH">
+    <End Role="DS_NGANH" Type="iBRPModel.Store.DS_NGANH" Multiplicity="1" />
+    <End Role="DS_NHOM" Type="iBRPModel.Store.DS_NHOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DS_NGANH">
+        <PropertyRef Name="MANGANH" />
+      </Principal>
+      <Dependent Role="DS_NHOM">
+        <PropertyRef Name="MANGANH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="iBRPModelStoreContainer" CdmEntityContainer="iBRPEntities">
+    <EntitySetMapping Name="AD_USER">
+      <EntityTypeMapping TypeName="iBRPModel.AD_USER">
+        <MappingFragment StoreEntitySet="AD_USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_DOITAC">
+      <EntityTypeMapping TypeName="iBRPModel.DS_DOITAC">
+        <MappingFragment StoreEntitySet="DS_DOITAC">
+          <ScalarProperty Name="MADT" ColumnName="MADT" />
+          <ScalarProperty Name="TENDT" ColumnName="TENDT" />
+          <ScalarProperty Name="NHOM" ColumnName="NHOM" />
+          <ScalarProperty Name="MST" ColumnName="MST" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="CN_DAUKY_TIEN" ColumnName="CN_DAUKY_TIEN" />
+          <ScalarProperty Name="CN_DAUKY_NGAY" ColumnName="CN_DAUKY_NGAY" />
+          <ScalarProperty Name="CN_SONGAY" ColumnName="CN_SONGAY" />
+          <ScalarProperty Name="CN_SOTIEN" ColumnName="CN_SOTIEN" />
+          <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_KHAC">
+      <EntityTypeMapping TypeName="iBRPModel.DS_KHAC">
+        <MappingFragment StoreEntitySet="DS_KHAC">
+          <ScalarProperty Name="MAKHAC" ColumnName="MAKHAC" />
+          <ScalarProperty Name="TENKKHAC" ColumnName="TENKKHAC" />
+          <ScalarProperty Name="PLOAI" ColumnName="PLOAI" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_KHAC_CT">
+      <EntityTypeMapping TypeName="iBRPModel.DS_KHAC_CT">
+        <MappingFragment StoreEntitySet="DS_KHAC_CT">
+          <ScalarProperty Name="MAKHAC" ColumnName="MAKHAC" />
+          <ScalarProperty Name="MAKHAC_CT" ColumnName="MAKHAC_CT" />
+          <ScalarProperty Name="TENKHAC_CT" ColumnName="TENKHAC_CT" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_KHO">
+      <EntityTypeMapping TypeName="iBRPModel.DS_KHO">
+        <MappingFragment StoreEntitySet="DS_KHO">
+          <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
+          <ScalarProperty Name="TENKHO" ColumnName="TENKHO" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="THUKHO" ColumnName="THUKHO" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_MAU">
+      <EntityTypeMapping TypeName="iBRPModel.DS_MAU">
+        <MappingFragment StoreEntitySet="DS_MAU">
+          <ScalarProperty Name="MAMAU" ColumnName="MAMAU" />
+          <ScalarProperty Name="TENMAU" ColumnName="TENMAU" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_NGANH">
+      <EntityTypeMapping TypeName="iBRPModel.DS_NGANH">
+        <MappingFragment StoreEntitySet="DS_NGANH">
+          <ScalarProperty Name="MANGANH" ColumnName="MANGANH" />
+          <ScalarProperty Name="TENNGANH" ColumnName="TENNGANH" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_NHOM">
+      <EntityTypeMapping TypeName="iBRPModel.DS_NHOM">
+        <MappingFragment StoreEntitySet="DS_NHOM">
+          <ScalarProperty Name="MANHOM" ColumnName="MANHOM" />
+          <ScalarProperty Name="MA" ColumnName="MA" />
+          <ScalarProperty Name="MANGANH" ColumnName="MANGANH" />
+          <ScalarProperty Name="TENNHOM" ColumnName="TENNHOM" />
+          <ScalarProperty Name="PLU" ColumnName="PLU" />
+          <ScalarProperty Name="N1" ColumnName="N1" />
+          <ScalarProperty Name="N2" ColumnName="N2" />
+          <ScalarProperty Name="N3" ColumnName="N3" />
+          <ScalarProperty Name="N4" ColumnName="N4" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_NHOM_1">
+      <EntityTypeMapping TypeName="iBRPModel.DS_NHOM_1">
+        <MappingFragment StoreEntitySet="DS_NHOM_1">
+          <ScalarProperty Name="MANHOM1" ColumnName="MANHOM1" />
+          <ScalarProperty Name="MANGANH" ColumnName="MANGANH" />
+          <ScalarProperty Name="MANHOM" ColumnName="MANHOM" />
+          <ScalarProperty Name="MA" ColumnName="MA" />
+          <ScalarProperty Name="TENNHOM1" ColumnName="TENNHOM1" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_NV">
+      <EntityTypeMapping TypeName="iBRPModel.DS_NV">
+        <MappingFragment StoreEntitySet="DS_NV">
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="BIDANH" ColumnName="BIDANH" />
+          <ScalarProperty Name="NHOM" ColumnName="NHOM" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CN_GIOIHAN" ColumnName="CN_GIOIHAN" />
+          <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS_SIZE">
+      <EntityTypeMapping TypeName="iBRPModel.DS_SIZE">
+        <MappingFragment StoreEntitySet="DS_SIZE">
+          <ScalarProperty Name="MASIZE" ColumnName="MASIZE" />
+          <ScalarProperty Name="TENSIZE" ColumnName="TENSIZE" />
+          <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+          <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="iBRPModel.dtproperty">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="iBRPModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
