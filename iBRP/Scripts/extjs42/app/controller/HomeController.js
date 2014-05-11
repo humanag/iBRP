@@ -29,7 +29,12 @@
         nganhhang.show();
     },
     showLayoutNhom: function () {
-        console.log("Show layout Nhom");
+        if (debug) {
+            console.log('The nhom layout will be shown when user click on the button DM NHOM on the main menu. [iBRP.controller.HomeController.showLayoutNhom()]');
+        }
+        //Create and show layout nganhhang
+        var nhom = Ext.create("iBRP.view.nhom.LayoutNhom");
+        nhom.show();
     },
     thoatKhoiChuongTrinh: function () {
         console.log("Thoat khoi chuong trinh !!!");

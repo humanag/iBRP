@@ -56,6 +56,13 @@ var Globals = {
             danh_sach_nganh_hang: 'DANH MỤC NGÀNH HÀNG',
             ma_nganh: 'Mã ngành',
             ten_nganh: 'Tên ngành'
+        },
+        //define nhom languages
+        Nhom: {
+            nhom: 'Nhóm',
+            danh_sach_nhom: 'DANH MỤC NHÓM',
+            ma_nhom: 'Mã nhóm',
+            ten_nhom: 'Tên nhóm'
         }
     }
     

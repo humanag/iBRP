@@ -6,7 +6,7 @@ Ext.application({
     name: 'iBRP',
     appFolder: '../Scripts/extjs42/app',
     autoCreateViewport: true,
-    controllers: ["NganhHangController", "HomeController"],
+    controllers: ["NganhHangController", "NhomController", "HomeController"],
     requires: ['iBRP.model.ModelHelper'],
     launch: function () {
         if (debug) {
