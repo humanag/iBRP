@@ -48,6 +48,7 @@ var Globals = {
             du_lieu_khong_hop_le_xin_vui_long_kiem_tra_lai: 'Dữ liệu không hợp lệ. Xin vui lòng kiểm tra lại.',
             loc_du_lieu: 'Lọc dữ liệu',
             bo_loc_du_lieu: 'Bỏ dữ liệu',
+            xin_vui_long_chon_mau_tin: 'Xin vui lòng chọn mẫu tin.',
         },
         //define nganhHang languages
         NganhHang: {

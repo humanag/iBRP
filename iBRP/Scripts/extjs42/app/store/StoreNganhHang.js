@@ -5,6 +5,7 @@
     autoLoad: false,
     pageSize: Globals.Vars.perItems,
     remoteSort: true,
+    remoteFilter: true,
     proxy: {
         type: "ajax",
         api: {

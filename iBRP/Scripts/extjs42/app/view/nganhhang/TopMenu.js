@@ -14,11 +14,11 @@ Ext.define('iBRP.view.nganhhang.TopMenu', {
                             id: 'btnNganhHangThemMoi',
                             text: Globals.Langs.Common.toolbar_them_moi, //Thêm Mới
                             icon: Globals.Langs.Common.toolbar_image_them_moi,
-                        }, '-', {
-                            xtype: 'button',
-                            id: 'btnNganhHangChinhSua',
-                            text: Globals.Langs.Common.toolbar_chinh_sua,
-                            icon: Globals.Langs.Common.toolbar_image_chinh_sua,
+                        //}, '-', {
+                        //    xtype: 'button',
+                        //    id: 'btnNganhHangChinhSua',
+                        //    text: Globals.Langs.Common.toolbar_chinh_sua,
+                        //    icon: Globals.Langs.Common.toolbar_image_chinh_sua,
                         }, '-', {
                             xtype: 'button',
                             id: 'btnNganhHangXoa',

@@ -28,10 +28,12 @@
         id: 'btnNganhHangLuu',
         icon: Globals.Langs.Common.button_image_luu,
         disabled: true
-    }, {
-        text: Globals.Langs.Common.button_nhap_lai,
-        id: 'btnNganhHangLamLai',
-        icon: Globals.Langs.Common.button_image_nhap_lai,
-        disabled: true
-    }]
+    }
+    //{
+    //    text: Globals.Langs.Common.button_nhap_lai,
+    //    id: 'btnNganhHangLamLai',
+    //    icon: Globals.Langs.Common.button_image_nhap_lai,
+    //    disabled: true
+    //}
+    ]
 });

@@ -46,13 +46,17 @@
         Ext.util.Cookies.set("tennganh", "");
         Ext.util.Cookies.set("manganh", "");
 
+        //Register events for store
+        var store = Ext.getStore("StoreNganhHang");
+        store.addListener('load', this.finishedLoadStore, this);
+
         this.control({
             "#btnNganhHangThemMoi": {
                 click: this.themNganhHang
             },
-            "#btnNganhHangChinhSua": {
-                click: this.suaNganhHang
-            },
+            //"#btnNganhHangChinhSua": {
+            //    click: this.suaNganhHang
+            //},
             "#btnNganhHangXoa": {
                 click: this.xoaNganhHang
             },
@@ -64,22 +68,16 @@
             },
             "girdnganhhang": {
                 selectionchange: this.selectionNganhHangChange,
-                beforerender: this.loadStore,
-                viewready: this.setFirstRow,
-                itemdblclick: this.edit,
+                beforerender: this.initStoreForGrid,
+                itemclick: this.edit,
                 cellkeydown: this.pressKey
-            },
-            "storenganhhang": {
-                load: this.setSelectionFirstRow
             },
             "#btnNganhHangLuu": {
                 click: this.save
             },
-            "#btnNganhHangLamLai": {
-                click: this.refesh
-            },
-            "formfilternganhhang": {
-            },
+            //"#btnNganhHangLamLai": {
+            //    click: this.refesh
+            //},
             "#btnNganhHangFilter": {
                 click: this.filterData
             },
@@ -92,22 +90,31 @@
         });
     },
 
-    setFirstRow: function (grid) {
+    finishedLoadStore: function (store, records, successful, eOpts) {
         if (debug) {
-            console.log("Set selection for the first record of the grid. [iBRP.controller.NganhHangController.setFirstRow()]");
+            console.log("This event will be fire whenever store is loaded. [iBRP.controller.NganhHangController.finishedLoadStore()]");
         }
-        var store = Ext.getStore("StoreNganhHang");
-        var row = store.first();
-        grid.getSelectionModel().select(row);
+        
+        //If last page has just one record and we deleted this record so you need to load previous page.
+        if (records != null && records.length <= 0 && store.currentPage > 1) {
+            store.currentPage = store.currentPage - 1;
+            store.load();
+        }
+
+        //var store = Ext.getStore("StoreNganhHang");
+        var grid = this.getGirdNganhHang();
+        grid.getSelectionModel().select(0, true);
     },
 
-    loadStore: function () {
+    initStoreForGrid: function () {
         if (debug) {
             console.log("Before render grid we need to load store. [iBRP.controller.NganhHangController.loadStore()]");
         }
         var store = Ext.getStore("StoreNganhHang");
-        store.load();
+        var grid = this.getGirdNganhHang();
+        grid.getStore().load();
     },
+
     selectionNganhHangChange: function (model, records) {
         if (debug) {
             console.log("This event will be fired when the grid change selection row. [iBRP.controller.NganhHangController.selectionNganhHangChange()]");
@@ -117,12 +124,12 @@
         var form = this.getFormNganhHang().getForm();
         if (records[0]) {
             rec = records[0];
-            iBRP.model.ModelHelper.disabledForm(form);
+            iBRP.model.ModelHelper.enableForm(form);
             form.loadRecord(rec);
         }
 
         //Enable toolbar and diable form button
-        this.disableControl(false, true);
+        this.disableControl(false, false);
     },
 
     themNganhHang: function () {
@@ -134,7 +141,7 @@
         iBRP.model.ModelHelper.clearForm(form);
 
         //Disable toolbar and enable form button
-        this.disableControl(true, false);
+        this.disableControl(false, false);
     },
     suaNganhHang: function () {
         if (debug) {
@@ -144,7 +151,7 @@
         iBRP.model.ModelHelper.enableForm(form);
 
         //Disable toolbar and enable form button
-        this.disableControl(true, false);
+        this.disableControl(false, false);
     },
     xoaNganhHang: function () {
         if (debug) {
@@ -167,13 +174,15 @@
         }
         var form = this.getFormNganhHang().getForm();
         var store = Ext.getStore("StoreNganhHang");
+        var grid = this.getGirdNganhHang();
         if (form.isValid()) {
             form.submit({
                 method: 'POST',
                 url: '/NganhHang/Update',
                 waitMsg: Globals.Langs.Common.he_thong_dang_xu_ly_xin_vui_long_cho_trong_giay_lat,
                 success: function (f, a) {
-                    store.reload();
+                    //store.reload();
+                    grid.getStore().load();
                     iBRP.model.ModelHelper.disabledForm(form);
                     iBRP.model.ModelHelper.showSuccessMsg();
                 },
@@ -207,20 +216,20 @@
         iBRP.model.ModelHelper.enableForm(form);
 
         //Disable toolbar and enable form button
-        this.disableControl(true, false);
+        this.disableControl(false, false);
     },
     disableControl: function (tlbar, frmButton) {
         //disable all toolbar button
         var arrayButton = Array();
         arrayButton[0] = "btnNganhHangThemMoi";
-        arrayButton[1] = "btnNganhHangChinhSua";
-        arrayButton[2] = "btnNganhHangXoa";
-        arrayButton[3] = "btnNganhHangIn";
+        //arrayButton[1] = "btnNganhHangChinhSua";
+        arrayButton[1] = "btnNganhHangXoa";
+        arrayButton[2] = "btnNganhHangIn";
         iBRP.model.ModelHelper.disableButtons(arrayButton, tlbar);
         //enable Luu, Lam Lai button
         var arrayButton = Array();
         arrayButton[0] = "btnNganhHangLuu";
-        arrayButton[1] = "btnNganhHangLamLai";
+        //arrayButton[1] = "btnNganhHangLamLai";
         iBRP.model.ModelHelper.disableButtons(arrayButton, frmButton);
     },
     deleteSelectionRow: function () {
@@ -254,8 +263,8 @@
                                 success: function (response, opts) {
                                     Ext.MessageBox.hide();
                                     grid.getStore().remove(sel);
-                                    grid.getStore().load();
-
+                                    grid.store.load();
+                                    grid.reconfigure();
                                 },
                                 failure: function (response, opts) {
                                     Ext.Msg.show({
@@ -267,9 +276,15 @@
                                 }
                             });
                         }
-
                     }
                 }
+            });
+        } else {
+            Ext.Msg.show({
+                title: Globals.Langs.Common.thong_bao,
+                msg: Globals.Langs.Common.xin_vui_long_chon_mau_tin,
+                buttons: Ext.MessageBox.OK,
+                icon: Ext.MessageBox.ERROR
             });
         }
     },
@@ -291,7 +306,7 @@
                 this.disableControl(true, false);
                 break;
             case e.F:
-                console.log("Filter result");
+                console.log("Show Filter Form");
                 var filterForm = Ext.create("iBRP.view.nganhhang.FormFilter");
                 var tennganh = Ext.util.Cookies.get("tennganh");
                 var manganh = Ext.util.Cookies.get("manganh");
@@ -315,7 +330,7 @@
 
         var grid = this.getGirdNganhHang();
         //Clear old filter
-        grid.getStore().clearFilter();
+        grid.getStore().clearFilter(true);
 
         if (tennganh != '') {
             grid.getStore().filter('TENNGANH', tennganh);
@@ -324,7 +339,6 @@
             grid.getStore().filter('MANGANH', manganh);
         }
         grid.getStore().currentPage = 1;
-        grid.getStore().load();
         grid.reconfigure();
         this.getFormFilterNganhHang().close();
     },
@@ -341,7 +355,7 @@
 
         //Reload for grid
         var grid = this.getGirdNganhHang();
-        grid.getStore().clearFilter();
+        grid.getStore().clearFilter(true);
         grid.getStore().load();
         grid.reconfigure();
         this.getFormFilterNganhHang().close();

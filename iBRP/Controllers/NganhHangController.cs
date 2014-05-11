@@ -21,6 +21,10 @@ namespace iBRP.Controllers
             {
                 condition = Helper.ConvertFilterStringToArray(filter);
             }
+            if (start < 0)
+            {
+                start = 0;
+            }
             
 
             NganhHang mNganhHang = new NganhHang();

@@ -35,12 +35,12 @@ namespace iBRP.Models.Data
             ////Set condition for MANGANH
             //if (manganh != "")
             //{
-            //    list.Where(nh => nh.MANGANH.Contains(manganh));
+            //    list.AsQueryable().Where(nh => nh.MANGANH.Contains(manganh));
             //}
             ////Set condition for TENNGANH
             //if (tennganh != "")
             //{
-            //    list.Where(nh => nh.TENNGANH.Contains(tennganh));
+            //    list.AsQueryable().Where(nh => nh.TENNGANH.Contains(tennganh));
             //}
 
             if (perItem > 0)
@@ -73,12 +73,12 @@ namespace iBRP.Models.Data
             ////Set condition for MANGANH
             //if (manganh != "")
             //{
-            //    list.Where(nh => nh.MANGANH.Contains(manganh));
+            //    list.AsQueryable().Where(nh => nh.MANGANH.Contains(manganh));
             //}
             ////Set condition for TENNGANH
             //if (tennganh != "")
             //{
-            //    list.Where(nh => nh.TENNGANH.Contains(tennganh));
+            //    list.AsQueryable().Where(nh => nh.TENNGANH.Contains(tennganh));
             //}
 
             return list.Count();
