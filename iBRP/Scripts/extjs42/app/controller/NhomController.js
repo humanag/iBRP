@@ -20,13 +20,13 @@
             ref: "tenNhom",
             selector: "formnhom textfield[id=tennhom]"
         },
-        {
-            ref: "fmaNhom",
-            selector: "formfilternhom textfield[id=fmanhom]"
-        },
+        //{
+        //    ref: "fmaNganh",
+        //    selector: "formfilternhom textfield[id=fmanganh]"
+        //},
         {
             ref: "ftenNhom",
-            selector: "formfilternhom textfield[id=ftennhomganh]"
+            selector: "formfilternhom textfield[id=ftennhom]"
         },
         {
             ref: "layoutNhom",
@@ -44,7 +44,7 @@
         }
         //Clear all old session
         Ext.util.Cookies.set("tennhom", "");
-        Ext.util.Cookies.set("manhom", "");
+        //Ext.util.Cookies.set("manganh", "");
 
         //Register events for store
         var store = Ext.getStore("StoreNhom");
@@ -66,7 +66,7 @@
             "#btnNhomKetThuc": {
                 click: this.thoatNhom
             },
-            "girdNhom": {
+            "girdnhom": {
                 selectionchange: this.selectionNhomChange,
                 beforerender: this.initStoreForGrid,
                 itemclick: this.edit,
@@ -309,9 +309,9 @@
                 console.log("Show Filter Form");
                 var filterForm = Ext.create("iBRP.view.nhom.FormFilter");
                 var tennhom = Ext.util.Cookies.get("tennhom");
-                var manhom = Ext.util.Cookies.get("manhom");
+                //var manganh = Ext.util.Cookies.get("manganh");
                 this.getFtenNhom().setValue(tennhom);
-                this.getFmaNhom().setValue(manhom);
+                //this.getFmaNganh().setValue(manganh);
 
                 filterForm.show();
                 break;
@@ -324,9 +324,9 @@
         }
 
         var tennhom = this.getFtenNhom().getValue();
-        var manhom = this.getFmaNhom().getValue();
+        //var manganh = this.getFmaNganh().getValue();
         Ext.util.Cookies.set("tennhom", tennhom);
-        Ext.util.Cookies.set("manhom", manhom);
+        //Ext.util.Cookies.set("manganh", manganh);
 
         var grid = this.getGirdNhom();
         //Clear old filter
@@ -335,9 +335,9 @@
         if (tennhom != '') {
             grid.getStore().filter('TENNHOM', tennhom);
         }
-        if (manhom != '') {
-            grid.getStore().filter('MANHOM', manhom);
-        }
+        //if (manganh != '') {
+        //    grid.getStore().filter('MANGANH', manganh);
+        //}
         grid.getStore().currentPage = 1;
         grid.reconfigure();
         this.getFormFilterNhom().close();
@@ -349,9 +349,9 @@
         }
         //Clear filter data on the filter form
         this.getFtenNhom().setValue("");
-        this.getFmaNhom().setValue("");
+        //this.getFmaNganh().setValue("");
         Ext.util.Cookies.set("tennhom", "");
-        Ext.util.Cookies.set("manhom", "");
+        //Ext.util.Cookies.set("manganh", "");
 
         //Reload for grid
         var grid = this.getGirdNhom();
@@ -366,10 +366,10 @@
             console.log('This function will be called when button Loc du lieu was clicked. [iBRP.controller.NhomController.showFilterForm()]');
         }
         var filterForm = Ext.create("iBRP.view.nhom.FormFilter");
-        var tennganh = Ext.util.Cookies.get("tennhom");
-        var manganh = Ext.util.Cookies.get("mannhom");
-        this.getFtenNganh().setValue(tennganh);
-        this.getFmaNganh().setValue(manganh);
+        var tennhom = Ext.util.Cookies.get("tennhom");
+        //var manganh = Ext.util.Cookies.get("manganh");
+        this.getFtenNhom().setValue(tennhom);
+        //this.getFmaNganh().setValue(manganh);
 
         filterForm.show();
     }

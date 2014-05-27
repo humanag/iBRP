@@ -32,5 +32,6 @@ namespace iBRP
         public Nullable<int> UPDATED_ID { get; set; }
         public Nullable<System.DateTime> CREATED_AT { get; set; }
         public Nullable<System.DateTime> UPDATED_AT { get; set; }
+        public string LOAI { get; set; }
     }
 }

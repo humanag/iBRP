@@ -22,10 +22,6 @@
     <EntitySet Name="DS_SIZE" EntityType="iBRPModel.Store.DS_SIZE" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="dtproperties" EntityType="iBRPModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="iBRPModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_DS_NHOM_DS_NGANH" Association="iBRPModel.Store.FK_DS_NHOM_DS_NGANH">
-      <End Role="DS_NGANH" EntitySet="DS_NGANH" />
-      <End Role="DS_NHOM" EntitySet="DS_NHOM" />
-    </AssociationSet>
   </EntityContainer>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'iBRP.dbo.AD_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -47,6 +43,7 @@
     <Property Name="MADT" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="TENDT" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="LOAI" Type="nvarchar" Nullable="false" MaxLength="1" />
     <Property Name="MST" Type="nvarchar" MaxLength="50" />
     <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
     <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
@@ -130,7 +127,7 @@
       <PropertyRef Name="MANHOM" />
     </Key>
     <Property Name="MANHOM" Type="nvarchar" Nullable="false" MaxLength="6" />
-    <Property Name="MA" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="MA" Type="nvarchar" MaxLength="3" />
     <Property Name="MANGANH" Type="nvarchar" Nullable="false" MaxLength="3" />
     <Property Name="TENNHOM" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="PLU" Type="bit" />
@@ -210,16 +207,4 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <Association Name="FK_DS_NHOM_DS_NGANH">
-    <End Role="DS_NGANH" Type="iBRPModel.Store.DS_NGANH" Multiplicity="1" />
-    <End Role="DS_NHOM" Type="iBRPModel.Store.DS_NHOM" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_NGANH">
-        <PropertyRef Name="MANGANH" />
-      </Principal>
-      <Dependent Role="DS_NHOM">
-        <PropertyRef Name="MANGANH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

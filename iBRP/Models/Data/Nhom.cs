@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace iBRP.Models.Data
@@ -63,28 +65,51 @@ namespace iBRP.Models.Data
             
         }
 
-        public int AddNhom(string manganh, string tennganh)
+        public int AddNhom(string manganh, string manhom, string tennhom)
         {
-            bool isAdd = false;
-            DS_NGANH nganhHang = dbContext.DS_NGANH.SingleOrDefault(nh => nh.MANGANH == manganh);
-            if (nganhHang == null) {
-                isAdd = true;
-                nganhHang = new DS_NGANH();
+            try
+            {
+                bool isAdd = false;
+                DS_NHOM nhom = dbContext.DS_NHOM.SingleOrDefault(nh => nh.MANHOM == manhom);
+                if (nhom == null)
+                {
+                    isAdd = true;
+                    nhom = new DS_NHOM();
+                    manhom = "000000";
+                }
+
+                nhom.MANHOM = manhom;
+                nhom.MANGANH = manganh;
+                nhom.TENNHOM = tennhom;
+                
+                if (isAdd)
+                {
+                    dbContext.DS_NHOM.Add(nhom);
+                }
+
+                return dbContext.SaveChanges();
             }
-            nganhHang.MANGANH = manganh;
-            nganhHang.TENNGANH = tennganh;
-            if (isAdd) {
-                dbContext.DS_NGANH.Add(nganhHang);    
+            catch (Exception e)
+            {
+                var strErr = e.Message;
+                throw;
             }
             
+        }
+
+        public int DeleteNhom(string manhom)
+        {
+            DS_NHOM nhom = dbContext.DS_NHOM.SingleOrDefault(nh => nh.MANHOM == manhom);
+            dbContext.DS_NHOM.Remove(nhom);
             return dbContext.SaveChanges();
         }
 
-        public int DeleteNganhHang(string manganh)
+        public IQueryable<DS_NHOM> FindByMaNganh(string manganh)
         {
-            DS_NGANH nganhHang = dbContext.DS_NGANH.Single(nh => nh.MANGANH == manganh);
-            dbContext.DS_NGANH.Remove(nganhHang);
-            return dbContext.SaveChanges();
+            return from nh in dbContext.DS_NHOM
+                       where nh.MANGANH.Contains(manganh)
+                       orderby nh.MANHOM
+                       select nh;
         }
     }
 }

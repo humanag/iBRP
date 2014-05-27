@@ -15,6 +15,7 @@
     <EntitySetMapping Name="DS_DOITAC">
       <EntityTypeMapping TypeName="iBRPModel.DS_DOITAC">
         <MappingFragment StoreEntitySet="DS_DOITAC">
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
           <ScalarProperty Name="MADT" ColumnName="MADT" />
           <ScalarProperty Name="TENDT" ColumnName="TENDT" />
           <ScalarProperty Name="NHOM" ColumnName="NHOM" />

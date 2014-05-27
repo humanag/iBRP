@@ -10,13 +10,33 @@
            xtype: "fieldset", title: Globals.Langs.Nhom.nhom,
            defaults: { xtype: "textfield"},
            items: [
+                //{
+                //    id: "fmanganh",
+                //    name: "FMANGANH",
+                //    xtype: "combobox",
+                //    fieldLabel: Globals.Langs.NganhHang.ten_nganh,
+                //    queryMode: 'remote',
+                //    displayField: 'TENNGANH',
+                //    valueField: 'MANGANH',
+                //    allowBlank: false,
+                //    store: new Ext.data.Store({
+                //        fields: ['MANGANH', 'TENNGANH'],
+                //        autoLoad: true,
+                //        proxy: {
+                //            type: "ajax",
+                //            api: {
+                //                read: "/NganhHang/Options",
+                //            },
+                //            reader: {
+                //                type: "json",
+                //                root: "actionitems",
+                //                idProperty: 'MANGANH'
+                //            }
+                //        },
+                //    }),
+                //},
                 {
-                    id: "fmanhom",
-                    name: "FMANHOM",
-                    fieldLabel: Globals.Langs.Nhom.ma_nhom
-                },
-                {
-                    id: "ftenhom",
+                    id: "ftennhom",
                     name: "FTENNHOM",
                     fieldLabel: Globals.Langs.Nhom.ten_nhom
                 },

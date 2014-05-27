@@ -34,6 +34,27 @@ namespace iBRP.Controllers
             return Content(json);
         }
 
+        public ContentResult Options(int start = 0, int limit = 5, int page = 1)
+        {
+            NganhHang mNganhHang = new NganhHang();
+            //var list = mNganhHang.GetList(start, limit).ToArray();
+            var list = mNganhHang.GetList();
+            ArrayList all = new ArrayList();
+            foreach(DS_NGANH item in list) 
+            {
+                Dictionary<string, string> arr = new Dictionary<string, string>();
+                string manganh = (string)item.MANGANH;
+                string tennganh = (string)item.TENNGANH;
+                arr.Add("MANGANH", manganh);
+                arr.Add("TENNGANH", tennganh);
+                all.Add(arr);
+            }
+
+            var total = mNganhHang.GetTotal();
+            string json = "{\"actionitems\":" + JsonConvert.SerializeObject(all) + "}";
+            return Content(json);
+        }
+
         [HttpPost]
         public ContentResult Update(string manganh, string tennganh)
         {

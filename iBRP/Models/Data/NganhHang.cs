@@ -16,13 +16,13 @@ namespace iBRP.Models.Data
         public IQueryable<DS_NGANH> GetList(int start = 0, int perItem = 0, Dictionary<string, string> condition = null)
         {
             string manganh = "";
-            if (condition.ContainsKey("MANGANH"))
+            if (condition != null && condition.ContainsKey("MANGANH"))
             {
                 manganh = condition["MANGANH"];
             }
 
             string tennganh = "";
-            if (condition.ContainsKey("TENNGANH"))
+            if (condition != null && condition.ContainsKey("TENNGANH"))
             {
                 tennganh = condition["TENNGANH"];
             }
@@ -54,13 +54,13 @@ namespace iBRP.Models.Data
         public int GetTotal(Dictionary<string, string> condition = null)
         {
             string manganh = "";
-            if (condition.ContainsKey("MANGANH"))
+            if (condition != null && condition.ContainsKey("MANGANH"))
             {
                 manganh = condition["MANGANH"];
             }
 
             string tennganh = "";
-            if (condition.ContainsKey("TENNGANH"))
+            if (condition != null && condition.ContainsKey("TENNGANH"))
             {
                 tennganh = condition["TENNGANH"];
             }
@@ -104,9 +104,28 @@ namespace iBRP.Models.Data
 
         public int DeleteNganhHang(string manganh)
         {
+            int hasNhom = this.HasNhom(manganh);
+            if (hasNhom > 0)
+            {
+                //You can not delete because this nganh has child nhom.
+                return 0;
+            }
+
             DS_NGANH nganhHang = dbContext.DS_NGANH.Single(nh => nh.MANGANH == manganh);
             dbContext.DS_NGANH.Remove(nganhHang);
             return dbContext.SaveChanges();
+        }
+
+        public DS_NGANH FindById(string manganh)
+        {
+            return dbContext.DS_NGANH.Single(nh => nh.MANGANH == manganh);
+        }
+
+
+        private int HasNhom(string manganh)
+        {
+            Nhom mNhom = new Nhom();
+            return mNhom.FindByMaNganh(manganh).Count();
         }
     }
 }

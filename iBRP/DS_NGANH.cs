@@ -14,18 +14,11 @@ namespace iBRP
     
     public partial class DS_NGANH
     {
-        public DS_NGANH()
-        {
-            this.DS_NHOM = new HashSet<DS_NHOM>();
-        }
-    
         public string MANGANH { get; set; }
         public string TENNGANH { get; set; }
         public Nullable<int> CREATED_ID { get; set; }
         public Nullable<int> UPDATED_ID { get; set; }
         public Nullable<System.DateTime> CREATED_AT { get; set; }
         public Nullable<System.DateTime> UPDATED_AT { get; set; }
-    
-        public virtual ICollection<DS_NHOM> DS_NHOM { get; set; }
     }
 }

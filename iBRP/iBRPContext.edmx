@@ -27,10 +27,6 @@
           <EntitySet Name="DS_SIZE" EntityType="iBRPModel.Store.DS_SIZE" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="dtproperties" EntityType="iBRPModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="iBRPModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_DS_NHOM_DS_NGANH" Association="iBRPModel.Store.FK_DS_NHOM_DS_NGANH">
-            <End Role="DS_NGANH" EntitySet="DS_NGANH" />
-            <End Role="DS_NHOM" EntitySet="DS_NHOM" />
-          </AssociationSet>
         </EntityContainer>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'iBRP.dbo.AD_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -52,6 +48,7 @@
           <Property Name="MADT" Type="nvarchar" Nullable="false" MaxLength="15" />
           <Property Name="TENDT" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="LOAI" Type="nvarchar" Nullable="false" MaxLength="1" />
           <Property Name="MST" Type="nvarchar" MaxLength="50" />
           <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
           <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
@@ -135,7 +132,7 @@
             <PropertyRef Name="MANHOM" />
           </Key>
           <Property Name="MANHOM" Type="nvarchar" Nullable="false" MaxLength="6" />
-          <Property Name="MA" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="MA" Type="nvarchar" MaxLength="3" />
           <Property Name="MANGANH" Type="nvarchar" Nullable="false" MaxLength="3" />
           <Property Name="TENNHOM" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="PLU" Type="bit" />
@@ -215,18 +212,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK_DS_NHOM_DS_NGANH">
-          <End Role="DS_NGANH" Type="iBRPModel.Store.DS_NGANH" Multiplicity="1" />
-          <End Role="DS_NHOM" Type="iBRPModel.Store.DS_NHOM" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DS_NGANH">
-              <PropertyRef Name="MANGANH" />
-            </Principal>
-            <Dependent Role="DS_NHOM">
-              <PropertyRef Name="MANGANH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -245,10 +230,6 @@
           <EntitySet Name="DS_SIZE" EntityType="iBRPModel.DS_SIZE" />
           <EntitySet Name="dtproperties" EntityType="iBRPModel.dtproperty" />
           <EntitySet Name="sysdiagrams" EntityType="iBRPModel.sysdiagram" />
-          <AssociationSet Name="FK_DS_NHOM_DS_NGANH" Association="iBRPModel.FK_DS_NHOM_DS_NGANH">
-            <End Role="DS_NGANH" EntitySet="DS_NGANH" />
-            <End Role="DS_NHOM" EntitySet="DS_NHOM" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AD_USER">
           <Key>
@@ -282,6 +263,7 @@
           <Property Name="UPDATED_ID" Type="Int32" />
           <Property Name="CREATED_AT" Type="DateTime" Precision="3" />
           <Property Name="UPDATED_AT" Type="DateTime" Precision="3" />
+          <Property Type="String" Name="LOAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DS_KHAC">
           <Key>
@@ -344,14 +326,13 @@
           <Property Name="UPDATED_ID" Type="Int32" />
           <Property Name="CREATED_AT" Type="DateTime" Precision="3" />
           <Property Name="UPDATED_AT" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="DS_NHOM" Relationship="iBRPModel.FK_DS_NHOM_DS_NGANH" FromRole="DS_NGANH" ToRole="DS_NHOM" />
         </EntityType>
         <EntityType Name="DS_NHOM">
           <Key>
             <PropertyRef Name="MANHOM" />
           </Key>
           <Property Name="MANHOM" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="false" />
-          <Property Name="MA" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="MA" Type="String" MaxLength="3" Unicode="true" FixedLength="false" Nullable="true" />
           <Property Name="MANGANH" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="false" />
           <Property Name="TENNHOM" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="PLU" Type="Boolean" />
@@ -363,7 +344,6 @@
           <Property Name="UPDATED_ID" Type="Int32" />
           <Property Name="CREATED_AT" Type="DateTime" Precision="3" />
           <Property Name="UPDATED_AT" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="DS_NGANH" Relationship="iBRPModel.FK_DS_NHOM_DS_NGANH" FromRole="DS_NHOM" ToRole="DS_NGANH" />
         </EntityType>
         <EntityType Name="DS_NHOM_1">
           <Key>
@@ -432,18 +412,6 @@
           <Property Type="Int32" Name="version" />
           <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_DS_NHOM_DS_NGANH">
-          <End Type="iBRPModel.DS_NGANH" Role="DS_NGANH" Multiplicity="1" />
-          <End Type="iBRPModel.DS_NHOM" Role="DS_NHOM" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DS_NGANH">
-              <PropertyRef Name="MANGANH" />
-            </Principal>
-            <Dependent Role="DS_NHOM">
-              <PropertyRef Name="MANGANH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -464,6 +432,7 @@
           <EntitySetMapping Name="DS_DOITAC">
             <EntityTypeMapping TypeName="iBRPModel.DS_DOITAC">
               <MappingFragment StoreEntitySet="DS_DOITAC">
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
                 <ScalarProperty Name="MADT" ColumnName="MADT" />
                 <ScalarProperty Name="TENDT" ColumnName="TENDT" />
                 <ScalarProperty Name="NHOM" ColumnName="NHOM" />

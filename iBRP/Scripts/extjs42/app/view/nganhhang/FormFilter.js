@@ -10,11 +10,11 @@
            xtype: "fieldset", title: Globals.Langs.NganhHang.nganh_hang,
            defaults: { xtype: "textfield"},
            items: [
-                {
-                    id: "fmanghanh",
-                    name: "FMANGANH",
-                    fieldLabel: Globals.Langs.NganhHang.ma_nganh
-                },
+                //{
+                //    id: "fmanghanh",
+                //    name: "FMANGANH",
+                //    fieldLabel: Globals.Langs.NganhHang.ma_nganh
+                //},
                 {
                     id: "ftennganh",
                     name: "FTENNGANH",

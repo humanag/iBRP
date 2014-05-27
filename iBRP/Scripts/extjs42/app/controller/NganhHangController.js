@@ -20,10 +20,10 @@
             ref: "tenNganh",
             selector: "formnganhhang textfield[id=tennganh]"
         },
-        {
-            ref: "fmaNganh",
-            selector: "formfilternganhhang textfield[id=fmanghanh]"
-        },
+        //{
+        //    ref: "fmaNganh",
+        //    selector: "formfilternganhhang textfield[id=fmanghanh]"
+        //},
         {
             ref: "ftenNganh",
             selector: "formfilternganhhang textfield[id=ftennganh]"
@@ -44,7 +44,7 @@
         }
         //Clear all old session
         Ext.util.Cookies.set("tennganh", "");
-        Ext.util.Cookies.set("manganh", "");
+        //Ext.util.Cookies.set("manganh", "");
 
         //Register events for store
         var store = Ext.getStore("StoreNganhHang");
@@ -309,9 +309,9 @@
                 console.log("Show Filter Form");
                 var filterForm = Ext.create("iBRP.view.nganhhang.FormFilter");
                 var tennganh = Ext.util.Cookies.get("tennganh");
-                var manganh = Ext.util.Cookies.get("manganh");
+                //var manganh = Ext.util.Cookies.get("manganh");
                 this.getFtenNganh().setValue(tennganh);
-                this.getFmaNganh().setValue(manganh);
+                //this.getFmaNganh().setValue(manganh);
 
                 filterForm.show();
                 break;
@@ -324,9 +324,9 @@
         }
 
         var tennganh = this.getFtenNganh().getValue();
-        var manganh = this.getFmaNganh().getValue();
+        //var manganh = this.getFmaNganh().getValue();
         Ext.util.Cookies.set("tennganh", tennganh);
-        Ext.util.Cookies.set("manganh", manganh);
+        //Ext.util.Cookies.set("manganh", manganh);
 
         var grid = this.getGirdNganhHang();
         //Clear old filter
@@ -335,9 +335,9 @@
         if (tennganh != '') {
             grid.getStore().filter('TENNGANH', tennganh);
         }
-        if (manganh != '') {
-            grid.getStore().filter('MANGANH', manganh);
-        }
+        //if (manganh != '') {
+        //    grid.getStore().filter('MANGANH', manganh);
+        //}
         grid.getStore().currentPage = 1;
         grid.reconfigure();
         this.getFormFilterNganhHang().close();
@@ -349,9 +349,9 @@
         }
         //Clear filter data on the filter form
         this.getFtenNganh().setValue("");
-        this.getFmaNganh().setValue("");
+        //this.getFmaNganh().setValue("");
         Ext.util.Cookies.set("tennganh", "");
-        Ext.util.Cookies.set("manganh", "");
+        //Ext.util.Cookies.set("manganh", "");
 
         //Reload for grid
         var grid = this.getGirdNganhHang();
@@ -367,9 +367,9 @@
         }
         var filterForm = Ext.create("iBRP.view.nganhhang.FormFilter");
         var tennganh = Ext.util.Cookies.get("tennganh");
-        var manganh = Ext.util.Cookies.get("manganh");
+        //var manganh = Ext.util.Cookies.get("manganh");
         this.getFtenNganh().setValue(tennganh);
-        this.getFmaNganh().setValue(manganh);
+        //this.getFmaNganh().setValue(manganh);
 
         filterForm.show();
     }

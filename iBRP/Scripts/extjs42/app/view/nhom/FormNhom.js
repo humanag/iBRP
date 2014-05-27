@@ -20,6 +20,31 @@
                     fieldLabel: Globals.Langs.Nhom.ten_nhom,
                     allowBlank: false
                 },
+                {
+                    id: "manganh",
+                    name: "MANGANH",
+                    xtype: "combobox",
+                    fieldLabel: Globals.Langs.NganhHang.ten_nganh,
+                    queryMode: 'remote',
+                    displayField: 'TENNGANH',
+                    valueField: 'MANGANH',
+                    allowBlank: false,
+                    store: new Ext.data.Store({
+                        fields: ['MANGANH', 'TENNGANH'],
+                        autoLoad: true,
+                        proxy: {
+                            type: "ajax",
+                            api: {
+                                read: "/NganhHang/Options",
+                            },
+                            reader: {
+                                type: "json",
+                                root: "actionitems",
+                                idProperty: 'MANGANH'
+                            }
+                        },
+                    }),
+                }
            ]
        }
     ],

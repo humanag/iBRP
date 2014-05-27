@@ -18,7 +18,6 @@
         <EntityTypeShape EntityType="iBRPModel.DS_SIZE" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="iBRPModel.dtproperty" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="iBRPModel.sysdiagram" Width="1.5" PointX="11.351793843950981" PointY="31.732134833807187" />
-        <AssociationConnector Association="iBRPModel.FK_DS_NHOM_DS_NGANH" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
