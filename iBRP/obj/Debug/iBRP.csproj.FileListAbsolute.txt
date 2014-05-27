@@ -27,3 +27,4 @@ D:\www\iBRP\iBRP\bin\System.Web.WebPages.Deployment.xml
 D:\www\iBRP\iBRP\bin\System.Web.WebPages.Razor.xml
 D:\www\iBRP\iBRP\obj\Debug\iBRP.dll
 D:\www\iBRP\iBRP\obj\Debug\iBRP.pdb
+D:\www\iBRP\iBRP\obj\Debug\iBRP.csprojResolveAssemblyReference.cache
