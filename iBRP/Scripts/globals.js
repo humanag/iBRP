@@ -3,7 +3,8 @@
 var Globals = {
     //Define global configs
     Vars: {
-        perItems: 5
+        perItems: 5,
+        lenghtOfMainMenu: 30,
     },
 
     //Define global languages

@@ -1,0 +1,14 @@
+﻿.gridTitleCenterCss{
+    text-align:center;
+    font-weight: bold;
+    font-size: small;
+ }
+
+.layoutTitle {
+    font-weight: bold;
+    font-size: small;
+}
+
+.buttonOnLayout {
+    font-weight: bold;
+}

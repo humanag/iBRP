@@ -5,8 +5,8 @@
     id: "idGirdNganhHang",
     scroll: true,
     columns: [
-        { header: Globals.Langs.NganhHang.ma_nganh, dataIndex: "MANGANH", width: 100 },
-        { header: Globals.Langs.NganhHang.ten_nganh, dataIndex: "TENNGANH", width: 400 },
+        { header: Globals.Langs.NganhHang.ma_nganh, dataIndex: "MANGANH", width: 100, cls: 'gridTitleCenterCss' },
+        { header: Globals.Langs.NganhHang.ten_nganh, dataIndex: "TENNGANH", width: 400, cls: 'gridTitleCenterCss' },
     ],
     dockedItems: [{
         xtype: 'pagingtoolbar',

@@ -11,17 +11,19 @@ Ext.define('iBRP.view.nganhhang.LayoutNganhHang', {
     xtype: "layoutnganhhang",
     initComponent: function () {
         Ext.apply(this, {
-            title: Globals.Langs.NganhHang.danh_sach_nganh_hang,
+            title: '<span class="layoutTitle"><h2>' + Globals.Langs.NganhHang.danh_sach_nganh_hang + '</h2></span>',
             id: 'mainWindowDMNganhHang',
             draggable: false,
             resizable: false,
             minimizable: false,
             maximizable: false,
+            modal: true,
             width: document.body.offsetWidth,
             height: document.body.offsetHeight,
             layout: 'border',
             border: false,
             closable: true,
+            margin: Globals.Vars.lenghtOfMainMenu + ' 0 0 0',
             items: [
             {
                 //Menu top phia tren
@@ -39,6 +41,7 @@ Ext.define('iBRP.view.nganhhang.LayoutNganhHang', {
                 collapsible: true,
                 animCollapse: true,
                 collapseMode: 'mini',
+                margins: '0 0 0 5',
                 width: 400,
                 items: [
                     { xtype: "formnganhhang" }

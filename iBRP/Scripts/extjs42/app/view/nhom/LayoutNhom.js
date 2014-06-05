@@ -18,7 +18,7 @@ Ext.define('iBRP.view.nhom.LayoutNhom', {
             minimizable: false,
             maximizable: false,
             width: document.body.offsetWidth,
-            height: document.body.offsetHeight,
+            height: document.body.offsetHeight - Globals.Vars.lenghtOfMainMenu,
             layout: 'border',
             border: false,
             closable: true,

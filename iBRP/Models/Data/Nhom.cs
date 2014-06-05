@@ -15,7 +15,7 @@ namespace iBRP.Models.Data
             dbContext = new iBRPContext();
         }
 
-        public IQueryable<DS_NHOM> GetList(int start = 0, int perItem = 0, Dictionary<string, string> condition = null)
+        public IQueryable<Object> GetList(int start = 0, int perItem = 0, Dictionary<string, string> condition = null)
         {
             string manhom = "";
             if (condition.ContainsKey("MANHOM"))
@@ -30,9 +30,10 @@ namespace iBRP.Models.Data
             }
 
             var list = from nh in dbContext.DS_NHOM
+                       join ngh in dbContext.DS_NGANH on nh.MANGANH equals ngh.MANGANH
                        where nh.MANHOM.Contains(manhom) && nh.TENNHOM.Contains(tennhom)
                        orderby nh.MANHOM
-                       select nh;
+                       select new { nh.MANHOM, nh.MA, nh.MANGANH, nh.TENNHOM, ngh.TENNGANH };
 
             if (perItem > 0)
             {
@@ -57,6 +58,7 @@ namespace iBRP.Models.Data
             }
 
             var list = from nh in dbContext.DS_NHOM
+                       join ngh in dbContext.DS_NGANH on nh.MANGANH equals ngh.MANGANH
                        where nh.MANHOM.Contains(manhom) && nh.TENNHOM.Contains(tennhom)
                        orderby nh.MANHOM
                        select nh;
