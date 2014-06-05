@@ -11,7 +11,7 @@ Ext.define('iBRP.view.nganhhang.LayoutNganhHang', {
     xtype: "layoutnganhhang",
     initComponent: function () {
         Ext.apply(this, {
-            title: '<span class="layoutTitle"><h2>' + Globals.Langs.NganhHang.danh_sach_nganh_hang + '</h2></span>',
+            title: '<span class="layoutTitle">' + Globals.Langs.NganhHang.danh_sach_nganh_hang + '</span>',
             id: 'mainWindowDMNganhHang',
             draggable: false,
             resizable: false,
