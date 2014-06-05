@@ -5,7 +5,8 @@
     border: false,
     items: [
        {
-           xtype: "fieldset", title: Globals.Langs.NganhHang.nganh_hang,
+           xtype: "fieldset",
+           title: Globals.Langs.NganhHang.nganh_hang,
            defaults: { xtype: "textfield", disabled: true },
            items: [
                 {

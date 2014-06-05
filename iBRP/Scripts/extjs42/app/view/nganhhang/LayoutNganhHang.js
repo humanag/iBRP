@@ -35,7 +35,7 @@ Ext.define('iBRP.view.nganhhang.LayoutNganhHang', {
                 //Form ben trai
                 region: 'east',
                 id: 'panelLeft',
-                title: Globals.Langs.Common.thong_tin_chi_tiet,
+                title: '<span class="thongtinchitiet">' + Globals.Langs.Common.thong_tin_chi_tiet + '</span>',
                 split: true,
                 collapsed: false,
                 collapsible: true,

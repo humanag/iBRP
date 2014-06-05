@@ -1,7 +1,8 @@
 ﻿.gridTitleCenterCss{
     text-align:center;
-    font-weight: bold;
+    font-weight: normal;
     font-size: small;
+    color: #04408C;
  }
 
 .layoutTitle {
@@ -11,6 +12,11 @@
 
 /**Set style for button*/
 .buttonOnLayout {
+    font-weight: bold;
+    font-size: small;
+}
+
+.thongtinchitiet {
     font-weight: bold;
     font-size: small;
 }
