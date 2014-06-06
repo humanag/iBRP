@@ -5,9 +5,9 @@
     id: "idGirdNhom",
     scroll: true,
     columns: [
-        { header: Globals.Langs.Nhom.ma_nhom, dataIndex: "MANHOM", width: 100 },
-        { header: Globals.Langs.Nhom.ten_nhom, dataIndex: "TENNHOM", width: 400 },
-        { header: Globals.Langs.NganhHang.ten_nganh, dataIndex: "TENNGANH", width: 400 },
+        { header: Globals.Langs.NganhHang.ten_nganh, dataIndex: "TENNGANH", width: 400, cls: 'gridTitleCenterCss' },
+        { header: Globals.Langs.Nhom.ma_nhom, dataIndex: "MANHOM", width: 100, cls: 'gridTitleCenterCss' },
+        { header: Globals.Langs.Nhom.ten_nhom, dataIndex: "TENNHOM", width: 400, cls: 'gridTitleCenterCss' },
     ],
     dockedItems: [{
         xtype: 'pagingtoolbar',

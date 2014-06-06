@@ -49,7 +49,7 @@
        }
     ],
     buttons: [{
-        text: Globals.Langs.Common.button_luu,
+        text: '<span class="buttonOnLayout">' + Globals.Langs.Common.button_luu + '</span>',
         id: 'btnNhomLuu',
         icon: Globals.Langs.Common.button_image_luu,
         disabled: true

@@ -12,7 +12,7 @@ Ext.define('iBRP.view.nhom.TopMenu', {
                         {
                             xtype: 'button',
                             id: 'btnNhomThemMoi',
-                            text: Globals.Langs.Common.toolbar_them_moi, //Thêm Mới
+                            text: '<span class="buttonOnLayout">' + Globals.Langs.Common.toolbar_them_moi + '<span>', //Thêm Mới
                             icon: Globals.Langs.Common.toolbar_image_them_moi,
                         //}, '-', {
                         //    xtype: 'button',
@@ -22,24 +22,25 @@ Ext.define('iBRP.view.nhom.TopMenu', {
                         }, '-', {
                             xtype: 'button',
                             id: 'btnNhomXoa',
-                            text: Globals.Langs.Common.toolbar_xoa,
+                            text: '<span class="buttonOnLayout">' + Globals.Langs.Common.toolbar_xoa + '<span>',
                             icon: Globals.Langs.Common.toolbar_image_xoa,
                         }, '-', {
                             xtype: 'button',
                             id: 'btnNhomIn',
-                            text: Globals.Langs.Common.toolbar_in,
+                            text: '<span class="buttonOnLayout">' + Globals.Langs.Common.toolbar_in+ '<span>',
                             icon: Globals.Langs.Common.toolbar_image_in,
                         }, '-', {
                             xtype: 'button',
                             id: 'btnNhomKetThuc',
-                            text: Globals.Langs.Common.toolbar_ket_thuc,
+                            text: '<span class="buttonOnLayout">' + Globals.Langs.Common.toolbar_ket_thuc + '<span>',
                             icon: Globals.Langs.Common.toolbar_image_ket_thuc,
-                        }, '-', {
-                            xtype: 'button',
-                            id: 'btnNhomShowFilter',
-                            text: Globals.Langs.Common.toolbar_loc_du_lieu,
-                            icon: Globals.Langs.Common.toolbar_image_loc_du_lieu,
                         }
+                        //, '-', {
+                        //    xtype: 'button',
+                        //    id: 'btnNhomShowFilter',
+                        //    text: Globals.Langs.Common.toolbar_loc_du_lieu,
+                        //    icon: Globals.Langs.Common.toolbar_image_loc_du_lieu,
+                        //}
                     ]
         });
         this.callParent(arguments);

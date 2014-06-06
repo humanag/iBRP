@@ -11,14 +11,16 @@ Ext.define('iBRP.view.nhom.LayoutNhom', {
     xtype: "layoutnhom",
     initComponent: function () {
         Ext.apply(this, {
-            title: Globals.Langs.Nhom.danh_sach_nhom,
+            title: '<span class="layoutTitle">' + Globals.Langs.Nhom.danh_sach_nhom + '</span>',
             id: 'mainWindowDMNhom',
+            modal: true,
             draggable: false,
             resizable: false,
             minimizable: false,
             maximizable: false,
             width: document.body.offsetWidth,
-            height: document.body.offsetHeight - Globals.Vars.lenghtOfMainMenu,
+            height: document.body.offsetHeight,
+            margin: Globals.Vars.lenghtOfMainMenu + ' 0 0 0',
             layout: 'border',
             border: false,
             closable: true,
@@ -33,13 +35,14 @@ Ext.define('iBRP.view.nhom.LayoutNhom', {
                 //Form ben trai
                 region: 'east',
                 id: 'panelLeft',
-                title: Globals.Langs.Common.thong_tin_chi_tiet,
+                title: '<span class="thongtinchitiet">' + Globals.Langs.Common.thong_tin_chi_tiet + '</span>',
                 split: true,
                 collapsed: false,
                 collapsible: true,
                 animCollapse: true,
                 collapseMode: 'mini',
                 width: 400,
+                margins: '0 0 0 5',
                 items: [
                     { xtype: "formnhom" }
                 ]
