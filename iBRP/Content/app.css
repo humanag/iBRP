@@ -20,3 +20,7 @@
     font-weight: bold;
     font-size: small;
 }
+
+.myWindowCls .x-window-body > .x-box-inner {
+    overflow: auto;
+}

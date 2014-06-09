@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -87,33 +88,48 @@ namespace iBRP.Models.Data
 
         public int AddNganhHang(string manganh, string tennganh)
         {
-            bool isAdd = false;
-            DS_NGANH nganhHang = dbContext.DS_NGANH.SingleOrDefault(nh => nh.MANGANH == manganh);
-            if (nganhHang == null) {
-                isAdd = true;
-                nganhHang = new DS_NGANH();
+            try
+            {
+                bool isAdd = false;
+                DS_NGANH nganhHang = dbContext.DS_NGANH.SingleOrDefault(nh => nh.MANGANH == manganh);
+                if (nganhHang == null)
+                {
+                    isAdd = true;
+                    nganhHang = new DS_NGANH();
+                }
+                nganhHang.MANGANH = manganh;
+                nganhHang.TENNGANH = tennganh;
+                if (isAdd)
+                {
+                    dbContext.DS_NGANH.Add(nganhHang);
+                }
+
+                return dbContext.SaveChanges();
             }
-            nganhHang.MANGANH = manganh;
-            nganhHang.TENNGANH = tennganh;
-            if (isAdd) {
-                dbContext.DS_NGANH.Add(nganhHang);    
+            catch (Exception e)
+            {
+                throw e;
             }
-            
-            return dbContext.SaveChanges();
         }
 
         public int DeleteNganhHang(string manganh)
         {
-            int hasNhom = this.HasNhom(manganh);
-            if (hasNhom > 0)
+            try
             {
-                //You can not delete because this nganh has child nhom.
-                return 0;
-            }
+                int hasNhom = this.HasNhom(manganh);
+                if (hasNhom > 0)
+                {
+                    throw new Exception("This item is not deleted because it has some child item.");
+                }
 
-            DS_NGANH nganhHang = dbContext.DS_NGANH.Single(nh => nh.MANGANH == manganh);
-            dbContext.DS_NGANH.Remove(nganhHang);
-            return dbContext.SaveChanges();
+                DS_NGANH nganhHang = dbContext.DS_NGANH.Single(nh => nh.MANGANH == manganh);
+                dbContext.DS_NGANH.Remove(nganhHang);
+                return dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public DS_NGANH FindById(string manganh)

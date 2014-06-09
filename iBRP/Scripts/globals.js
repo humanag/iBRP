@@ -5,6 +5,11 @@ var Globals = {
     Vars: {
         perItems: 5,
         lenghtOfMainMenu: 30,
+        showError: 2,
+        ErrorTypes: {
+            generalness: 1,   //show generalness error message.
+            detail: 2         //show detail error message.
+        }
     },
 
     //Define global languages
@@ -41,7 +46,7 @@ var Globals = {
             thong_tin_chi_tiet: 'Thông Tin Chi Tiết',
             khong_ton_tai_mau_tin_nao: 'Không tồn tại mẫu tin nào',
             he_thong_dang_xu_ly_xin_vui_long_cho_trong_giay_lat: 'Hệ thống đang xữ lý. Xin vui lòng chờ trong giây lát.',
-            thong_bao: 'Thôn báo',
+            thong_bao: 'Thông báo',
             thao_tac_thanh_cong: 'Thao tác thành công.',
             thao_tac_khong_thanh_cong: 'Thao tác không thành công. Xin vui lòng thực hiện lại.',
             canh_bao: 'Cảnh Báo',
@@ -50,6 +55,7 @@ var Globals = {
             loc_du_lieu: 'Lọc dữ liệu',
             bo_loc_du_lieu: 'Bỏ dữ liệu',
             xin_vui_long_chon_mau_tin: 'Xin vui lòng chọn mẫu tin.',
+            qua_trinh_ket_noi_may_chu_gap_van_de: 'Quá trình kết nối với máy chủ gặp vấn đề. xin vui lòng liên hệ với người quản trị.'
         },
         //define nganhHang languages
         NganhHang: {

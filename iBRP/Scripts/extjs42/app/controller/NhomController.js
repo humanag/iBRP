@@ -187,7 +187,10 @@
                     iBRP.model.ModelHelper.showSuccessMsg();
                 },
                 failure: function (f, a) {
-                    iBRP.model.ModelHelper.showErrorMsg();
+                    if (debug) {
+                        console.log(a);
+                    }
+                    iBRP.model.ModelHelper.showErrorMsg(a.response);
                 }
             });
             //Enable toolbar and disable form button

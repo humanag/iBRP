@@ -64,6 +64,28 @@
         })
     },
 
+    showErrorMsg: function (response) {
+        if (debug) {
+            console.log("This function will be show an error message. [iBRP.model.ModelHelper.showErrorMsg()]");
+        }
+
+        var errorMsg = Globals.Langs.Common.qua_trinh_ket_noi_may_chu_gap_van_de;
+        switch (parseInt(Globals.Vars.showError)) {
+            case parseInt(Globals.Vars.ErrorTypes.detail):
+                errorMsg = response.responseText;
+                break;
+            default:
+        }
+
+        Ext.Msg.show({
+            title: Globals.Langs.Common.thong_bao,
+            msg: errorMsg,
+            buttons: Ext.MessageBox.OK,
+            icon: Ext.MessageBox.ERROR,
+            cls: 'myWindowCls'
+        });
+
+    },
     disableButtons: function (arrButton, v) {
         if (debug) {
             console.log("This function will set disable for buttons. [iBRP.model.ModelHelper.disableButtons()]");

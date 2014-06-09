@@ -108,7 +108,7 @@
 
     initStoreForGrid: function () {
         if (debug) {
-            console.log("Before render grid we need to load store. [iBRP.controller.NganhHangController.loadStore()]");
+            console.log("Before render grid we need to load store. [iBRP.controller.NganhHangController.initStoreForGrid()]");
         }
         var store = Ext.getStore("StoreNganhHang");
         var grid = this.getGirdNganhHang();
@@ -187,7 +187,10 @@
                     iBRP.model.ModelHelper.showSuccessMsg();
                 },
                 failure: function (f, a) {
-                    iBRP.model.ModelHelper.showErrorMsg();
+                    if (debug) {
+                        console.log(a);
+                    }
+                    iBRP.model.ModelHelper.showErrorMsg(a.response);
                 }
             });
             //Enable toolbar and disable form button
@@ -267,12 +270,10 @@
                                     grid.reconfigure();
                                 },
                                 failure: function (response, opts) {
-                                    Ext.Msg.show({
-                                        title: Globals.Langs.Common.thong_bao,
-                                        msg: Globals.Langs.Common.thao_tac_khong_thanh_cong,
-                                        buttons: Ext.MessageBox.OK,
-                                        icon: Ext.MessageBox.ERROR
-                                    })
+                                    if (debug) {
+                                        console.log(response);
+                                    }
+                                    iBRP.model.ModelHelper.showErrorMsg(response);
                                 }
                             });
                         }

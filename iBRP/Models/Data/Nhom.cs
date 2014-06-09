@@ -101,9 +101,16 @@ namespace iBRP.Models.Data
 
         public int DeleteNhom(string manhom)
         {
-            DS_NHOM nhom = dbContext.DS_NHOM.SingleOrDefault(nh => nh.MANHOM == manhom);
-            dbContext.DS_NHOM.Remove(nhom);
-            return dbContext.SaveChanges();
+            try
+            {
+                DS_NHOM nhom = dbContext.DS_NHOM.SingleOrDefault(nh => nh.MANHOM == manhom);
+                dbContext.DS_NHOM.Remove(nhom);
+                return dbContext.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public IQueryable<DS_NHOM> FindByMaNganh(string manganh)
