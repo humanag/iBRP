@@ -17,6 +17,9 @@
             },
             "#mainMenuDMNhom": {
                 click: this.showLayoutNhom
+            },
+            "#mainMenuDMKhachHang": {
+                click: this.showLayoutKhachHang
             }
         });
     },
@@ -38,6 +41,14 @@
     },
     thoatKhoiChuongTrinh: function () {
         console.log("Thoat khoi chuong trinh !!!");
+    },
+    showLayoutKhachHang: function () {
+        if (debug) {
+            console.log('The nhom layout will be shown when user click on the button DM KHACH HANG on the main menu. [iBRP.controller.HomeController.showLayoutKhachHang()]');
+        }
+        //Create and show layout khach hang
+        var kh = Ext.create("iBRP.view.khachhang.LayoutKhachHang");
+        kh.show();
     }
     
 });

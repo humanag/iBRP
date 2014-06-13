@@ -23,6 +23,7 @@ var Globals = {
             mainmenu_tro_giup: 'TRỢ GIÚP',
             main_menu_submenu_dm_nganhhang: 'DM NGÀNH HÀNG',
             main_menu_submenu_dm_nhom: 'DM NHÓM',
+            main_menu_submenu_dm_khach_hang: 'DM KHÁCH HÀNG',
             toolbar_them_moi: 'Thêm Mới',
             toolbar_image_them_moi: '../Content/themes/iBRP/images/icons/16/add.png',
             toolbar_chinh_sua: 'Chỉnh Sửa',
@@ -70,7 +71,14 @@ var Globals = {
             danh_sach_nhom: 'DANH MỤC NHÓM',
             ma_nhom: 'Mã nhóm',
             ten_nhom: 'Tên nhóm'
-        }
+        },
+        //define nganhHang languages
+        KhachHang: {
+            khach_hang: 'Khách Hàng',
+            danh_sach_khach_hang: 'DANH MỤC KHÁCH HÀNG',
+            ma_khach_hang: 'Mã khách hàng',
+            ten_khach_hang: 'Tên khách hàng'
+        },
     }
     
 }

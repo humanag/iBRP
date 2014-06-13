@@ -30,6 +30,9 @@ Ext.define('iBRP.view.home.MainMenu', {
                     }, {
                         text: Globals.Langs.Common.main_menu_submenu_dm_nhom,
                         id: 'mainMenuDMNhom',
+                    }, {
+                        text: Globals.Langs.Common.main_menu_submenu_dm_khach_hang,
+                        id: 'mainMenuDMKhachHang',
                     }
                 ]
             }, '-', {
