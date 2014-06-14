@@ -33,6 +33,9 @@ Ext.define('iBRP.view.home.MainMenu', {
                     }, {
                         text: Globals.Langs.Common.main_menu_submenu_dm_khach_hang,
                         id: 'mainMenuDMKhachHang',
+                    }, , {
+                        text: Globals.Langs.Common.main_menu_submenu_dm_khac_ct,
+                        id: 'mainMenuDMKhacCT',
                     }
                 ]
             }, '-', {

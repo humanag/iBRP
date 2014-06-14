@@ -24,6 +24,7 @@ var Globals = {
             main_menu_submenu_dm_nganhhang: 'DM NGÀNH HÀNG',
             main_menu_submenu_dm_nhom: 'DM NHÓM',
             main_menu_submenu_dm_khach_hang: 'DM KHÁCH HÀNG',
+            main_menu_submenu_dm_khac_ct: 'DM KHÁC',
             toolbar_them_moi: 'Thêm Mới',
             toolbar_image_them_moi: '../Content/themes/iBRP/images/icons/16/add.png',
             toolbar_chinh_sua: 'Chỉnh Sửa',
@@ -78,6 +79,15 @@ var Globals = {
             danh_sach_khach_hang: 'DANH MỤC KHÁCH HÀNG',
             ma_khach_hang: 'Mã khách hàng',
             ten_khach_hang: 'Tên khách hàng'
+        },
+        //define nhom languages
+        KhacCT: {
+            khac_ct: 'Khác',
+            danh_sach_nhom: 'DANH MỤC Khác',
+            ma_khac: 'Mã khác',
+            ma_khac_ct: 'Mã khác chi tiết',
+            ten_khac_ct: 'Tên khác chi tiết',
+            ten_khac: 'Tên khác'
         },
     }
     

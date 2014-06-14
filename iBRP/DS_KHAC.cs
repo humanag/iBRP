@@ -15,8 +15,8 @@ namespace iBRP
     public partial class DS_KHAC
     {
         public string MAKHAC { get; set; }
-        public string TENKKHAC { get; set; }
-        public Nullable<int> PLOAI { get; set; }
+        public string TENKHAC { get; set; }
+        public string PLOAI { get; set; }
         public Nullable<int> CREATED_ID { get; set; }
         public Nullable<int> UPDATED_ID { get; set; }
         public Nullable<System.DateTime> CREATED_AT { get; set; }

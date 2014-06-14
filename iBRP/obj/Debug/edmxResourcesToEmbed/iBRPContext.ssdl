@@ -11,17 +11,138 @@
       FROM [dbo].[AD_USER] AS [AD_USER]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="DS_DOITAC" EntityType="iBRPModel.Store.DS_DOITAC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_HANGHOA" EntityType="iBRPModel.Store.DS_HANGHOA" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_KHAC" EntityType="iBRPModel.Store.DS_KHAC" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_KHAC_CT" EntityType="iBRPModel.Store.DS_KHAC_CT" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_KHO" EntityType="iBRPModel.Store.DS_KHO" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_MAU" EntityType="iBRPModel.Store.DS_MAU" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_NGANH" EntityType="iBRPModel.Store.DS_NGANH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DS_NHANVIEN" EntityType="iBRPModel.Store.DS_NHANVIEN" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_NHOM" EntityType="iBRPModel.Store.DS_NHOM" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_NHOM_1" EntityType="iBRPModel.Store.DS_NHOM_1" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DS_NV" EntityType="iBRPModel.Store.DS_NV" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DS_SIZE" EntityType="iBRPModel.Store.DS_SIZE" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="dtproperties" EntityType="iBRPModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="iBRPModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_DS_KH" EntityType="iBRPModel.Store.V_DS_KH" store:Type="Views" store:Schema="dbo" store:Name="V_DS_KH">
+      <DefiningQuery>SELECT 
+      [V_DS_KH].[ID] AS [ID], 
+      [V_DS_KH].[LOAI] AS [LOAI], 
+      [V_DS_KH].[NHOM] AS [NHOM], 
+      [V_DS_KH].[MADT] AS [MADT], 
+      [V_DS_KH].[TENDT] AS [TENDT], 
+      [V_DS_KH].[MST] AS [MST], 
+      [V_DS_KH].[DIACHI] AS [DIACHI], 
+      [V_DS_KH].[DIENTHOAI] AS [DIENTHOAI], 
+      [V_DS_KH].[FAX] AS [FAX], 
+      [V_DS_KH].[EMAIL] AS [EMAIL], 
+      [V_DS_KH].[CN_DAUKY] AS [CN_DAUKY], 
+      [V_DS_KH].[CN_SONGAY] AS [CN_SONGAY], 
+      [V_DS_KH].[CN_SOTIEN] AS [CN_SOTIEN], 
+      [V_DS_KH].[GHICHU] AS [GHICHU], 
+      [V_DS_KH].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_KH].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_KH].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_KH].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_KH] AS [V_DS_KH]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_DS_NCC" EntityType="iBRPModel.Store.V_DS_NCC" store:Type="Views" store:Schema="dbo" store:Name="V_DS_NCC">
+      <DefiningQuery>SELECT 
+      [V_DS_NCC].[ID] AS [ID], 
+      [V_DS_NCC].[LOAI] AS [LOAI], 
+      [V_DS_NCC].[NHOM] AS [NHOM], 
+      [V_DS_NCC].[MADT] AS [MADT], 
+      [V_DS_NCC].[TENDT] AS [TENDT], 
+      [V_DS_NCC].[MST] AS [MST], 
+      [V_DS_NCC].[DIACHI] AS [DIACHI], 
+      [V_DS_NCC].[DIENTHOAI] AS [DIENTHOAI], 
+      [V_DS_NCC].[FAX] AS [FAX], 
+      [V_DS_NCC].[EMAIL] AS [EMAIL], 
+      [V_DS_NCC].[CN_DAUKY] AS [CN_DAUKY], 
+      [V_DS_NCC].[CN_SONGAY] AS [CN_SONGAY], 
+      [V_DS_NCC].[CN_SOTIEN] AS [CN_SOTIEN], 
+      [V_DS_NCC].[GHICHU] AS [GHICHU], 
+      [V_DS_NCC].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_NCC].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_NCC].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_NCC].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_NCC] AS [V_DS_NCC]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_DS_NHOM_KH_NCC" EntityType="iBRPModel.Store.V_DS_NHOM_KH_NCC" store:Type="Views" store:Schema="dbo" store:Name="V_DS_NHOM_KH_NCC">
+      <DefiningQuery>SELECT 
+      [V_DS_NHOM_KH_NCC].[MAKHAC] AS [MAKHAC], 
+      [V_DS_NHOM_KH_NCC].[MAKHAC_CT] AS [MAKHAC_CT], 
+      [V_DS_NHOM_KH_NCC].[TENKHAC_CT] AS [TENKHAC_CT], 
+      [V_DS_NHOM_KH_NCC].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_NHOM_KH_NCC].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_NHOM_KH_NCC].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_NHOM_KH_NCC].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_NHOM_KH_NCC] AS [V_DS_NHOM_KH_NCC]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_DS_NHOM_NV" EntityType="iBRPModel.Store.V_DS_NHOM_NV" store:Type="Views" store:Schema="dbo" store:Name="V_DS_NHOM_NV">
+      <DefiningQuery>SELECT 
+      [V_DS_NHOM_NV].[MAKHAC] AS [MAKHAC], 
+      [V_DS_NHOM_NV].[MAKHAC_CT] AS [MAKHAC_CT], 
+      [V_DS_NHOM_NV].[TENKHAC_CT] AS [TENKHAC_CT], 
+      [V_DS_NHOM_NV].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_NHOM_NV].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_NHOM_NV].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_NHOM_NV].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_NHOM_NV] AS [V_DS_NHOM_NV]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_DS_NV_KD" EntityType="iBRPModel.Store.V_DS_NV_KD" store:Type="Views" store:Schema="dbo" store:Name="V_DS_NV_KD">
+      <DefiningQuery>SELECT 
+      [V_DS_NV_KD].[MANV] AS [MANV], 
+      [V_DS_NV_KD].[TENNV] AS [TENNV], 
+      [V_DS_NV_KD].[BIDANH] AS [BIDANH], 
+      [V_DS_NV_KD].[NHOM] AS [NHOM], 
+      [V_DS_NV_KD].[DIACHI] AS [DIACHI], 
+      [V_DS_NV_KD].[DIENTHOAI] AS [DIENTHOAI], 
+      [V_DS_NV_KD].[FAX] AS [FAX], 
+      [V_DS_NV_KD].[EMAIL] AS [EMAIL], 
+      [V_DS_NV_KD].[GHICHU] AS [GHICHU], 
+      [V_DS_NV_KD].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_NV_KD].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_NV_KD].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_NV_KD].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_NV_KD] AS [V_DS_NV_KD]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_DS_NV_ORDER" EntityType="iBRPModel.Store.V_DS_NV_ORDER" store:Type="Views" store:Schema="dbo" store:Name="V_DS_NV_ORDER">
+      <DefiningQuery>SELECT 
+      [V_DS_NV_ORDER].[MANV] AS [MANV], 
+      [V_DS_NV_ORDER].[TENNV] AS [TENNV], 
+      [V_DS_NV_ORDER].[BIDANH] AS [BIDANH], 
+      [V_DS_NV_ORDER].[NHOM] AS [NHOM], 
+      [V_DS_NV_ORDER].[DIACHI] AS [DIACHI], 
+      [V_DS_NV_ORDER].[DIENTHOAI] AS [DIENTHOAI], 
+      [V_DS_NV_ORDER].[FAX] AS [FAX], 
+      [V_DS_NV_ORDER].[EMAIL] AS [EMAIL], 
+      [V_DS_NV_ORDER].[GHICHU] AS [GHICHU], 
+      [V_DS_NV_ORDER].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_NV_ORDER].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_NV_ORDER].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_NV_ORDER].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_NV_ORDER] AS [V_DS_NV_ORDER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_DS_PTTT" EntityType="iBRPModel.Store.V_DS_PTTT" store:Type="Views" store:Schema="dbo" store:Name="V_DS_PTTT">
+      <DefiningQuery>SELECT 
+      [V_DS_PTTT].[MAKHAC] AS [MAKHAC], 
+      [V_DS_PTTT].[MAKHAC_CT] AS [MAKHAC_CT], 
+      [V_DS_PTTT].[TENKHAC_CT] AS [TENKHAC_CT], 
+      [V_DS_PTTT].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_PTTT].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_PTTT].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_PTTT].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_PTTT] AS [V_DS_PTTT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_DS_TT_HANGHHOA" EntityType="iBRPModel.Store.V_DS_TT_HANGHHOA" store:Type="Views" store:Schema="dbo" store:Name="V_DS_TT_HANGHHOA">
+      <DefiningQuery>SELECT 
+      [V_DS_TT_HANGHHOA].[MAKHAC] AS [MAKHAC], 
+      [V_DS_TT_HANGHHOA].[MAKHAC_CT] AS [MAKHAC_CT], 
+      [V_DS_TT_HANGHHOA].[TENKHAC_CT] AS [TENKHAC_CT], 
+      [V_DS_TT_HANGHHOA].[CREATED_ID] AS [CREATED_ID], 
+      [V_DS_TT_HANGHHOA].[UPDATED_ID] AS [UPDATED_ID], 
+      [V_DS_TT_HANGHHOA].[CREATED_AT] AS [CREATED_AT], 
+      [V_DS_TT_HANGHHOA].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[V_DS_TT_HANGHHOA] AS [V_DS_TT_HANGHHOA]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'iBRP.dbo.AD_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -43,7 +164,7 @@
     <Property Name="MADT" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="TENDT" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
-    <Property Name="LOAI" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="LOAI" Type="nvarchar" MaxLength="1" />
     <Property Name="MST" Type="nvarchar" MaxLength="50" />
     <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
     <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
@@ -52,9 +173,40 @@
     <Property Name="MANV" Type="nvarchar" MaxLength="5" />
     <Property Name="CN_DAUKY_TIEN" Type="float" />
     <Property Name="CN_DAUKY_NGAY" Type="datetime" />
+    <Property Name="CN_SOTIEN" Type="float" />
     <Property Name="CN_SONGAY" Type="int" />
-    <Property Name="CN_SOTIEN" Type="datetime" />
     <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DS_HANGHOA">
+    <Key>
+      <PropertyRef Name="MAHANG" />
+    </Key>
+    <Property Name="MAHANG" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="MANGANH" Type="nvarchar" MaxLength="3" />
+    <Property Name="MANHOM" Type="nvarchar" MaxLength="6" />
+    <Property Name="MANHOM1" Type="nvarchar" MaxLength="9" />
+    <Property Name="MAMAU" Type="nvarchar" MaxLength="10" />
+    <Property Name="MASIZE" Type="nvarchar" MaxLength="10" />
+    <Property Name="TENHANG" Type="nvarchar" MaxLength="70" />
+    <Property Name="TENTAT" Type="nvarchar" MaxLength="25" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="10" />
+    <Property Name="QUIDOI" Type="float" />
+    <Property Name="DVT_LON" Type="nvarchar" MaxLength="10" />
+    <Property Name="TON_MAX" Type="float" />
+    <Property Name="TON_MIN" Type="float" />
+    <Property Name="TRANGTHAI" Type="nvarchar" MaxLength="3" />
+    <Property Name="VAT_IN" Type="float" />
+    <Property Name="VAT_OUT" Type="float" />
+    <Property Name="GIAMUA" Type="float" />
+    <Property Name="TL_LAI_LE" Type="float" />
+    <Property Name="GIABAN_LE" Type="float" />
+    <Property Name="TL_LAI_SI" Type="float" />
+    <Property Name="GIABAN_SI" Type="float" />
+    <Property Name="GHICHU" Type="nvarchar" MaxLength="100" />
     <Property Name="CREATED_ID" Type="int" />
     <Property Name="UPDATED_ID" Type="int" />
     <Property Name="CREATED_AT" Type="datetime" />
@@ -65,8 +217,8 @@
       <PropertyRef Name="MAKHAC" />
     </Key>
     <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="10" />
-    <Property Name="TENKKHAC" Type="nvarchar" MaxLength="50" />
-    <Property Name="PLOAI" Type="int" />
+    <Property Name="TENKHAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PLOAI" Type="nvarchar" MaxLength="1" />
     <Property Name="CREATED_ID" Type="int" />
     <Property Name="UPDATED_ID" Type="int" />
     <Property Name="CREATED_AT" Type="datetime" />
@@ -122,6 +274,24 @@
     <Property Name="CREATED_AT" Type="datetime" />
     <Property Name="UPDATED_AT" Type="datetime" />
   </EntityType>
+  <EntityType Name="DS_NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="TENNV" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BIDANH" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="100" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
   <EntityType Name="DS_NHOM">
     <Key>
       <PropertyRef Name="MANHOM" />
@@ -154,25 +324,6 @@
     <Property Name="CREATED_AT" Type="datetime" />
     <Property Name="UPDATED_AT" Type="datetime" />
   </EntityType>
-  <EntityType Name="DS_NV">
-    <Key>
-      <PropertyRef Name="MANV" />
-    </Key>
-    <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="5" />
-    <Property Name="TENNV" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="BIDANH" Type="nvarchar" Nullable="false" MaxLength="20" />
-    <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
-    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
-    <Property Name="DIENTHOAI" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="FAX" Type="nvarchar" MaxLength="100" />
-    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
-    <Property Name="CN_GIOIHAN" Type="float" />
-    <Property Name="GHICHU" Type="ntext" />
-    <Property Name="CREATED_ID" Type="int" />
-    <Property Name="UPDATED_ID" Type="int" />
-    <Property Name="CREATED_AT" Type="datetime" />
-    <Property Name="UPDATED_AT" Type="datetime" />
-  </EntityType>
   <EntityType Name="DS_SIZE">
     <Key>
       <PropertyRef Name="MASIZE" />
@@ -184,27 +335,176 @@
     <Property Name="CREATED_AT" Type="datetime" />
     <Property Name="UPDATED_AT" Type="datetime" />
   </EntityType>
-  <EntityType Name="dtproperties">
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_KH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_KH">
     <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="property" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOAI" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="objectid" Type="int" />
-    <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
-    <Property Name="value" Type="varchar" MaxLength="255" />
-    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
-    <Property Name="lvalue" Type="image" />
-    <Property Name="version" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LOAI" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NHOM" Type="nvarchar" MaxLength="5" />
+    <Property Name="MADT" Type="nvarchar" MaxLength="15" />
+    <Property Name="TENDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MST" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CN_DAUKY" Type="float" />
+    <Property Name="CN_SONGAY" Type="int" />
+    <Property Name="CN_SOTIEN" Type="datetime" />
+    <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_NCC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_NCC">
     <Key>
-      <PropertyRef Name="diagram_id" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOAI" />
     </Key>
-    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LOAI" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NHOM" Type="nvarchar" MaxLength="5" />
+    <Property Name="MADT" Type="nvarchar" MaxLength="15" />
+    <Property Name="TENDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MST" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CN_DAUKY" Type="float" />
+    <Property Name="CN_SONGAY" Type="int" />
+    <Property Name="CN_SOTIEN" Type="datetime" />
+    <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_NHOM_KH_NCC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_NHOM_KH_NCC">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="MAKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_NHOM_NV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_NHOM_NV">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="MAKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="TENKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_NV_KD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_NV_KD">
+    <Key>
+      <PropertyRef Name="MANV" />
+      <PropertyRef Name="TENNV" />
+      <PropertyRef Name="BIDANH" />
+      <PropertyRef Name="NHOM" />
+      <PropertyRef Name="DIENTHOAI" />
+    </Key>
+    <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="TENNV" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BIDANH" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="100" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_NV_ORDER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_NV_ORDER">
+    <Key>
+      <PropertyRef Name="MANV" />
+      <PropertyRef Name="TENNV" />
+      <PropertyRef Name="BIDANH" />
+      <PropertyRef Name="NHOM" />
+      <PropertyRef Name="DIENTHOAI" />
+    </Key>
+    <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="TENNV" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BIDANH" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIENTHOAI" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="100" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="GHICHU" Type="ntext" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_PTTT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_PTTT">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="MAKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_TT_HANGHHOA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_DS_TT_HANGHHOA">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="MAKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="TENKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CREATED_ID" Type="int" />
+    <Property Name="UPDATED_ID" Type="int" />
+    <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="UPDATED_AT" Type="datetime" />
   </EntityType>
 </Schema>

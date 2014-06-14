@@ -12,23 +12,11 @@ namespace iBRP
     using System;
     using System.Collections.Generic;
     
-    public partial class DS_DOITAC
+    public partial class V_DS_NHOM_NV
     {
-        public string MADT { get; set; }
-        public string TENDT { get; set; }
-        public string NHOM { get; set; }
-        public string LOAI { get; set; }
-        public string MST { get; set; }
-        public string DIACHI { get; set; }
-        public string DIENTHOAI { get; set; }
-        public string FAX { get; set; }
-        public string EMAIL { get; set; }
-        public string MANV { get; set; }
-        public Nullable<double> CN_DAUKY_TIEN { get; set; }
-        public Nullable<System.DateTime> CN_DAUKY_NGAY { get; set; }
-        public Nullable<double> CN_SOTIEN { get; set; }
-        public Nullable<int> CN_SONGAY { get; set; }
-        public string GHICHU { get; set; }
+        public string MAKHAC { get; set; }
+        public string MAKHAC_CT { get; set; }
+        public string TENKHAC_CT { get; set; }
         public Nullable<int> CREATED_ID { get; set; }
         public Nullable<int> UPDATED_ID { get; set; }
         public Nullable<System.DateTime> CREATED_AT { get; set; }

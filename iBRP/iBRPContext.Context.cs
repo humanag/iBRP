@@ -27,16 +27,23 @@ namespace iBRP
     
         public DbSet<AD_USER> AD_USER { get; set; }
         public DbSet<DS_DOITAC> DS_DOITAC { get; set; }
+        public DbSet<DS_HANGHOA> DS_HANGHOA { get; set; }
         public DbSet<DS_KHAC> DS_KHAC { get; set; }
         public DbSet<DS_KHAC_CT> DS_KHAC_CT { get; set; }
         public DbSet<DS_KHO> DS_KHO { get; set; }
         public DbSet<DS_MAU> DS_MAU { get; set; }
         public DbSet<DS_NGANH> DS_NGANH { get; set; }
+        public DbSet<DS_NHANVIEN> DS_NHANVIEN { get; set; }
         public DbSet<DS_NHOM> DS_NHOM { get; set; }
         public DbSet<DS_NHOM_1> DS_NHOM_1 { get; set; }
-        public DbSet<DS_NV> DS_NV { get; set; }
         public DbSet<DS_SIZE> DS_SIZE { get; set; }
-        public DbSet<dtproperty> dtproperties { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
+        public DbSet<V_DS_KH> V_DS_KH { get; set; }
+        public DbSet<V_DS_NCC> V_DS_NCC { get; set; }
+        public DbSet<V_DS_NHOM_KH_NCC> V_DS_NHOM_KH_NCC { get; set; }
+        public DbSet<V_DS_NHOM_NV> V_DS_NHOM_NV { get; set; }
+        public DbSet<V_DS_NV_KD> V_DS_NV_KD { get; set; }
+        public DbSet<V_DS_NV_ORDER> V_DS_NV_ORDER { get; set; }
+        public DbSet<V_DS_PTTT> V_DS_PTTT { get; set; }
+        public DbSet<V_DS_TT_HANGHHOA> V_DS_TT_HANGHHOA { get; set; }
     }
 }

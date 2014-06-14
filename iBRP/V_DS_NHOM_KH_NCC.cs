@@ -12,14 +12,14 @@ namespace iBRP
     using System;
     using System.Collections.Generic;
     
-    public partial class dtproperty
+    public partial class V_DS_NHOM_KH_NCC
     {
-        public int id { get; set; }
-        public Nullable<int> objectid { get; set; }
-        public string property { get; set; }
-        public string value { get; set; }
-        public string uvalue { get; set; }
-        public byte[] lvalue { get; set; }
-        public int version { get; set; }
+        public string MAKHAC { get; set; }
+        public string MAKHAC_CT { get; set; }
+        public string TENKHAC_CT { get; set; }
+        public Nullable<int> CREATED_ID { get; set; }
+        public Nullable<int> UPDATED_ID { get; set; }
+        public Nullable<System.DateTime> CREATED_AT { get; set; }
+        public Nullable<System.DateTime> UPDATED_AT { get; set; }
     }
 }

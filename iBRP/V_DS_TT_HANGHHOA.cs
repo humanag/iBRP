@@ -12,12 +12,14 @@ namespace iBRP
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class V_DS_TT_HANGHHOA
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string MAKHAC { get; set; }
+        public string MAKHAC_CT { get; set; }
+        public string TENKHAC_CT { get; set; }
+        public Nullable<int> CREATED_ID { get; set; }
+        public Nullable<int> UPDATED_ID { get; set; }
+        public Nullable<System.DateTime> CREATED_AT { get; set; }
+        public Nullable<System.DateTime> UPDATED_AT { get; set; }
     }
 }

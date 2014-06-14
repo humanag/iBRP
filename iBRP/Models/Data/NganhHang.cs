@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -71,17 +72,6 @@ namespace iBRP.Models.Data
                        orderby nh.MANGANH
                        select nh;
 
-            ////Set condition for MANGANH
-            //if (manganh != "")
-            //{
-            //    list.AsQueryable().Where(nh => nh.MANGANH.Contains(manganh));
-            //}
-            ////Set condition for TENNGANH
-            //if (tennganh != "")
-            //{
-            //    list.AsQueryable().Where(nh => nh.TENNGANH.Contains(tennganh));
-            //}
-
             return list.Count();
             
         }
@@ -142,6 +132,25 @@ namespace iBRP.Models.Data
         {
             Nhom mNhom = new Nhom();
             return mNhom.FindByMaNganh(manganh).Count();
+        }
+
+
+        public ArrayList GetOptions(int start = 0, int limit = 5, int page = 1)
+        {
+            NganhHang mNganhHang = new NganhHang();
+            var list = mNganhHang.GetList();
+            ArrayList all = new ArrayList();
+            foreach (DS_NGANH item in list)
+            {
+                Dictionary<string, string> arr = new Dictionary<string, string>();
+                string manganh = (string)item.MANGANH;
+                string tennganh = (string)item.TENNGANH;
+                arr.Add("MANGANH", manganh);
+                arr.Add("TENNGANH", tennganh);
+                all.Add(arr);
+            }
+
+            return all;
         }
     }
 }

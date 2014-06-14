@@ -12,7 +12,7 @@ using iBRP.Models;
 
 namespace iBRP.Controllers
 {
-    public class NganhHangController : Controller
+    public class KhacCTController : Controller
     {
         public ContentResult List(int start = 0, int limit = 5, int page = 1, string filter = "")
         {
@@ -25,33 +25,23 @@ namespace iBRP.Controllers
             {
                 start = 0;
             }
-            
 
-            NganhHang mNganhHang = new NganhHang();
-            var list = mNganhHang.GetList(start, limit, condition).ToArray();
-            var total = mNganhHang.GetTotal(condition);
+
+            KhacCT model = new KhacCT();
+            var list = model.GetList(start, limit, condition).ToArray();
+            var total = model.GetTotal(condition);
             string json = "{\"totalCount\":" + total +", \"actionitems\":" + JsonConvert.SerializeObject(list) + "}";
             return Content(json);
         }
 
-        public ContentResult Options(int start = 0, int limit = 5, int page = 1)
-        {
-            NganhHang mNganhHang = new NganhHang();
-            ArrayList all = new ArrayList();
-            all = mNganhHang.GetOptions();
-            var total = mNganhHang.GetTotal();
-            string json = "{\"actionitems\":" + JsonConvert.SerializeObject(all) + "}";
-            return Content(json);
-        }
-
         [HttpPost]
-        public ContentResult Update(string manganh, string tennganh)
+        public ContentResult Update(string maKhac, string maKhacCT, string tenKhacCT)
         {
             string json = "{success:false}";
-            if (tennganh != "")
+            if (tenKhacCT != "")
             {
-                NganhHang mNganhHang = new NganhHang();
-                int rst = mNganhHang.AddNganhHang(manganh, tennganh);
+                KhacCT model = new KhacCT();
+                int rst = model.Add(maKhac, maKhacCT, tenKhacCT);
                 if (rst > 0) {
                     json = "{success:true}";
                 }
@@ -60,11 +50,11 @@ namespace iBRP.Controllers
         }
 
         [HttpPost]
-        public ContentResult Delete(string manganh)
+        public ContentResult Delete(string maKhacCT)
         {
             string json = "{success:false}";
-            NganhHang mNganhHang = new NganhHang();
-            int rst = mNganhHang.DeleteNganhHang(manganh);
+            KhacCT model = new KhacCT();
+            int rst = model.Delete(maKhacCT);
             if (rst > 0)
             {
                 json = "{success:true}";
@@ -72,5 +62,15 @@ namespace iBRP.Controllers
             return Content(json);
         }
 
+        public ContentResult OptionsKhac(int start = 0, int limit = 5, int page = 1)
+        {
+            Khac model = new Khac();
+            ArrayList all = new ArrayList();
+            all = model.GetOptions();
+
+            var total = model.GetTotal();
+            string json = "{\"actionitems\":" + JsonConvert.SerializeObject(all) + "}";
+            return Content(json);
+        }
     }
 }

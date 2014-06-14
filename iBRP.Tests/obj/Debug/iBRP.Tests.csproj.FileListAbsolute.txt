@@ -13,6 +13,7 @@ D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.Razor.dll
 D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
 D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.WebPages.dll
 D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\www\iBRP\iBRP.Tests\bin\Debug\EntityFramework.dll
 D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.Optimization.dll
 D:\www\iBRP\iBRP.Tests\bin\Debug\WebGrease.dll
 D:\www\iBRP\iBRP.Tests\bin\Debug\Antlr3.Runtime.dll
@@ -27,8 +28,7 @@ D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.Razor.xml
 D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.WebPages.xml
 D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\www\iBRP\iBRP.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\www\iBRP\iBRP.Tests\bin\Debug\EntityFramework.xml
 D:\www\iBRP\iBRP.Tests\obj\Debug\iBRP.Tests.csprojResolveAssemblyReference.cache
 D:\www\iBRP\iBRP.Tests\obj\Debug\iBRP.Tests.dll
 D:\www\iBRP\iBRP.Tests\obj\Debug\iBRP.Tests.pdb
-D:\www\iBRP\iBRP.Tests\bin\Debug\EntityFramework.dll
-D:\www\iBRP\iBRP.Tests\bin\Debug\EntityFramework.xml

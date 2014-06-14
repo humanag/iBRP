@@ -128,11 +128,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\KhacCTController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Controllers\NhomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NganhHangController.cs" />
     <Compile Include="DS_DOITAC.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS_HANGHOA.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DS_KHAC.cs">
@@ -150,19 +154,16 @@
     <Compile Include="DS_NGANH.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DS_NHANVIEN.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DS_NHOM.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DS_NHOM_1.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DS_NV.cs">
-      <DependentUpon>iBRPContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="DS_SIZE.cs">
-      <DependentUpon>iBRPContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="dtproperty.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -183,13 +184,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>iBRPContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data\Khac.cs" />
+    <Compile Include="Models\Data\KhacCT.cs" />
     <Compile Include="Models\Data\KhachHang.cs" />
     <Compile Include="Models\Data\Nhom.cs" />
     <Compile Include="Models\Data\iBRPContext.cs" />
     <Compile Include="Models\Data\NganhHang.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="V_DS_KH.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_NCC.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_NHOM_KH_NCC.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_NHOM_NV.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_NV_KD.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_NV_ORDER.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_PTTT.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_TT_HANGHHOA.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -1529,17 +1553,27 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\extjs42\.sencha\workspace\plugin.xml" />
+    <Content Include="Scripts\extjs42\app\controller\KhacCTController.js" />
     <Content Include="Scripts\extjs42\app\controller\KhachHangController.js" />
     <Content Include="Scripts\extjs42\app\controller\NhomController.js" />
     <Content Include="Scripts\extjs42\app\controller\HomeController.js" />
     <Content Include="Scripts\extjs42\app\controller\NganhHangController.js" />
+    <Content Include="Scripts\extjs42\app\model\ModelKhac.js" />
+    <Content Include="Scripts\extjs42\app\model\ModelKhacCT.js" />
     <Content Include="Scripts\extjs42\app\model\ModelKhachHang.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNhom.js" />
     <Content Include="Scripts\extjs42\app\model\ModelHelper.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\store\StoreKhac.js" />
+    <Content Include="Scripts\extjs42\app\store\StoreKhacCT.js" />
     <Content Include="Scripts\extjs42\app\store\StoreKhachHang.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhom.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\FormFilter.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\FormKhacCT.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\GirdKhacCT.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\LayoutKhacCT.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\TopMenu.js" />
     <Content Include="Scripts\extjs42\app\view\khachhang\FormFilter.js" />
     <Content Include="Scripts\extjs42\app\view\khachhang\FormKhachHang.js" />
     <Content Include="Scripts\extjs42\app\view\khachhang\GirdKhachHang.js" />
