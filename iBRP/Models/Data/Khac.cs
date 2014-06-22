@@ -84,5 +84,68 @@ namespace iBRP.Models.Data
             return all;
 
         }
+
+        public int Add(string maKhac, string tenKhac, string ploai)
+        {
+            try
+            {
+                bool isAdd = false;
+                DS_KHAC model = dbContext.DS_KHAC.SingleOrDefault(nh => nh.MAKHAC == maKhac);
+                if (model == null)
+                {
+                    isAdd = true;
+                    model = new DS_KHAC();
+                }
+
+                model.MAKHAC = maKhac;
+                model.TENKHAC = tenKhac;
+
+                if (ploai == null)
+                {
+                    ploai = "0";
+                }
+
+                model.PLOAI = ploai;
+                if (isAdd)
+                {
+                    dbContext.DS_KHAC.Add(model);
+                }
+
+                return dbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                var strErr = e.Message;
+                throw;
+            }
+
+        }
+
+        public int Delete(string maKhac)
+        {
+            try
+            {
+                int hasCT = this.HasCT(maKhac);
+                if (hasCT > 0)
+                {
+                    throw new Exception("This item is not deleted because it has some child item.");
+                }
+
+                DS_KHAC khac = dbContext.DS_KHAC.Single(t => t.MAKHAC == maKhac);
+                dbContext.DS_KHAC.Remove(khac);
+                return dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private int HasCT(string maKhac)
+        {
+            KhacCT mKhacCT = new KhacCT();
+            return mKhacCT.FindByMaKhac(maKhac).Count();
+        }
+
     }
 }

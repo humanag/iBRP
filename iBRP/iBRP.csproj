@@ -1569,9 +1569,11 @@
     <Content Include="Scripts\extjs42\app\store\StoreKhachHang.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhom.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\GridKhac.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\LayoutMainGrid.js" />
     <Content Include="Scripts\extjs42\app\view\khacct\FormFilter.js" />
     <Content Include="Scripts\extjs42\app\view\khacct\FormKhacCT.js" />
-    <Content Include="Scripts\extjs42\app\view\khacct\GirdKhacCT.js" />
+    <Content Include="Scripts\extjs42\app\view\khacct\GridKhacCT.js" />
     <Content Include="Scripts\extjs42\app\view\khacct\LayoutKhacCT.js" />
     <Content Include="Scripts\extjs42\app\view\khacct\TopMenu.js" />
     <Content Include="Scripts\extjs42\app\view\khachhang\FormFilter.js" />

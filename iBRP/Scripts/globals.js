@@ -83,11 +83,13 @@ var Globals = {
         //define nhom languages
         KhacCT: {
             khac_ct: 'Khác',
-            danh_sach_nhom: 'DANH MỤC Khác',
+            danh_sach_khac: 'DANH MỤC KHÁC',
+            danh_sach_khac_ct: 'CHI TIẾT',
             ma_khac: 'Mã khác',
             ma_khac_ct: 'Mã khác chi tiết',
             ten_khac_ct: 'Tên khác chi tiết',
-            ten_khac: 'Tên khác'
+            ten_khac: 'Tên khác',
+            loai: 'Loại'
         },
     }
     

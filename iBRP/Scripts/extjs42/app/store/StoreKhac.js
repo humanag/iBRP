@@ -9,7 +9,7 @@
     proxy: {
         type: "ajax",
         api: {
-            read: "/Khac/List",
+            read: "/KhacCT/ListKhac",
         },
         reader: {
             type: "json",

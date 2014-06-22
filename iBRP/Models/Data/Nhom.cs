@@ -116,7 +116,7 @@ namespace iBRP.Models.Data
         public IQueryable<DS_NHOM> FindByMaNganh(string manganh)
         {
             return from nh in dbContext.DS_NHOM
-                       where nh.MANGANH.Contains(manganh)
+                       where nh.MANGANH == manganh
                        orderby nh.MANHOM
                        select nh;
         }

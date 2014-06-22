@@ -29,9 +29,15 @@ namespace iBRP.Models.Data
                 tenKhacCT = condition["TENKHAC_CT"];
             }
 
+            string maKhac = "";
+            if (condition.ContainsKey("makhac"))
+            {
+                maKhac = condition["makhac"];
+            }
+
             var list = from t in dbContext.DS_KHAC_CT
                        join ot in dbContext.DS_KHAC on t.MAKHAC equals ot.MAKHAC
-                       where t.MAKHAC_CT.Contains(maKhacCT) && t.TENKHAC_CT.Contains(tenKhacCT)
+                       where t.MAKHAC_CT.Contains(maKhacCT) && t.TENKHAC_CT.Contains(tenKhacCT) && t.MAKHAC == maKhac
                        orderby t.MAKHAC_CT
                        select new { t.MAKHAC_CT, t.MAKHAC, t.TENKHAC_CT, ot.TENKHAC };
 
@@ -57,9 +63,15 @@ namespace iBRP.Models.Data
                 tenKhacCT = condition["TENKHAC_CT"];
             }
 
+            string maKhac = "";
+            if (condition.ContainsKey("makhac"))
+            {
+                maKhac = condition["makhac"];
+            }
+
             var list = from t in dbContext.DS_KHAC_CT
                        join ot in dbContext.DS_KHAC on t.MAKHAC equals ot.MAKHAC
-                       where t.MAKHAC_CT.Contains(maKhacCT) && t.TENKHAC_CT.Contains(tenKhacCT)
+                       where t.MAKHAC_CT.Contains(maKhacCT) && t.TENKHAC_CT.Contains(tenKhacCT) && t.MAKHAC == maKhac
                        orderby t.MAKHAC_CT
                        select new { t.MAKHAC_CT, t.MAKHAC, t.TENKHAC_CT, ot.TENKHAC };
 
@@ -72,12 +84,11 @@ namespace iBRP.Models.Data
             try
             {
                 bool isAdd = false;
-                DS_KHAC_CT model = dbContext.DS_KHAC_CT.SingleOrDefault(nh => nh.MAKHAC_CT == maKhacCT);
+                DS_KHAC_CT model = dbContext.DS_KHAC_CT.SingleOrDefault(nh => nh.MAKHAC_CT == maKhacCT && nh.MAKHAC == maKhac);
                 if (model == null)
                 {
                     isAdd = true;
                     model = new DS_KHAC_CT();
-                    maKhacCT = "000000";
                 }
 
                 model.MAKHAC = maKhac;
@@ -111,6 +122,14 @@ namespace iBRP.Models.Data
             {
                 throw ex;
             }
+        }
+
+        public IQueryable<DS_KHAC_CT> FindByMaKhac(string maKhac)
+        {
+            return from nh in dbContext.DS_KHAC_CT
+                   where nh.MAKHAC == maKhac
+                   orderby nh.MAKHAC
+                   select nh;
         }
     }
 }
