@@ -20,7 +20,11 @@
             },
             "#mainMenuDMKhacCT": {
                 click: this.showLayoutKhacCT
+            },
+            "#mainMenuDMKhachHang": {
+                click: this.showLayoutKhachHang
             }
+            
         });
     },
     showLayoutNganhHang: function () {
@@ -49,6 +53,12 @@
         //Create and show layout khach hang
         var kh = Ext.create("iBRP.view.khachhang.LayoutKhachHang");
         kh.show();
+        //set maxlenght for makhachhang input
+        att = { maxlength: '15' }; // generate attribute list 
+        Ext.get("makhachhang-inputEl").set(att);
+        //set maxlenght for manv input
+        att = { maxlength: '5' }; // generate attribute list 
+        Ext.get("manv-inputEl").set(att);
     },
     showLayoutKhacCT: function () {
         if (debug) {

@@ -9,6 +9,11 @@ var Globals = {
         ErrorTypes: {
             generalness: 1,   //show generalness error message.
             detail: 2         //show detail error message.
+        },
+        LoaiKhachHang: {
+            khach_hang: 1,
+            nha_cung_cap: 2,
+            khach_hang_nha_cung_cap: 3,
         }
     },
 
@@ -78,7 +83,23 @@ var Globals = {
             khach_hang: 'Khách Hàng',
             danh_sach_khach_hang: 'DANH MỤC KHÁCH HÀNG',
             ma_khach_hang: 'Mã khách hàng',
-            ten_khach_hang: 'Tên khách hàng'
+            ten_khach_hang: 'Tên khách hàng',
+            ten_nhom: 'Tên Nhóm',
+            loai: 'Loại',
+            khach_hang: 'Khách hàng',
+            nha_cung_cap: 'Nhà cung cấp',
+            khach_hang_nha_cung_cap: 'Khách hàng & nhà cung cấp',
+            dia_chi: 'Địa chỉ',
+            fax: 'Fax',
+            email: 'Email',
+            ghi_chu: 'Ghi chú',
+            ma_so_thue: 'Mã số thuế',
+            dien_thoai: 'Điện thoại',
+            ma_nhan_vien: 'Mã nhân viên',
+            cong_no_dau_ky_tien: 'Công nợ đầu kỳ tiền',
+            cong_no_dau_ky_ngay: 'Công nợ đầu kỳ ngày',
+            cong_no_so_tien: 'Công nợ tiền',
+            cong_no_so_ngay: 'Công nợ ngày'
         },
         //define nhom languages
         KhacCT: {
@@ -89,7 +110,6 @@ var Globals = {
             ma_khac_ct: 'Mã khác chi tiết',
             ten_khac_ct: 'Tên khác chi tiết',
             ten_khac: 'Tên khác',
-            loai: 'Loại'
         },
     }
     

@@ -20,31 +20,31 @@
                     fieldLabel: Globals.Langs.KhacCT.ten_khac_ct,
                     allowBlank: false
                 },
-                {
-                    id: "mahac",
-                    name: "MAKHAC",
-                    xtype: "combobox",
-                    fieldLabel: Globals.Langs.KhacCT.ten_khac,
-                    queryMode: 'remote',
-                    displayField: 'TENKHAC',
-                    valueField: 'MAKHAC',
-                    allowBlank: false,
-                    store: new Ext.data.Store({
-                        fields: ['MAKHAC', 'TENKHAC'],
-                        autoLoad: true,
-                        proxy: {
-                            type: "ajax",
-                            api: {
-                                read: "/KhacCT/OptionsKhac",
-                            },
-                            reader: {
-                                type: "json",
-                                root: "actionitems",
-                                idProperty: 'MAKHAC'
-                            }
-                        },
-                    }),
-                }
+                //{
+                //    id: "mahac",
+                //    name: "MAKHAC",
+                //    xtype: "combobox",
+                //    fieldLabel: Globals.Langs.KhacCT.ten_khac,
+                //    queryMode: 'local',
+                //    displayField: 'TENKHAC',
+                //    valueField: 'MAKHAC',
+                //    allowBlank: false,
+                //    store: new Ext.data.Store({
+                //        fields: ['MAKHAC', 'TENKHAC'],
+                //        autoLoad: true,
+                //        proxy: {
+                //            type: "ajax",
+                //            api: {
+                //                read: "/KhacCT/OptionsKhac",
+                //            },
+                //            reader: {
+                //                type: "json",
+                //                root: "actionitems",
+                //                idProperty: 'MAKHAC'
+                //            }
+                //        },
+                //    }),
+                //}
            ]
        }
     ],

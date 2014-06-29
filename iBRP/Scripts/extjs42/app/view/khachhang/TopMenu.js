@@ -14,11 +14,6 @@ Ext.define('iBRP.view.khachhang.TopMenu', {
                             id: 'btnKhachHangThemMoi',
                             text: '<span class="buttonOnLayout">' + Globals.Langs.Common.toolbar_them_moi + '</span>',
                             icon: Globals.Langs.Common.toolbar_image_them_moi,
-                        //}, '-', {
-                        //    xtype: 'button',
-                        //    id: 'btnKhachHangChinhSua',
-                        //    text: Globals.Langs.Common.toolbar_chinh_sua,
-                        //    icon: Globals.Langs.Common.toolbar_image_chinh_sua,
                         }, '-', {
                             xtype: 'button',
                             id: 'btnKhachHangXoa',

@@ -42,7 +42,8 @@ Ext.define('iBRP.view.khachhang.LayoutKhachHang', {
                 animCollapse: true,
                 collapseMode: 'mini',
                 margins: '0 0 0 5',
-                width: 400,
+                width: 500,
+                autoScroll: true,
                 items: [
                     { xtype: "formkhachhang" }
                 ]

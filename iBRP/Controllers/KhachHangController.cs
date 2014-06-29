@@ -35,13 +35,13 @@ namespace iBRP.Controllers
         }
 
         [HttpPost]
-        public ContentResult Update(string maKhachHang, string tenKhachHang)
+        public ContentResult Update(string maKhachHang, string tenKhachHang, string nhom, string loai, string mst = "", string diaChi = "", string dienThoai = "", string fax = "", string email = "", string manv = "", float cn_dauky_tien = 0, string cn_dauky_ngay = "", float cn_sotien = 0, int cn_songay = 0, string ghiChu = "")
         {
             string json = "{success:false}";
             if (tenKhachHang != "")
             {
                 KhachHang mKhachHang = new KhachHang();
-                int rst = mKhachHang.AddKhachHang(maKhachHang, tenKhachHang);
+                int rst = mKhachHang.AddKhachHang(maKhachHang, tenKhachHang, nhom, loai, mst, diaChi, dienThoai, fax, email, manv, cn_dauky_tien, cn_dauky_ngay, cn_sotien, cn_songay, ghiChu);
                 if (rst > 0) {
                     json = "{success:true}";
                 }
@@ -59,6 +59,26 @@ namespace iBRP.Controllers
             {
                 json = "{success:true}";
             }
+            return Content(json);
+        }
+
+        public ContentResult GetNhomOptions()
+        {
+            KhachHang model = new KhachHang();
+            ArrayList all = new ArrayList();
+            all = model.GetKhachHangOptions();
+
+            string json = "{\"actionitems\":" + JsonConvert.SerializeObject(all) + "}";
+            return Content(json);
+        }
+
+        public ContentResult GetLoaiKHOptions()
+        {
+            KhacCT model = new KhacCT();
+            ArrayList all = new ArrayList();
+            all = model.GetOptionsLoaiKH();
+
+            string json = "{\"actionitems\":" + JsonConvert.SerializeObject(all) + "}";
             return Content(json);
         }
 

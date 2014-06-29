@@ -42,6 +42,7 @@
         if (debug) {
             console.log("Init KhachHang Controller");
         }
+
         //Clear all old session
         Ext.util.Cookies.set("tenKhachHang", "");
         //Ext.util.Cookies.set("manganh", "");
@@ -54,9 +55,6 @@
             "#btnKhachHangThemMoi": {
                 click: this.themKhachHang
             },
-            //"#btnKhachHangChinhSua": {
-            //    click: this.suaKhachHang
-            //},
             "#btnKhachHangXoa": {
                 click: this.xoaKhachHang
             },
@@ -75,9 +73,6 @@
             "#btnKhachHangLuu": {
                 click: this.save
             },
-            //"#btnKhachHangLamLai": {
-            //    click: this.refesh
-            //},
             "#btnKhachHangFilter": {
                 click: this.filterData
             },
@@ -181,7 +176,6 @@
                 url: '/KhachHang/Update',
                 waitMsg: Globals.Langs.Common.he_thong_dang_xu_ly_xin_vui_long_cho_trong_giay_lat,
                 success: function (f, a) {
-                    //store.reload();
                     grid.getStore().load();
                     iBRP.model.ModelHelper.disabledForm(form);
                     iBRP.model.ModelHelper.showSuccessMsg();

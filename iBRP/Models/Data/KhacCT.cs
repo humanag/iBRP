@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
@@ -131,5 +132,28 @@ namespace iBRP.Models.Data
                    orderby nh.MAKHAC
                    select nh;
         }
+
+        public ArrayList GetOptionsLoaiKH()
+        {
+            var list = from t in dbContext.DS_KHAC_CT
+                       join ot in dbContext.DS_KHAC on t.MAKHAC equals ot.MAKHAC
+                       where t.MAKHAC == "LOAI_KH"
+                       orderby t.MAKHAC_CT
+                       select t;
+
+            ArrayList all = new ArrayList();
+            foreach (DS_KHAC_CT item in list)
+            {
+                Dictionary<string, string> arr = new Dictionary<string, string>();
+                string maKhacCT = (string)item.MAKHAC_CT;
+                string tenKhacCT = (string)item.TENKHAC_CT;
+                arr.Add("MA_LOAI", maKhacCT);
+                arr.Add("TEN_LOAI", tenKhacCT);
+                all.Add(arr);
+            }
+
+            return all;
+        }
+
     }
 }

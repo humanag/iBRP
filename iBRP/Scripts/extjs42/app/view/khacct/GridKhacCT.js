@@ -53,7 +53,7 @@ Ext.define("iBRP.view.khacct.GridKhacCT", {
             name: "MAKHAC",
             xtype: "combobox",
             fieldLabel: Globals.Langs.KhacCT.ten_khac,
-            queryMode: 'remote',
+            queryMode: 'local',
             displayField: 'TENKHAC',
             valueField: 'MAKHAC',
             allowBlank: false,

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace iBRP.Models.Data
             var list = from t in dbContext.DS_DOITAC
                        where t.MADT.Contains(maKhachHang) && t.TENDT.Contains(tenKhachHang)
                        orderby t.MADT
-                       select new { MAKHACHHANG = t.MADT, TENKHACHHANG = t.TENDT };
+                       select new { MAKHACHHANG = t.MADT, TENKHACHHANG = t.TENDT, t.NHOM, t.LOAI, t.MST, t.DIACHI, t.DIENTHOAI, t.FAX, t.EMAIL, t.MANV, t.CN_DAUKY_TIEN, t.CN_DAUKY_NGAY, t.CN_SOTIEN, t.CN_SONGAY, t.GHICHU };
 
             ////Set condition for MANGANH
             //if (manganh != "")
@@ -86,7 +87,7 @@ namespace iBRP.Models.Data
             
         }
 
-        public int AddKhachHang(string maKhachHang, string tenKhachHang)
+        public int AddKhachHang(string maKhachHang, string tenKhachHang, string nhom, string loai, string mst = "", string diaChi = "", string dienThoai = "", string fax = "", string email = "", string manv = "", float cnDauKyTien = 0, string cnDauKyNgay = "", float cnSoTien = 0, int cnSoNgay = 0, string ghiChu = "")
         {
             try
             {
@@ -99,6 +100,26 @@ namespace iBRP.Models.Data
                 }
                 khachHang.MADT = maKhachHang;
                 khachHang.TENDT = tenKhachHang;
+                khachHang.NHOM = nhom;
+                khachHang.LOAI = loai;
+                khachHang.MST = mst;
+                khachHang.DIACHI = diaChi;
+                khachHang.DIENTHOAI = dienThoai;
+                khachHang.FAX = fax;
+                khachHang.EMAIL = email;
+                khachHang.MANV = manv;
+                khachHang.CN_DAUKY_TIEN = Convert.ToDouble(cnDauKyTien);
+                
+                DateTime dateTime;
+                if (DateTime.TryParse(cnDauKyNgay, out dateTime))
+                {
+                    khachHang.CN_DAUKY_NGAY = dateTime;
+                }
+
+                khachHang.CN_SOTIEN = Convert.ToDouble(cnSoTien);
+                khachHang.CN_SONGAY = Convert.ToInt32(cnSoNgay);
+                khachHang.GHICHU = ghiChu;
+                
                 if (isAdd)
                 {
                     dbContext.DS_DOITAC.Add(khachHang);
@@ -130,6 +151,34 @@ namespace iBRP.Models.Data
         {
             return dbContext.DS_DOITAC.Single(nh => nh.MADT == maKhachHang);
         }
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="limit"></param>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public ArrayList GetKhachHangOptions(int start = 0, int limit = 5, int page = 1)
+        {
+            var list = from t in dbContext.V_DS_NHOM_KH_NCC
+                       orderby t.MAKHAC
+                       select t;
+
+            ArrayList all = new ArrayList();
+            foreach (V_DS_NHOM_KH_NCC item in list)
+            {
+                Dictionary<string, string> arr = new Dictionary<string, string>();
+                string maKhacCT = (string)item.MAKHAC_CT;
+                string tenKhacCT = (string)item.TENKHAC_CT;
+                arr.Add("MAKHAC_CT", maKhacCT);
+                arr.Add("TENKHAC_CT", tenKhacCT);
+                all.Add(arr);
+            }
+
+            return all;
+        }
+
+
     }
 }

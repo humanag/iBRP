@@ -2,7 +2,7 @@
     extend: "Ext.app.Controller",
     models: ["ModelKhacCT", "ModelKhac"],
     stores: ["StoreKhacCT", "StoreKhac"],
-    views: ["khacct.LayoutKhacCT", "khacct.GridKhacCT", "khacct.FormKhacCT", "khacct.FormFilter", "khacct.GridKhac"],
+    views: ["khacct.LayoutKhacCT", "khacct.GridKhac"],
     refs: [
         {
             ref: 'gridKhacCT',
@@ -30,6 +30,7 @@
         //Register events for store
         var store = Ext.getStore("StoreKhacCT");
         store.addListener('load', this.finishedLoadStoreCT, this);
+
         var store = Ext.getStore("StoreKhac");
         store.addListener('load', this.finishedLoadStore, this);
 
@@ -37,9 +38,6 @@
             "#btnKhacCTThemMoi": {
                 click: this.themKhacCT
             },
-            //"#btnKhacCTChinhSua": {
-            //    click: this.suaKhacCT
-            //},
             "#btnKhacCTXoa": {
                 click: this.xoaKhacCT
             },
@@ -61,7 +59,7 @@
                 click: this.inKhac
             },
             "#btnKhacKetThuc": {
-                click: this.thoatKhacCT
+                click: this.thoatKhac
             },
 
             "gridkhacct": {
@@ -85,7 +83,7 @@
 
     finishedLoadStoreCT: function (store, records, successful, eOpts) {
         if (debug) {
-            console.log("This event will be fire whenever store is loaded. [iBRP.controller.KhacCTController.finishedLoadStore()]");
+            console.log("This event will be fire whenever store is loaded. [iBRP.controller.KhacCTController.finishedLoadStoreCT()]");
         }
 
         //If last page has just one record and we deleted this record so you need to load previous page.
@@ -140,8 +138,7 @@
         }
         var grid = this.getGridKhac();
         var store = grid.getStore();
-        rowEditing.cancelEdit();
-
+        
         // Create a model instance
         var r = Ext.create('iBRP.model.ModelKhac', {
             MAKHAC: Globals.Langs.KhacCT.ma_khac,
@@ -149,7 +146,6 @@
             PLOAI: "1"
 
         });
-
         store.insert(0, r);
         rowEditing.startEdit(0, 0);
     },
@@ -160,7 +156,6 @@
         }
         var grid = this.getGridKhacCT();
         var store = grid.getStore();
-        rowEditingCT.cancelEdit();
 
         // Create a model instance
         var r = Ext.create('iBRP.model.ModelKhacCT', {
@@ -170,8 +165,6 @@
 
         store.insert(0, r);
         rowEditingCT.startEdit(0, 0);
-
-
     },
 
     xoaKhac: function () {
@@ -193,48 +186,20 @@
     inKhacCT: function () {
         console.log('This event will be fired when user click on button In. [iBRP.controller.KhacCTController.inKhacCT()]');
     },
+    thoatKhac: function () {
+        if (debug) {
+            console.log('This event will be fired when user click on button Thoat. [iBRP.controller.KhacCTController.thoatKhacCT()]');
+        }
+
+        this.getLayoutKhacCT().close();
+    },
+
     thoatKhacCT: function () {
         if (debug) {
             console.log('This event will be fired when user click on button Thoat. [iBRP.controller.KhacCTController.thoatKhacCT()]');
         }
-        this.getLayoutKhacCT().close();
-    },
 
-    save: function () {
-        if (debug) {
-            console.log('This event will be fired when user click on button Luu. [iBRP.controller.KhacCTController.save()]');
-        }
-        var form = this.getFormKhacCT().getForm();
-        var store = Ext.getStore("StoreKhacCT");
-        var grid = this.getGridKhacCT();
-        if (form.isValid()) {
-            form.submit({
-                method: 'POST',
-                url: '/KhacCT/Update',
-                waitMsg: Globals.Langs.Common.he_thong_dang_xu_ly_xin_vui_long_cho_trong_giay_lat,
-                success: function (f, a) {
-                    //store.reload();
-                    grid.getStore().load();
-                    iBRP.model.ModelHelper.disabledForm(form);
-                    iBRP.model.ModelHelper.showSuccessMsg();
-                },
-                failure: function (f, a) {
-                    if (debug) {
-                        console.log(a);
-                    }
-                    iBRP.model.ModelHelper.showErrorMsg(a.response);
-                }
-            });
-            //Enable toolbar and disable form button
-            this.disableControl(false, true);
-        } else {
-            Ext.Msg.show({
-                title: Globals.Langs.Common.thong_bao,
-                msg: Globals.Langs.Common.du_lieu_khong_hop_le_xin_vui_long_kiem_tra_lai,
-                buttons: Ext.MessageBox.OK,
-                icon: Ext.MessageBox.ERROR
-            });
-        }
+        this.getLayoutKhacCT().close();
     },
 
     deleteSelectionRow: function () {
@@ -359,13 +324,6 @@
         switch (key) {
             case e.DELETE:
                 this.deleteSelectionRow();
-                break;
-            case e.ENTER:
-                var form = this.getFormKhacCT().getForm();
-                iBRP.model.ModelHelper.enableForm(form);
-
-                //Disable toolbar and enable form button
-                this.disableControl(true, false);
                 break;
             case e.F:
                 console.log("Show Filter Form");

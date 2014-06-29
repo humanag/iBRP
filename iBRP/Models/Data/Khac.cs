@@ -82,7 +82,6 @@ namespace iBRP.Models.Data
             }
 
             return all;
-
         }
 
         public int Add(string maKhac, string tenKhac, string ploai)

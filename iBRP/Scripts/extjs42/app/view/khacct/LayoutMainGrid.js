@@ -22,10 +22,12 @@ Ext.define('iBRP.view.khacct.LayoutMainGrid', {
                 {
                     title: Globals.Langs.KhacCT.danh_sach_khac,
                     xtype: 'gridkhac',
-                }, {
+                },
+                {
                     title: Globals.Langs.KhacCT.danh_sach_khac_ct,
                     xtype: 'gridkhacct',
-                }]
+                }
+                ]
             }
             ]//item layout border
         });

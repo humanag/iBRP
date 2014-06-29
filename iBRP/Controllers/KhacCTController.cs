@@ -88,7 +88,6 @@ namespace iBRP.Controllers
             ArrayList all = new ArrayList();
             all = model.GetOptions();
 
-            var total = model.GetTotal();
             string json = "{\"actionitems\":" + JsonConvert.SerializeObject(all) + "}";
             return Content(json);
         }
@@ -121,5 +120,6 @@ namespace iBRP.Controllers
             }
             return Content(json);
         }
+        
     }
 }
