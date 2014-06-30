@@ -285,10 +285,10 @@
           </Key>
           <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="5" />
           <Property Name="TENNV" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="BIDANH" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="BIDANH" Type="nvarchar" MaxLength="20" />
           <Property Name="NHOM" Type="nvarchar" Nullable="false" MaxLength="3" />
           <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
-          <Property Name="DIENTHOAI" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
           <Property Name="FAX" Type="nvarchar" MaxLength="100" />
           <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
           <Property Name="GHICHU" Type="ntext" />
@@ -671,10 +671,10 @@
           </Key>
           <Property Type="String" Name="MANV" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="TENNV" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="BIDANH" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BIDANH" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="NHOM" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="DIENTHOAI" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DIENTHOAI" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="FAX" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="EMAIL" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />

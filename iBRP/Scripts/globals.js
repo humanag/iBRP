@@ -29,6 +29,7 @@ var Globals = {
             main_menu_submenu_dm_nganhhang: 'DM NGÀNH HÀNG',
             main_menu_submenu_dm_nhom: 'DM NHÓM',
             main_menu_submenu_dm_khach_hang: 'DM KHÁCH HÀNG',
+            main_menu_submenu_dm_nhan_vien: 'DM NHÂN VIÊN',
             main_menu_submenu_dm_khac_ct: 'DM KHÁC',
             toolbar_them_moi: 'Thêm Mới',
             toolbar_image_them_moi: '../Content/themes/iBRP/images/icons/16/add.png',
@@ -110,6 +111,19 @@ var Globals = {
             ma_khac_ct: 'Mã khác chi tiết',
             ten_khac_ct: 'Tên khác chi tiết',
             ten_khac: 'Tên khác',
+        },
+        NhanVien: {
+            nhan_vien: 'Nhân Viên',
+            danh_sach_nhan_vien: 'DANH MỤC NHÂN VIÊN',
+            ma_nhan_vien: 'Mã nhân viên',
+            ten_nhan_vien: 'Tên nhân viên',
+            bi_danh: 'Bí danh',
+            ten_nhom: 'Tên Nhóm',
+            dia_chi: 'Địa chỉ',
+            dien_thoai: 'Điện thoại',
+            fax: 'Fax',
+            email: 'Email',
+            ghi_chu: 'Ghi chú',
         },
     }
     

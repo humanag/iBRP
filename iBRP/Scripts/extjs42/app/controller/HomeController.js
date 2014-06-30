@@ -23,7 +23,12 @@
             },
             "#mainMenuDMKhachHang": {
                 click: this.showLayoutKhachHang
+            },
+            "#mainMenuDMNhanVien": {
+                click: this.showLayoutNhanVien
             }
+
+
             
         });
     },
@@ -59,6 +64,17 @@
         //set maxlenght for manv input
         att = { maxlength: '5' }; // generate attribute list 
         Ext.get("manv-inputEl").set(att);
+    },
+    showLayoutNhanVien: function () {
+        if (debug) {
+            console.log('The nhan vien layout will be shown when user click on the button DM NHAN VIEN on the main menu. [iBRP.controller.HomeController.showLayoutNhanVien()]');
+        }
+        //Create and show layout nhan vien
+        var kh = Ext.create("iBRP.view.nhanvien.LayoutNhanVien");
+        kh.show();
+        //set maxlenght for ma nhan vien input
+        att = { maxlength: '5' }; // generate attribute list 
+        Ext.get("manhanvien-inputEl").set(att);
     },
     showLayoutKhacCT: function () {
         if (debug) {
