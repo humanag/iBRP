@@ -82,5 +82,15 @@ namespace iBRP.Controllers
             return Content(json);
         }
 
+        public ContentResult GetNhanVienOptions()
+        {
+            NhanVien model = new NhanVien();
+            ArrayList all = new ArrayList();
+            all = model.GetNVKinhDoanhOptions();
+
+            string json = "{\"actionitems\":" + JsonConvert.SerializeObject(all) + "}";
+            return Content(json);
+        }
+
     }
 }

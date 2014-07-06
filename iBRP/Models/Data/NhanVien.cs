@@ -145,6 +145,26 @@ namespace iBRP.Models.Data
             return all;
         }
 
+        public ArrayList GetNVKinhDoanhOptions()
+        {
+            var list = from t in dbContext.V_DS_NV_KD
+                       orderby t.MANV
+                       select t;
+
+            ArrayList all = new ArrayList();
+            foreach (V_DS_NV_KD item in list)
+            {
+                Dictionary<string, string> arr = new Dictionary<string, string>();
+                string maNV = (string)item.MANV;
+                string tenNV = (string)item.TENNV;
+                arr.Add("MANHANVIEN", maNV);
+                arr.Add("TENNHANVIEN", tenNV);
+                all.Add(arr);
+            }
+
+            return all;
+        }
+
 
     }
 }

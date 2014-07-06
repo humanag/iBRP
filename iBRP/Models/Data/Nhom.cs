@@ -14,17 +14,17 @@ namespace iBRP.Models.Data
         {
             dbContext = new iBRPContext();
         }
-
+        
         public IQueryable<Object> GetList(int start = 0, int perItem = 0, Dictionary<string, string> condition = null)
         {
             string manhom = "";
-            if (condition.ContainsKey("MANHOM"))
+            if (condition != null && condition.ContainsKey("MANHOM"))
             {
                 manhom = condition["MANHOM"];
             }
 
             string tennhom = "";
-            if (condition.ContainsKey("TENNHOM"))
+            if (condition != null && condition.ContainsKey("TENNHOM"))
             {
                 tennhom = condition["TENNHOM"];
             }

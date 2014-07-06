@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\HangHoaController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\KhacCTController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
@@ -185,6 +186,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>iBRPContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data\HangHoa.cs" />
     <Compile Include="Models\Data\NhanVien.cs" />
     <Compile Include="Models\Data\Khac.cs" />
     <Compile Include="Models\Data\KhacCT.cs" />
@@ -1555,12 +1557,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\extjs42\.sencha\workspace\plugin.xml" />
+    <Content Include="Scripts\extjs42\app\controller\HangHoaController.js" />
     <Content Include="Scripts\extjs42\app\controller\NhanVienController.js" />
     <Content Include="Scripts\extjs42\app\controller\KhacCTController.js" />
     <Content Include="Scripts\extjs42\app\controller\KhachHangController.js" />
     <Content Include="Scripts\extjs42\app\controller\NhomController.js" />
     <Content Include="Scripts\extjs42\app\controller\HomeController.js" />
     <Content Include="Scripts\extjs42\app\controller\NganhHangController.js" />
+    <Content Include="Scripts\extjs42\app\model\ModelHangHoa.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNhanVien.js" />
     <Content Include="Scripts\extjs42\app\model\ModelKhac.js" />
     <Content Include="Scripts\extjs42\app\model\ModelKhacCT.js" />
@@ -1568,12 +1572,18 @@
     <Content Include="Scripts\extjs42\app\model\ModelNhom.js" />
     <Content Include="Scripts\extjs42\app\model\ModelHelper.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\store\StoreHangHoa.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhanVien.js" />
     <Content Include="Scripts\extjs42\app\store\StoreKhac.js" />
     <Content Include="Scripts\extjs42\app\store\StoreKhacCT.js" />
     <Content Include="Scripts\extjs42\app\store\StoreKhachHang.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhom.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\view\hanghoa\FormFilter.js" />
+    <Content Include="Scripts\extjs42\app\view\hanghoa\FormHangHoa.js" />
+    <Content Include="Scripts\extjs42\app\view\hanghoa\GirdHangHoa.js" />
+    <Content Include="Scripts\extjs42\app\view\hanghoa\LayoutHangHoa.js" />
+    <Content Include="Scripts\extjs42\app\view\hanghoa\TopMenu.js" />
     <Content Include="Scripts\extjs42\app\view\nhanvien\FormFilter.js" />
     <Content Include="Scripts\extjs42\app\view\nhanvien\FormNhanVien.js" />
     <Content Include="Scripts\extjs42\app\view\nhanvien\GirdNhanVien.js" />

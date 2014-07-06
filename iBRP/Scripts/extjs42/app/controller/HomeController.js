@@ -26,9 +26,10 @@
             },
             "#mainMenuDMNhanVien": {
                 click: this.showLayoutNhanVien
+            },
+            "#mainMenuDMHangHoa": {
+                click: this.showLayoutHangHoa
             }
-
-
             
         });
     },
@@ -83,7 +84,19 @@
         //Create and show layout khach hang
         var kh = Ext.create("iBRP.view.khacct.LayoutKhacCT");
         kh.show();
-    }
+    },
+
+    showLayoutHangHoa: function () {
+        if (debug) {
+            console.log('The hang hoa layout will be shown when user click on the button DM Hang Hoa on the main menu. [iBRP.controller.HomeController.showLayoutHangHoa()]');
+        }
+        //Create and show layout nhan vien
+        var hh = Ext.create("iBRP.view.hanghoa.LayoutHangHoa");
+        hh.show();
+        //set maxlenght for ma nhan vien input
+        att = { maxlength: '15' }; // generate attribute list 
+        Ext.get("mahanghoa-inputEl").set(att);
+    },
 
     
 });

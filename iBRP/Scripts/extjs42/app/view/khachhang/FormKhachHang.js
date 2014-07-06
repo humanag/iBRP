@@ -118,7 +118,27 @@
                     name: "MANV",
                     labelWidth: 150,
                     fieldLabel: Globals.Langs.KhachHang.ma_nhan_vien,
-                    maxLength: 15,
+                    xtype: "combobox",
+                    queryMode: 'remote',
+                    displayField: 'TENNHANVIEN',
+                    valueField: 'MANHANVIEN',
+                    allowBlank: false,
+                    width: 300,
+                    store: new Ext.data.Store({
+                        fields: ['MANHANVIEN', 'TENNHANVIEN'],
+                        autoLoad: true,
+                        proxy: {
+                            type: "ajax",
+                            api: {
+                                read: "/KhachHang/GetNhanVienOptions",
+                            },
+                            reader: {
+                                type: "json",
+                                root: "actionitems",
+                                idProperty: 'MANHANVIEN'
+                            }
+                        },
+                    }),
                 },
                 {
                     id: "CNDAUKYTIEN",
