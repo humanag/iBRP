@@ -24,15 +24,15 @@ namespace iBRP.Models.Data
             }
 
             string tenNhanVien = "";
-            if (condition != null && condition.ContainsKey("TENNV"))
+            if (condition != null && condition.ContainsKey("TENNHANVIEN"))
             {
-                tenNhanVien = condition["TENNV"];
+                tenNhanVien = condition["TENNHANVIEN"];
             }
 
             var list = from t in dbContext.DS_NHANVIEN
                        where t.MANV.Contains(maNhanVien) && t.TENNV.Contains(tenNhanVien)
                        orderby t.MANV
-                       select new { MANHANVIEN = t.MANV, TENNHANVIEN = t.TENNV, t.NHOM, t.DIACHI, t.DIENTHOAI, t.FAX, t.EMAIL, t.GHICHU };
+                       select new { MANHANVIEN = t.MANV, TENNHANVIEN = t.TENNV, t.BIDANH, t.NHOM, t.DIACHI, t.DIENTHOAI, t.FAX, t.EMAIL, t.GHICHU };
 
             if (perItem > 0)
             {
@@ -51,9 +51,9 @@ namespace iBRP.Models.Data
             }
 
             string tenNhanVien = "";
-            if (condition != null && condition.ContainsKey("TENNV"))
+            if (condition != null && condition.ContainsKey("TENNHANVIEN"))
             {
-                tenNhanVien = condition["TENNV"];
+                tenNhanVien = condition["TENNHANVIEN"];
             }
 
             var list = from t in dbContext.DS_NHANVIEN
@@ -65,7 +65,8 @@ namespace iBRP.Models.Data
             
         }
 
-        public int AddNhanVien(string maNhanVien, string tenNhanVien, string nhom, string biDanh = "", string diaChi = "", string dienThoai = "", string fax = "", string email = "", string ghiChu = "")
+        public int AddNhanVien(string maNhanVien, string tenNhanVien, string nhom, string biDanh = "", 
+            string diaChi = "", string dienThoai = "", string fax = "", string email = "", string ghiChu = "")
         {
             try
             {

@@ -123,7 +123,7 @@
             form.loadRecord(rec);
         }
 
-        //Enable toolbar and diable form button
+        //Enable toolbar and disable form button
         this.disableControl(false, false);
     },
 
@@ -236,6 +236,7 @@
         var grid = this.getGirdKhachHang();
         var sm = grid.getSelectionModel();
         var sel = sm.getSelection()[0];
+        var form = this.getFormKhachHang().getForm();
         if (sm.hasSelection()) {
             Ext.Msg.show({
                 title: Globals.Langs.Common.canh_bao,
@@ -262,6 +263,8 @@
                                     grid.getStore().remove(sel);
                                     grid.store.load();
                                     grid.reconfigure();
+
+                                    form.reset();
                                 },
                                 failure: function (response, opts) {
                                     if (debug) {

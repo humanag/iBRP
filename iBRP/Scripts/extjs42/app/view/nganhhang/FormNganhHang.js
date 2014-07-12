@@ -13,7 +13,8 @@
                     id: "manghanh",
                     name: "MANGANH",
                     xtype: "hidden",
-                    fieldLabel: Globals.Langs.NganhHang.ma_nganh
+                    fieldLabel: Globals.Langs.NganhHang.ma_nganh,
+                    allowBlank: false
                 },
                 {
                     id: "tennganh",

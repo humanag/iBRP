@@ -7,13 +7,13 @@
     title: Globals.Langs.Common.loc_du_lieu,
     items: [
        {
-           xtype: "fieldset", title: Globals.Langs.HangHoa.ten_hang,
+           xtype: "fieldset", title: Globals.Langs.HangHoa.ten_hang_hoa,
            defaults: { xtype: "textfield"},
            items: [
                 {
                     id: "ftenhanghoa",
                     name: "FTENHANGHOA",
-                    fieldLabel: Globals.Langs.HangHoa.ten_hang
+                    fieldLabel: Globals.Langs.HangHoa.ten_hang_hoa
                 },
            ]
        }

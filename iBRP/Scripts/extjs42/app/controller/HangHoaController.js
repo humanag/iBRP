@@ -236,6 +236,7 @@
         var grid = this.getGirdHangHoa();
         var sm = grid.getSelectionModel();
         var sel = sm.getSelection()[0];
+        var form = this.getFormHangHoa().getForm();
         if (sm.hasSelection()) {
             Ext.Msg.show({
                 title: Globals.Langs.Common.canh_bao,
@@ -262,6 +263,8 @@
                                     grid.getStore().remove(sel);
                                     grid.store.load();
                                     grid.reconfigure();
+                                    //Reset form
+                                    form.reset();
                                 },
                                 failure: function (response, opts) {
                                     if (debug) {

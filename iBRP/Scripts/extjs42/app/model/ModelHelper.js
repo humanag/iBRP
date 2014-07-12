@@ -29,7 +29,7 @@
         if (debug) {
             console.log("This function will set enable for all fields on the form. [iBRP.model.ModelHelper.enableForm()]");
         }
-        var isFocus = true;
+        var isFocus = false;
         fields = form.getFields();
         fields.each(function (field) {
             if (isFocus) {

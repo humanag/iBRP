@@ -159,9 +159,10 @@
 
         // Create a model instance
         var r = Ext.create('iBRP.model.ModelKhacCT', {
-            MAKHAC_CT: Globals.Langs.KhacCT.ma_khac_ct,
-            TENKHAC_CT: Globals.Langs.KhacCT.ten_khac_ct,
-        });
+                MAKHAC_CT: Globals.Langs.KhacCT.ma_khac_ct,
+                TENKHAC_CT: Globals.Langs.KhacCT.ten_khac_ct,
+            }
+        );
 
         store.insert(0, r);
         rowEditingCT.startEdit(0, 0);

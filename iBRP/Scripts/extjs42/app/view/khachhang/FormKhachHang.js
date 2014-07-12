@@ -18,8 +18,7 @@
                    labelWidth: 150,
                    fieldLabel: Globals.Langs.KhachHang.ma_khach_hang,
                    maxLength: 15,
-                   allowBlank: false,
-
+                   allowBlank: false
                },
                 {
                     id: "tenkhachhang",
@@ -52,7 +51,7 @@
                                 idProperty: 'MAKHAC_CT'
                             }
                         },
-                    }),
+                    })
                 },
                 {
                     id: "loai",
@@ -144,6 +143,9 @@
                     id: "CNDAUKYTIEN",
                     name: "CN_DAUKY_TIEN",
                     labelWidth: 150,
+                    xtype: 'numberfield',
+                    minValue: 0,
+                    hideTrigger: true,
                     fieldLabel: Globals.Langs.KhachHang.cong_no_dau_ky_tien
                 },
                 {
@@ -158,9 +160,15 @@
                     id: "CNSOTIEN",
                     name: "CN_SOTIEN",
                     labelWidth: 150,
+                    xtype: 'numberfield',
+                    minValue: 0,
+                    hideTrigger: true,
                     fieldLabel: Globals.Langs.KhachHang.cong_no_so_tien
                 },
                 {
+                    xtype: 'numberfield',
+                    minValue: 0,
+                    hideTrigger: true,
                     id: "CNSONGAY",
                     name: "CN_SONGAY",
                     labelWidth: 150,

@@ -35,7 +35,8 @@ namespace iBRP.Controllers
         }
 
         [HttpPost]
-        public ContentResult Update(string maNhanVien, string tenNhanVien, string nhom, string biDanh ="", string diaChi = "", string dienThoai = "", string fax = "", string email = "", string ghiChu = "")
+        public ContentResult Update(string maNhanVien, string tenNhanVien, string nhom, string biDanh = "", string diaChi = "", string dienThoai = "",
+            string fax = "", string email = "", string ghiChu = "")
         {
             string json = "{success:false}";
             if (tenNhanVien != "")

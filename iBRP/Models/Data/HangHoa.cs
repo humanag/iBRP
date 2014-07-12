@@ -24,9 +24,9 @@ namespace iBRP.Models.Data
             }
 
             string tenHangHoa = "";
-            if (condition != null && condition.ContainsKey("TENHANG"))
+            if (condition != null && condition.ContainsKey("TENHANGHOA"))
             {
-                tenHangHoa = condition["TENHANG"];
+                tenHangHoa = condition["TENHANGHOA"];
             }
 
             var list = from t in dbContext.DS_HANGHOA
@@ -71,9 +71,9 @@ namespace iBRP.Models.Data
         }
 
         public int AddHangHoa(string maHangHoa, string tenHangHoa, string maNganh, string maNhom, string maMau, string maSize,
-            string maDvt, double quiDoi = -1, string dvtLon = "", double tonMax = -1, double tonMin = -1, string trangThai = "",
-            double vatIn = -1, double vatOut = -1, double giaMua = -1, double tlLaiLe = -1, double giaBanLe = -1, double tlLaiSi = -1,
-            double giaBanSi = -1, string ghiChu = "")
+            string maDvt, double quiDoi = 0, string dvtLon = "", double tonMax = 0, double tonMin = 0, string trangThai = "",
+            double vatIn = 0, double vatOut = 0, double giaMua = 0, double tlLaiLe = 0, double giaBanLe = 0, double tlLaiSi = 0,
+            double giaBanSi = 0, string ghiChu = "")
         {
             try
             {

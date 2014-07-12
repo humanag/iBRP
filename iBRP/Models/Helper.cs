@@ -27,5 +27,13 @@ namespace iBRP.Models
             }
             return arr;
         }
+
+
+        public static DateTime ConvertToSqlDateTime(string strDateTime, string joinChar = "-", char splitChar = '/')
+        {
+            string[] tempsplit = strDateTime.Split(splitChar);
+            string strDate = tempsplit[2] + joinChar + tempsplit[1] + joinChar + tempsplit[0];
+            return Convert.ToDateTime(strDate);
+        }
     }
 }

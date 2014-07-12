@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 
 namespace iBRP.Models.Data
@@ -24,26 +25,15 @@ namespace iBRP.Models.Data
             }
 
             string tenKhachHang = "";
-            if (condition != null && condition.ContainsKey("TENDT"))
+            if (condition != null && condition.ContainsKey("TENKHACHHANG"))
             {
-                tenKhachHang = condition["TENDT"];
+                tenKhachHang = condition["TENKHACHHANG"];
             }
 
             var list = from t in dbContext.DS_DOITAC
                        where t.MADT.Contains(maKhachHang) && t.TENDT.Contains(tenKhachHang)
                        orderby t.MADT
                        select new { MAKHACHHANG = t.MADT, TENKHACHHANG = t.TENDT, t.NHOM, t.LOAI, t.MST, t.DIACHI, t.DIENTHOAI, t.FAX, t.EMAIL, t.MANV, t.CN_DAUKY_TIEN, t.CN_DAUKY_NGAY, t.CN_SOTIEN, t.CN_SONGAY, t.GHICHU };
-
-            ////Set condition for MANGANH
-            //if (manganh != "")
-            //{
-            //    list.AsQueryable().Where(nh => nh.MANGANH.Contains(manganh));
-            //}
-            ////Set condition for TENNGANH
-            //if (tennganh != "")
-            //{
-            //    list.AsQueryable().Where(nh => nh.TENNGANH.Contains(tennganh));
-            //}
 
             if (perItem > 0)
             {
@@ -62,9 +52,9 @@ namespace iBRP.Models.Data
             }
 
             string tenKhachHang = "";
-            if (condition != null && condition.ContainsKey("TENDT"))
+            if (condition != null && condition.ContainsKey("TENKHACHHANG"))
             {
-                tenKhachHang = condition["TENDT"];
+                tenKhachHang = condition["TENKHACHHANG"];
             }
 
             var list = from t in dbContext.DS_DOITAC
@@ -72,22 +62,13 @@ namespace iBRP.Models.Data
                        orderby t.MADT
                        select t;
 
-            ////Set condition for MANGANH
-            //if (manganh != "")
-            //{
-            //    list.AsQueryable().Where(nh => nh.MANGANH.Contains(manganh));
-            //}
-            ////Set condition for TENNGANH
-            //if (tennganh != "")
-            //{
-            //    list.AsQueryable().Where(nh => nh.TENNGANH.Contains(tennganh));
-            //}
-
             return list.Count();
             
         }
 
-        public int AddKhachHang(string maKhachHang, string tenKhachHang, string nhom, string loai, string mst = "", string diaChi = "", string dienThoai = "", string fax = "", string email = "", string manv = "", float cnDauKyTien = 0, string cnDauKyNgay = "", float cnSoTien = 0, int cnSoNgay = 0, string ghiChu = "")
+        public int AddKhachHang(string maKhachHang, string tenKhachHang, string nhom, string loai, string mst = "", string diaChi = "", string dienThoai = "", 
+            string fax = "", string email = "", string manv = "", float cnDauKyTien = 0, string cnDauKyNgay = "", float cnSoTien = 0,
+            int cnSoNgay = 0, string ghiChu = "")
         {
             try
             {
@@ -109,11 +90,9 @@ namespace iBRP.Models.Data
                 khachHang.EMAIL = email;
                 khachHang.MANV = manv;
                 khachHang.CN_DAUKY_TIEN = Convert.ToDouble(cnDauKyTien);
-                
-                DateTime dateTime;
-                if (DateTime.TryParse(cnDauKyNgay, out dateTime))
-                {
-                    khachHang.CN_DAUKY_NGAY = dateTime;
+
+                if (cnDauKyNgay != "") {
+                    khachHang.CN_DAUKY_NGAY = Helper.ConvertToSqlDateTime(cnDauKyNgay);
                 }
 
                 khachHang.CN_SOTIEN = Convert.ToDouble(cnSoTien);
@@ -178,7 +157,6 @@ namespace iBRP.Models.Data
 
             return all;
         }
-
 
     }
 }
