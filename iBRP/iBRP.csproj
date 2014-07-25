@@ -15033,6 +15033,7 @@
     <Content Include="Content\themes\iBRP\images\icons\PNG\32x32\.DS_Store" />
     <Content Include="Content\themes\iBRP\images\icons\PNG\48x48\.DS_Store" />
     <Content Include="Content\themes\iBRP\images\icons\PNG\64x64\.DS_Store" />
+    <None Include="Properties\PublishProfiles\iBRP.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />

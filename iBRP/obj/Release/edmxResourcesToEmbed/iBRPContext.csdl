@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iBRPModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="iBRPEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AD_USER" EntityType="iBRPModel.AD_USER" />
+    <EntitySet Name="DS_DOITAC" EntityType="iBRPModel.DS_DOITAC" />
+    <EntitySet Name="DS_HANGHOA" EntityType="iBRPModel.DS_HANGHOA" />
+    <EntitySet Name="DS_KHAC" EntityType="iBRPModel.DS_KHAC" />
+    <EntitySet Name="DS_KHAC_CT" EntityType="iBRPModel.DS_KHAC_CT" />
+    <EntitySet Name="DS_KHO" EntityType="iBRPModel.DS_KHO" />
+    <EntitySet Name="DS_MAU" EntityType="iBRPModel.DS_MAU" />
+    <EntitySet Name="DS_NGANH" EntityType="iBRPModel.DS_NGANH" />
+    <EntitySet Name="DS_NHANVIEN" EntityType="iBRPModel.DS_NHANVIEN" />
+    <EntitySet Name="DS_NHOM" EntityType="iBRPModel.DS_NHOM" />
+    <EntitySet Name="DS_NHOM_1" EntityType="iBRPModel.DS_NHOM_1" />
+    <EntitySet Name="DS_SIZE" EntityType="iBRPModel.DS_SIZE" />
+    <EntitySet Name="V_DS_KH" EntityType="iBRPModel.V_DS_KH" />
+    <EntitySet Name="V_DS_NCC" EntityType="iBRPModel.V_DS_NCC" />
+    <EntitySet Name="V_DS_NHOM_KH_NCC" EntityType="iBRPModel.V_DS_NHOM_KH_NCC" />
+    <EntitySet Name="V_DS_NHOM_NV" EntityType="iBRPModel.V_DS_NHOM_NV" />
+    <EntitySet Name="V_DS_NV_KD" EntityType="iBRPModel.V_DS_NV_KD" />
+    <EntitySet Name="V_DS_NV_ORDER" EntityType="iBRPModel.V_DS_NV_ORDER" />
+    <EntitySet Name="V_DS_PTTT" EntityType="iBRPModel.V_DS_PTTT" />
+    <EntitySet Name="V_DS_TT_HANGHHOA" EntityType="iBRPModel.V_DS_TT_HANGHHOA" />
+  </EntityContainer>
+  <EntityType Name="AD_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="USERNAME" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FULLNAME" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PASS" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DS_DOITAC">
+    <Key>
+      <PropertyRef Name="MADT" />
+    </Key>
+    <Property Type="String" Name="MADT" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENDT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NHOM" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MST" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIENTHOAI" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FAX" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MANV" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="CN_DAUKY_TIEN" />
+    <Property Type="DateTime" Name="CN_DAUKY_NGAY" Precision="3" />
+    <Property Type="Double" Name="CN_SOTIEN" />
+    <Property Type="Int32" Name="CN_SONGAY" />
+    <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_HANGHOA">
+    <Key>
+      <PropertyRef Name="MAHANG" />
+    </Key>
+    <Property Type="String" Name="MAHANG" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MANGANH" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MANHOM" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MANHOM1" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAMAU" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MASIZE" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENHANG" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENTAT" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DVT" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="QUIDOI" />
+    <Property Type="String" Name="DVT_LON" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="TON_MAX" />
+    <Property Type="Double" Name="TON_MIN" />
+    <Property Type="String" Name="TRANGTHAI" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="VAT_IN" />
+    <Property Type="Double" Name="VAT_OUT" />
+    <Property Type="Double" Name="GIAMUA" />
+    <Property Type="Double" Name="TL_LAI_LE" />
+    <Property Type="Double" Name="GIABAN_LE" />
+    <Property Type="Double" Name="TL_LAI_SI" />
+    <Property Type="Double" Name="GIABAN_SI" />
+    <Property Type="String" Name="GHICHU" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_KHAC">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+    </Key>
+    <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENKHAC" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PLOAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_KHAC_CT">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+    </Key>
+    <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_KHO">
+    <Key>
+      <PropertyRef Name="MAKHO" />
+    </Key>
+    <Property Type="String" Name="MAKHO" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENKHO" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIENTHOAI" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FAX" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="THUKHO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_MAU">
+    <Key>
+      <PropertyRef Name="MAMAU" />
+    </Key>
+    <Property Type="String" Name="MAMAU" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENMAU" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_NGANH">
+    <Key>
+      <PropertyRef Name="MANGANH" />
+    </Key>
+    <Property Type="String" Name="MANGANH" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENNGANH" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Type="String" Name="MANV" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENNV" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BIDANH" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NHOM" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIENTHOAI" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FAX" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_NHOM">
+    <Key>
+      <PropertyRef Name="MANHOM" />
+    </Key>
+    <Property Type="String" Name="MANHOM" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MANGANH" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENNHOM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="PLU" />
+    <Property Type="Boolean" Name="N1" />
+    <Property Type="Boolean" Name="N2" />
+    <Property Type="Boolean" Name="N3" />
+    <Property Type="Boolean" Name="N4" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_NHOM_1">
+    <Key>
+      <PropertyRef Name="MANHOM1" />
+    </Key>
+    <Property Type="String" Name="MANHOM1" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MANGANH" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MANHOM" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENNHOM1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="DS_SIZE">
+    <Key>
+      <PropertyRef Name="MASIZE" />
+    </Key>
+    <Property Type="String" Name="MASIZE" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENSIZE" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_KH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOAI" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="LOAI" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NHOM" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MADT" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENDT" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MST" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIENTHOAI" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FAX" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="CN_DAUKY" />
+    <Property Type="Int32" Name="CN_SONGAY" />
+    <Property Type="DateTime" Name="CN_SOTIEN" Precision="3" />
+    <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_NCC">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOAI" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="LOAI" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NHOM" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MADT" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENDT" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MST" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIENTHOAI" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FAX" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="CN_DAUKY" />
+    <Property Type="Int32" Name="CN_SONGAY" />
+    <Property Type="DateTime" Name="CN_SOTIEN" Precision="3" />
+    <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_NHOM_KH_NCC">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_NHOM_NV">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_NV_KD">
+    <Key>
+      <PropertyRef Name="MANV" />
+      <PropertyRef Name="TENNV" />
+      <PropertyRef Name="BIDANH" />
+      <PropertyRef Name="NHOM" />
+      <PropertyRef Name="DIENTHOAI" />
+    </Key>
+    <Property Type="String" Name="MANV" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENNV" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BIDANH" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NHOM" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIENTHOAI" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FAX" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_NV_ORDER">
+    <Key>
+      <PropertyRef Name="MANV" />
+      <PropertyRef Name="TENNV" />
+      <PropertyRef Name="BIDANH" />
+      <PropertyRef Name="NHOM" />
+      <PropertyRef Name="DIENTHOAI" />
+    </Key>
+    <Property Type="String" Name="MANV" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENNV" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BIDANH" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NHOM" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIACHI" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIENTHOAI" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FAX" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_PTTT">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DS_TT_HANGHHOA">
+    <Key>
+      <PropertyRef Name="MAKHAC" />
+      <PropertyRef Name="MAKHAC_CT" />
+      <PropertyRef Name="TENKHAC_CT" />
+    </Key>
+    <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CREATED_ID" />
+    <Property Type="Int32" Name="UPDATED_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+    <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+  </EntityType>
+</Schema>

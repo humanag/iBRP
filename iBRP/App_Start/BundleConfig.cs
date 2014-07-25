@@ -40,11 +40,11 @@ namespace iBRP
             //            "~/Content/themes/base/jquery.ui.theme.css"));
 
 
-            bundles.Add(new StyleBundle("~/Scripts/extjs42/resources/css").Include(
-                "~/Scripts/extjs42/resources/css/ext-all.css"
-            ));
+            //bundles.Add(new StyleBundle("~/Scripts/extjs42/resources/css").Include(
+            //    //"~/Scripts/extjs42/resources/css/ext-all.css"
+            //));
             bundles.Add(new ScriptBundle("~/bundles/extjs42").Include(
-                        "~/Scripts/extjs42/ext-all-debug.js"
+                        "~/Scripts/extjs42/ext-all.js"
             ));
         }
     }
