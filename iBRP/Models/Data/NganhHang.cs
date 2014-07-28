@@ -73,7 +73,6 @@ namespace iBRP.Models.Data
                        select nh;
 
             return list.Count();
-            
         }
 
         public int AddNganhHang(string manganh, string tennganh)

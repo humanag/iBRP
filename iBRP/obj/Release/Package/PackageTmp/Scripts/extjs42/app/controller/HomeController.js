@@ -29,6 +29,9 @@
             },
             "#mainMenuDMHangHoa": {
                 click: this.showLayoutHangHoa
+            },
+            "#mainMenuDMKho": {
+                click: this.showLayoutKho
             }
             
         });
@@ -97,6 +100,18 @@
         att = { maxlength: '15' }; // generate attribute list 
         Ext.get("mahanghoa-inputEl").set(att);
     },
+
+    showLayoutKho: function () {
+        if (debug) {
+            console.log('The kho layout will be shown when user click on the button DM Hang Hoa on the main menu. [iBRP.controller.HomeController.showLayoutKho()]');
+        }
+        //Create and show layout nhan vien
+        var kho = Ext.create("iBRP.view.kho.LayoutKho");
+        kho.show();
+        //set maxlenght for ma kho input
+        att = { maxlength: '3' }; // generate attribute list 
+        Ext.get("makho-inputEl").set(att);
+    }
 
     
 });

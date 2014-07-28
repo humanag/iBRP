@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Web.Mvc;
+using System.Linq;
 
 namespace iBRP.Models
 {
@@ -35,5 +38,32 @@ namespace iBRP.Models
             string strDate = tempsplit[2] + joinChar + tempsplit[1] + joinChar + tempsplit[0];
             return Convert.ToDateTime(strDate);
         }
+
+        public static List<string> GetControllerNames()
+        {
+            List<string> controllerNames = new List<string>();
+            GetSubClasses<Controller>().ForEach(type => controllerNames.Add(type.Name));
+            return controllerNames;
+        }
+
+        private static List<Type> GetSubClasses<T>()
+        {
+            return Assembly.GetCallingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(T))).ToList();
+        }
+        
+        public static List<string> GetActionsOfController(string controllerName)
+        {
+            var types = from a in AppDomain.CurrentDomain.GetAssemblies()
+                from t in a.GetTypes()
+                where typeof(IController).IsAssignableFrom(t) &&
+                        string.Equals(controllerName, t.Name, StringComparison.OrdinalIgnoreCase)
+                select t;
+
+                var controllerType = types.FirstOrDefault();
+                return new ReflectedControllerDescriptor(controllerType)
+                            .GetCanonicalActions()
+                            .Select(x => x.ActionName)
+                            .ToList();
+        }   
     }
 }

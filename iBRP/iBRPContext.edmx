@@ -6,6 +6,53 @@
     <edmx:StorageModels>
     <Schema Namespace="iBRPModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="iBRPModelStoreContainer">
+          <EntitySet Name="AD_FUNCTIONS" EntityType="iBRPModel.Store.AD_FUNCTIONS" store:Type="Tables" store:Schema="dbo" store:Name="AD_FUNCTIONS">
+            <DefiningQuery>SELECT 
+      [AD_FUNCTIONS].[ID] AS [ID], 
+      [AD_FUNCTIONS].[ID_MODULE] AS [ID_MODULE], 
+      [AD_FUNCTIONS].[NAME] AS [NAME], 
+      [AD_FUNCTIONS].[DESCRIPTION] AS [DESCRIPTION], 
+      [AD_FUNCTIONS].[CREATED_ID] AS [CREATED_ID], 
+      [AD_FUNCTIONS].[UPDATED_ID] AS [UPDATED_ID], 
+      [AD_FUNCTIONS].[CREATED_AT] AS [CREATED_AT], 
+      [AD_FUNCTIONS].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[AD_FUNCTIONS] AS [AD_FUNCTIONS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AD_MODULE_PERMISSION" EntityType="iBRPModel.Store.AD_MODULE_PERMISSION" store:Type="Tables" store:Schema="dbo" store:Name="AD_MODULE_PERMISSION">
+            <DefiningQuery>SELECT 
+      [AD_MODULE_PERMISSION].[ID] AS [ID], 
+      [AD_MODULE_PERMISSION].[ID_FUNC] AS [ID_FUNC], 
+      [AD_MODULE_PERMISSION].[ID_PER] AS [ID_PER], 
+      [AD_MODULE_PERMISSION].[ID_USER] AS [ID_USER], 
+      [AD_MODULE_PERMISSION].[DESCRIPTION] AS [DESCRIPTION], 
+      [AD_MODULE_PERMISSION].[CREATED_ID] AS [CREATED_ID], 
+      [AD_MODULE_PERMISSION].[UPDATED_ID] AS [UPDATED_ID], 
+      [AD_MODULE_PERMISSION].[CREATED_AT] AS [CREATED_AT], 
+      [AD_MODULE_PERMISSION].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[AD_MODULE_PERMISSION] AS [AD_MODULE_PERMISSION]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AD_MODULES" EntityType="iBRPModel.Store.AD_MODULES" store:Type="Tables" store:Schema="dbo" store:Name="AD_MODULES">
+            <DefiningQuery>SELECT 
+      [AD_MODULES].[ID] AS [ID], 
+      [AD_MODULES].[NAME] AS [NAME], 
+      [AD_MODULES].[DESCRIPTION] AS [DESCRIPTION], 
+      [AD_MODULES].[CREATED_ID] AS [CREATED_ID], 
+      [AD_MODULES].[UPDATED_ID] AS [UPDATED_ID], 
+      [AD_MODULES].[CREATED_AT] AS [CREATED_AT], 
+      [AD_MODULES].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[AD_MODULES] AS [AD_MODULES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AD_PERMISSIONS" EntityType="iBRPModel.Store.AD_PERMISSIONS" store:Type="Tables" store:Schema="dbo" store:Name="AD_PERMISSIONS">
+            <DefiningQuery>SELECT 
+      [AD_PERMISSIONS].[ID] AS [ID], 
+      [AD_PERMISSIONS].[NAME] AS [NAME], 
+      [AD_PERMISSIONS].[DESCRIPTION] AS [DESCRIPTION], 
+      [AD_PERMISSIONS].[CREATED_ID] AS [CREATED_ID], 
+      [AD_PERMISSIONS].[UPDATED_ID] AS [UPDATED_ID], 
+      [AD_PERMISSIONS].[CREATED_AT] AS [CREATED_AT], 
+      [AD_PERMISSIONS].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[AD_PERMISSIONS] AS [AD_PERMISSIONS]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="AD_USER" EntityType="iBRPModel.Store.AD_USER" store:Type="Tables" store:Schema="dbo" store:Name="AD_USER">
             <DefiningQuery>SELECT 
       [AD_USER].[ID] AS [ID], 
@@ -14,6 +61,31 @@
       [AD_USER].[EMAIL] AS [EMAIL], 
       [AD_USER].[PASS] AS [PASS]
       FROM [dbo].[AD_USER] AS [AD_USER]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CHUNGTU" EntityType="iBRPModel.Store.CHUNGTU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CHUNGTU_CT" EntityType="iBRPModel.Store.CHUNGTU_CT" store:Type="Tables" store:Schema="dbo" store:Name="CHUNGTU_CT">
+            <DefiningQuery>SELECT 
+      [CHUNGTU_CT].[KHOA] AS [KHOA], 
+      [CHUNGTU_CT].[KHOA_CT] AS [KHOA_CT], 
+      [CHUNGTU_CT].[STT] AS [STT], 
+      [CHUNGTU_CT].[MAHANG] AS [MAHANG], 
+      [CHUNGTU_CT].[SOLUONG] AS [SOLUONG], 
+      [CHUNGTU_CT].[DONGIA_DM] AS [DONGIA_DM], 
+      [CHUNGTU_CT].[DONGIA_CT] AS [DONGIA_CT], 
+      [CHUNGTU_CT].[DONGIA] AS [DONGIA], 
+      [CHUNGTU_CT].[TL_CK] AS [TL_CK], 
+      [CHUNGTU_CT].[DONGIA_CK] AS [DONGIA_CK], 
+      [CHUNGTU_CT].[SOTIEN_CK] AS [SOTIEN_CK], 
+      [CHUNGTU_CT].[THANHTIEN] AS [THANHTIEN], 
+      [CHUNGTU_CT].[THANHTIEN_CK] AS [THANHTIEN_CK], 
+      [CHUNGTU_CT].[THUE_SUAT] AS [THUE_SUAT], 
+      [CHUNGTU_CT].[SOTIEN_THUE] AS [SOTIEN_THUE], 
+      [CHUNGTU_CT].[SOPHIEU] AS [SOPHIEU], 
+      [CHUNGTU_CT].[CREATED_ID] AS [CREATED_ID], 
+      [CHUNGTU_CT].[UPDATED_ID] AS [UPDATED_ID], 
+      [CHUNGTU_CT].[CREATED_AT] AS [CREATED_AT], 
+      [CHUNGTU_CT].[UPDATED_AT] AS [UPDATED_AT]
+      FROM [dbo].[CHUNGTU_CT] AS [CHUNGTU_CT]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="DS_DOITAC" EntityType="iBRPModel.Store.DS_DOITAC" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DS_HANGHOA" EntityType="iBRPModel.Store.DS_HANGHOA" store:Type="Tables" Schema="dbo" />
@@ -47,6 +119,14 @@
       [V_DS_KH].[CREATED_AT] AS [CREATED_AT], 
       [V_DS_KH].[UPDATED_AT] AS [UPDATED_AT]
       FROM [dbo].[V_DS_KH] AS [V_DS_KH]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DS_MAU" EntityType="iBRPModel.Store.V_DS_MAU" store:Type="Views" store:Schema="dbo" store:Name="V_DS_MAU">
+            <DefiningQuery>SELECT 
+      [V_DS_MAU].[MAKHAC] AS [MAKHAC], 
+      [V_DS_MAU].[MAKHAC_CT] AS [MAKHAC_CT], 
+      [V_DS_MAU].[TENKHAC] AS [TENKHAC], 
+      [V_DS_MAU].[TENKHAC_CT] AS [TENKHAC_CT]
+      FROM [dbo].[V_DS_MAU] AS [V_DS_MAU]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="V_DS_NCC" EntityType="iBRPModel.Store.V_DS_NCC" store:Type="Views" store:Schema="dbo" store:Name="V_DS_NCC">
             <DefiningQuery>SELECT 
@@ -137,6 +217,14 @@
       [V_DS_PTTT].[UPDATED_AT] AS [UPDATED_AT]
       FROM [dbo].[V_DS_PTTT] AS [V_DS_PTTT]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="V_DS_SIZE" EntityType="iBRPModel.Store.V_DS_SIZE" store:Type="Views" store:Schema="dbo" store:Name="V_DS_SIZE">
+            <DefiningQuery>SELECT 
+      [V_DS_SIZE].[MAKHAC] AS [MAKHAC], 
+      [V_DS_SIZE].[MAKHAC_CT] AS [MAKHAC_CT], 
+      [V_DS_SIZE].[TENKHAC] AS [TENKHAC], 
+      [V_DS_SIZE].[TENKHAC_CT] AS [TENKHAC_CT]
+      FROM [dbo].[V_DS_SIZE] AS [V_DS_SIZE]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="V_DS_TT_HANGHHOA" EntityType="iBRPModel.Store.V_DS_TT_HANGHHOA" store:Type="Views" store:Schema="dbo" store:Name="V_DS_TT_HANGHHOA">
             <DefiningQuery>SELECT 
       [V_DS_TT_HANGHHOA].[MAKHAC] AS [MAKHAC], 
@@ -150,6 +238,76 @@
           </EntitySet>
         </EntityContainer>
         <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.AD_FUNCTIONS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AD_FUNCTIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_MODULE" />
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_MODULE" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="DESCRIPTION" Type="text" />
+          <Property Name="CREATED_ID" Type="int" />
+          <Property Name="UPDATED_ID" Type="int" />
+          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="UPDATED_AT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.AD_MODULE_PERMISSION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AD_MODULE_PERMISSION">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_FUNC" />
+            <PropertyRef Name="ID_PER" />
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_FUNC" Type="int" Nullable="false" />
+          <Property Name="ID_PER" Type="int" Nullable="false" />
+          <Property Name="ID_USER" Type="int" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="text" />
+          <Property Name="CREATED_ID" Type="int" />
+          <Property Name="UPDATED_ID" Type="int" />
+          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="UPDATED_AT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.AD_MODULES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AD_MODULES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="DESCRIPTION" Type="text" />
+          <Property Name="CREATED_ID" Type="int" />
+          <Property Name="UPDATED_ID" Type="int" />
+          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="UPDATED_AT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.AD_PERMISSIONS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AD_PERMISSIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="DESCRIPTION" Type="text" />
+          <Property Name="CREATED_ID" Type="int" />
+          <Property Name="UPDATED_ID" Type="int" />
+          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="UPDATED_AT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
       warning 6002: The table/view 'iBRP.dbo.AD_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="AD_USER">
@@ -161,6 +319,71 @@
           <Property Name="FULLNAME" Type="nvarchar" MaxLength="50" />
           <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
           <Property Name="PASS" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CHUNGTU">
+          <Key>
+            <PropertyRef Name="KHOA" />
+          </Key>
+          <Property Name="KHOA" Type="int" Nullable="false" />
+          <Property Name="LOAI" Type="nvarchar" MaxLength="3" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="2" />
+          <Property Name="PTTT" Type="nvarchar" MaxLength="2" />
+          <Property Name="NGAYLAP" Type="datetime" />
+          <Property Name="SOPHIEU" Type="nvarchar" MaxLength="20" />
+          <Property Name="MAKHO_N" Type="nvarchar" MaxLength="3" />
+          <Property Name="MAKHO_X" Type="nvarchar" MaxLength="3" />
+          <Property Name="MADT" Type="nvarchar" MaxLength="15" />
+          <Property Name="CN_SONGAY" Type="int" />
+          <Property Name="CN_SOTIEN" Type="float" />
+          <Property Name="MANV" Type="nvarchar" MaxLength="5" />
+          <Property Name="THUE_SUAT" Type="float" />
+          <Property Name="HOADON_SO" Type="nvarchar" MaxLength="10" />
+          <Property Name="HOADON_KYHIEU" Type="nvarchar" MaxLength="10" />
+          <Property Name="HOADON_NGAY" Type="datetime" />
+          <Property Name="NG_GIAO" Type="nvarchar" MaxLength="30" />
+          <Property Name="NG_NHAN" Type="nvarchar" MaxLength="30" />
+          <Property Name="GHICHU" Type="ntext" />
+          <Property Name="TL_CK_HD" Type="float" />
+          <Property Name="SOLUONG" Type="float" />
+          <Property Name="SOTIEN" Type="float" />
+          <Property Name="SOTIEN_CK_MH" Type="float" />
+          <Property Name="SOTIEN_CK_HD" Type="float" />
+          <Property Name="SOTIEN_THUE" Type="float" />
+          <Property Name="THANHTOAN" Type="float" />
+          <Property Name="CREATED_ID" Type="int" />
+          <Property Name="UPDATED_ID" Type="int" />
+          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="UPDATED_AT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.CHUNGTU_CT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CHUNGTU_CT">
+          <Key>
+            <PropertyRef Name="KHOA" />
+            <PropertyRef Name="KHOA_CT" />
+            <PropertyRef Name="SOLUONG" />
+          </Key>
+          <Property Name="KHOA" Type="int" Nullable="false" />
+          <Property Name="KHOA_CT" Type="int" Nullable="false" />
+          <Property Name="STT" Type="int" />
+          <Property Name="MAHANG" Type="nvarchar" MaxLength="15" />
+          <Property Name="SOLUONG" Type="float" Nullable="false" />
+          <Property Name="DONGIA_DM" Type="float" />
+          <Property Name="DONGIA_CT" Type="float" />
+          <Property Name="DONGIA" Type="float" />
+          <Property Name="TL_CK" Type="float" />
+          <Property Name="DONGIA_CK" Type="float" />
+          <Property Name="SOTIEN_CK" Type="float" />
+          <Property Name="THANHTIEN" Type="float" />
+          <Property Name="THANHTIEN_CK" Type="float" />
+          <Property Name="THUE_SUAT" Type="float" />
+          <Property Name="SOTIEN_THUE" Type="float" />
+          <Property Name="SOPHIEU" Type="nvarchar" MaxLength="20" />
+          <Property Name="CREATED_ID" Type="int" />
+          <Property Name="UPDATED_ID" Type="int" />
+          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="UPDATED_AT" Type="datetime" />
         </EntityType>
         <EntityType Name="DS_DOITAC">
           <Key>
@@ -214,7 +437,7 @@
           <Property Name="GHICHU" Type="nvarchar" MaxLength="100" />
           <Property Name="CREATED_ID" Type="int" />
           <Property Name="UPDATED_ID" Type="int" />
-          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="CREATED_AT" Type="datetime2" />
           <Property Name="UPDATED_AT" Type="datetime" />
         </EntityType>
         <EntityType Name="DS_KHAC">
@@ -368,6 +591,20 @@
           <Property Name="UPDATED_AT" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_MAU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_DS_MAU">
+          <Key>
+            <PropertyRef Name="MAKHAC" />
+            <PropertyRef Name="MAKHAC_CT" />
+            <PropertyRef Name="TENKHAC_CT" />
+          </Key>
+          <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="MAKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="TENKHAC" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
       warning 6002: The table/view 'iBRP.dbo.V_DS_NCC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="V_DS_NCC">
@@ -496,6 +733,20 @@
           <Property Name="UPDATED_AT" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
+      warning 6002: The table/view 'iBRP.dbo.V_DS_SIZE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_DS_SIZE">
+          <Key>
+            <PropertyRef Name="MAKHAC" />
+            <PropertyRef Name="MAKHAC_CT" />
+            <PropertyRef Name="TENKHAC_CT" />
+          </Key>
+          <Property Name="MAKHAC" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="MAKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="TENKHAC" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENKHAC_CT" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
       warning 6002: The table/view 'iBRP.dbo.V_DS_TT_HANGHHOA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="V_DS_TT_HANGHHOA">
@@ -537,6 +788,14 @@
           <EntitySet Name="V_DS_NV_ORDER" EntityType="iBRPModel.V_DS_NV_ORDER" />
           <EntitySet Name="V_DS_PTTT" EntityType="iBRPModel.V_DS_PTTT" />
           <EntitySet Name="V_DS_TT_HANGHHOA" EntityType="iBRPModel.V_DS_TT_HANGHHOA" />
+          <EntitySet Name="CHUNGTUs" EntityType="iBRPModel.CHUNGTU" />
+          <EntitySet Name="CHUNGTU_CT" EntityType="iBRPModel.CHUNGTU_CT" />
+          <EntitySet Name="V_DS_MAU" EntityType="iBRPModel.V_DS_MAU" />
+          <EntitySet Name="V_DS_SIZE" EntityType="iBRPModel.V_DS_SIZE" />
+          <EntitySet Name="AD_FUNCTIONS" EntityType="iBRPModel.AD_FUNCTIONS" />
+          <EntitySet Name="AD_MODULE_PERMISSION" EntityType="iBRPModel.AD_MODULE_PERMISSION" />
+          <EntitySet Name="AD_MODULES" EntityType="iBRPModel.AD_MODULES" />
+          <EntitySet Name="AD_PERMISSIONS" EntityType="iBRPModel.AD_PERMISSIONS" />
         </EntityContainer>
         <EntityType Name="AD_USER">
           <Key>
@@ -600,7 +859,7 @@
           <Property Type="String" Name="GHICHU" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="CREATED_ID" />
           <Property Type="Int32" Name="UPDATED_ID" />
-          <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+          <Property Type="DateTime" Name="CREATED_AT" Precision="7" />
           <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
         </EntityType>
         <EntityType Name="DS_KHAC">
@@ -869,6 +1128,148 @@
           <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CREATED_ID" />
+          <Property Type="Int32" Name="UPDATED_ID" />
+          <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+          <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+        </EntityType>
+        <EntityType Name="CHUNGTU">
+          <Key>
+            <PropertyRef Name="KHOA" />
+          </Key>
+          <Property Type="Int32" Name="KHOA" Nullable="false" />
+          <Property Type="String" Name="LOAI" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LYDO" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PTTT" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="NGAYLAP" Precision="3" />
+          <Property Type="String" Name="SOPHIEU" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAKHO_N" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAKHO_X" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MADT" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CN_SONGAY" />
+          <Property Type="Double" Name="CN_SOTIEN" />
+          <Property Type="String" Name="MANV" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="THUE_SUAT" />
+          <Property Type="String" Name="HOADON_SO" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HOADON_KYHIEU" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="HOADON_NGAY" Precision="3" />
+          <Property Type="String" Name="NG_GIAO" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NG_NHAN" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GHICHU" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="TL_CK_HD" />
+          <Property Type="Double" Name="SOLUONG" />
+          <Property Type="Double" Name="SOTIEN" />
+          <Property Type="Double" Name="SOTIEN_CK_MH" />
+          <Property Type="Double" Name="SOTIEN_CK_HD" />
+          <Property Type="Double" Name="SOTIEN_THUE" />
+          <Property Type="Double" Name="THANHTOAN" />
+          <Property Type="Int32" Name="CREATED_ID" />
+          <Property Type="Int32" Name="UPDATED_ID" />
+          <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+          <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+        </EntityType>
+        <EntityType Name="CHUNGTU_CT">
+          <Key>
+            <PropertyRef Name="KHOA" />
+            <PropertyRef Name="KHOA_CT" />
+            <PropertyRef Name="SOLUONG" />
+          </Key>
+          <Property Type="Int32" Name="KHOA" Nullable="false" />
+          <Property Type="Int32" Name="KHOA_CT" Nullable="false" />
+          <Property Type="Int32" Name="STT" />
+          <Property Type="String" Name="MAHANG" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="SOLUONG" Nullable="false" />
+          <Property Type="Double" Name="DONGIA_DM" />
+          <Property Type="Double" Name="DONGIA_CT" />
+          <Property Type="Double" Name="DONGIA" />
+          <Property Type="Double" Name="TL_CK" />
+          <Property Type="Double" Name="DONGIA_CK" />
+          <Property Type="Double" Name="SOTIEN_CK" />
+          <Property Type="Double" Name="THANHTIEN" />
+          <Property Type="Double" Name="THANHTIEN_CK" />
+          <Property Type="Double" Name="THUE_SUAT" />
+          <Property Type="Double" Name="SOTIEN_THUE" />
+          <Property Type="String" Name="SOPHIEU" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CREATED_ID" />
+          <Property Type="Int32" Name="UPDATED_ID" />
+          <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+          <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+        </EntityType>
+        <EntityType Name="V_DS_MAU">
+          <Key>
+            <PropertyRef Name="MAKHAC" />
+            <PropertyRef Name="MAKHAC_CT" />
+            <PropertyRef Name="TENKHAC_CT" />
+          </Key>
+          <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TENKHAC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_DS_SIZE">
+          <Key>
+            <PropertyRef Name="MAKHAC" />
+            <PropertyRef Name="MAKHAC_CT" />
+            <PropertyRef Name="TENKHAC_CT" />
+          </Key>
+          <Property Type="String" Name="MAKHAC" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAKHAC_CT" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TENKHAC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TENKHAC_CT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_FUNCTIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_MODULE" />
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ID_MODULE" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CREATED_ID" />
+          <Property Type="Int32" Name="UPDATED_ID" />
+          <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+          <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+        </EntityType>
+        <EntityType Name="AD_MODULE_PERMISSION">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_FUNC" />
+            <PropertyRef Name="ID_PER" />
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ID_FUNC" Nullable="false" />
+          <Property Type="Int32" Name="ID_PER" Nullable="false" />
+          <Property Type="Int32" Name="ID_USER" Nullable="false" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CREATED_ID" />
+          <Property Type="Int32" Name="UPDATED_ID" />
+          <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+          <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+        </EntityType>
+        <EntityType Name="AD_MODULES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CREATED_ID" />
+          <Property Type="Int32" Name="UPDATED_ID" />
+          <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
+          <Property Type="DateTime" Name="UPDATED_AT" Precision="3" />
+        </EntityType>
+        <EntityType Name="AD_PERMISSIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="CREATED_ID" />
           <Property Type="Int32" Name="UPDATED_ID" />
           <Property Type="DateTime" Name="CREATED_AT" Precision="3" />
@@ -1214,6 +1615,143 @@
                 <ScalarProperty Name="TENKHAC_CT" ColumnName="TENKHAC_CT" />
                 <ScalarProperty Name="MAKHAC_CT" ColumnName="MAKHAC_CT" />
                 <ScalarProperty Name="MAKHAC" ColumnName="MAKHAC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUNGTUs">
+            <EntityTypeMapping TypeName="iBRPModel.CHUNGTU">
+              <MappingFragment StoreEntitySet="CHUNGTU">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+                <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+                <ScalarProperty Name="THANHTOAN" ColumnName="THANHTOAN" />
+                <ScalarProperty Name="SOTIEN_THUE" ColumnName="SOTIEN_THUE" />
+                <ScalarProperty Name="SOTIEN_CK_HD" ColumnName="SOTIEN_CK_HD" />
+                <ScalarProperty Name="SOTIEN_CK_MH" ColumnName="SOTIEN_CK_MH" />
+                <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="TL_CK_HD" ColumnName="TL_CK_HD" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="NG_NHAN" ColumnName="NG_NHAN" />
+                <ScalarProperty Name="NG_GIAO" ColumnName="NG_GIAO" />
+                <ScalarProperty Name="HOADON_NGAY" ColumnName="HOADON_NGAY" />
+                <ScalarProperty Name="HOADON_KYHIEU" ColumnName="HOADON_KYHIEU" />
+                <ScalarProperty Name="HOADON_SO" ColumnName="HOADON_SO" />
+                <ScalarProperty Name="THUE_SUAT" ColumnName="THUE_SUAT" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="CN_SOTIEN" ColumnName="CN_SOTIEN" />
+                <ScalarProperty Name="CN_SONGAY" ColumnName="CN_SONGAY" />
+                <ScalarProperty Name="MADT" ColumnName="MADT" />
+                <ScalarProperty Name="MAKHO_X" ColumnName="MAKHO_X" />
+                <ScalarProperty Name="MAKHO_N" ColumnName="MAKHO_N" />
+                <ScalarProperty Name="SOPHIEU" ColumnName="SOPHIEU" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="PTTT" ColumnName="PTTT" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="KHOA" ColumnName="KHOA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUNGTU_CT">
+            <EntityTypeMapping TypeName="iBRPModel.CHUNGTU_CT">
+              <MappingFragment StoreEntitySet="CHUNGTU_CT">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+                <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+                <ScalarProperty Name="SOPHIEU" ColumnName="SOPHIEU" />
+                <ScalarProperty Name="SOTIEN_THUE" ColumnName="SOTIEN_THUE" />
+                <ScalarProperty Name="THUE_SUAT" ColumnName="THUE_SUAT" />
+                <ScalarProperty Name="THANHTIEN_CK" ColumnName="THANHTIEN_CK" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+                <ScalarProperty Name="SOTIEN_CK" ColumnName="SOTIEN_CK" />
+                <ScalarProperty Name="DONGIA_CK" ColumnName="DONGIA_CK" />
+                <ScalarProperty Name="TL_CK" ColumnName="TL_CK" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="DONGIA_CT" ColumnName="DONGIA_CT" />
+                <ScalarProperty Name="DONGIA_DM" ColumnName="DONGIA_DM" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="MAHANG" ColumnName="MAHANG" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="KHOA_CT" ColumnName="KHOA_CT" />
+                <ScalarProperty Name="KHOA" ColumnName="KHOA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DS_MAU">
+            <EntityTypeMapping TypeName="iBRPModel.V_DS_MAU">
+              <MappingFragment StoreEntitySet="V_DS_MAU">
+                <ScalarProperty Name="TENKHAC_CT" ColumnName="TENKHAC_CT" />
+                <ScalarProperty Name="TENKHAC" ColumnName="TENKHAC" />
+                <ScalarProperty Name="MAKHAC_CT" ColumnName="MAKHAC_CT" />
+                <ScalarProperty Name="MAKHAC" ColumnName="MAKHAC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DS_SIZE">
+            <EntityTypeMapping TypeName="iBRPModel.V_DS_SIZE">
+              <MappingFragment StoreEntitySet="V_DS_SIZE">
+                <ScalarProperty Name="TENKHAC_CT" ColumnName="TENKHAC_CT" />
+                <ScalarProperty Name="TENKHAC" ColumnName="TENKHAC" />
+                <ScalarProperty Name="MAKHAC_CT" ColumnName="MAKHAC_CT" />
+                <ScalarProperty Name="MAKHAC" ColumnName="MAKHAC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_FUNCTIONS">
+            <EntityTypeMapping TypeName="iBRPModel.AD_FUNCTIONS">
+              <MappingFragment StoreEntitySet="AD_FUNCTIONS">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+                <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID_MODULE" ColumnName="ID_MODULE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_MODULE_PERMISSION">
+            <EntityTypeMapping TypeName="iBRPModel.AD_MODULE_PERMISSION">
+              <MappingFragment StoreEntitySet="AD_MODULE_PERMISSION">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+                <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="ID_PER" ColumnName="ID_PER" />
+                <ScalarProperty Name="ID_FUNC" ColumnName="ID_FUNC" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_MODULES">
+            <EntityTypeMapping TypeName="iBRPModel.AD_MODULES">
+              <MappingFragment StoreEntitySet="AD_MODULES">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+                <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_PERMISSIONS">
+            <EntityTypeMapping TypeName="iBRPModel.AD_PERMISSIONS">
+              <MappingFragment StoreEntitySet="AD_PERMISSIONS">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="UPDATED_ID" ColumnName="UPDATED_ID" />
+                <ScalarProperty Name="CREATED_ID" ColumnName="CREATED_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

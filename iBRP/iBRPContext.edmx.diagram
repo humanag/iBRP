@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f00a65b2eca54d76bf6eacbb962e4de7" Name="Diagram1" ZoomLevel="67">
-        <EntityTypeShape EntityType="iBRPModel.AD_USER" Width="1.5" PointX="3.9858765415781536" PointY="6.7576045425411335" />
+        <EntityTypeShape EntityType="iBRPModel.AD_USER" Width="1.5" PointX="1.375" PointY="6.75" />
         <EntityTypeShape EntityType="iBRPModel.DS_DOITAC" Width="1.5" PointX="0.23237112734111542" PointY="20.235513413434621" />
         <EntityTypeShape EntityType="iBRPModel.DS_HANGHOA" Width="1.5" PointX="4.2540159934451882" PointY="17.00114526646265" />
         <EntityTypeShape EntityType="iBRPModel.DS_KHAC" Width="1.5" PointX="4.644398507030866" PointY="16.100310049997788" />
@@ -25,6 +25,14 @@
         <EntityTypeShape EntityType="iBRPModel.V_DS_NV_ORDER" Width="1.5" PointX="4.1570217721895419" PointY="28.840518696625026" />
         <EntityTypeShape EntityType="iBRPModel.V_DS_PTTT" Width="1.5" PointX="5.0112390820920645" PointY="9.36138934332942" />
         <EntityTypeShape EntityType="iBRPModel.V_DS_TT_HANGHHOA" Width="1.5" PointX="7.1202657702938961" PointY="2.4699042301950529" />
+        <EntityTypeShape EntityType="iBRPModel.CHUNGTU" Width="1.5" PointX="8.2784189583167525" PointY="9.4020101322801839" />
+        <EntityTypeShape EntityType="iBRPModel.CHUNGTU_CT" Width="1.5" PointX="2.38452353998298" PointY="9.19416064452108" />
+        <EntityTypeShape EntityType="iBRPModel.V_DS_MAU" Width="1.5" PointX="5.369173354175488" PointY="31.511323496471775" />
+        <EntityTypeShape EntityType="iBRPModel.V_DS_SIZE" Width="1.5" PointX="3.176330528769796" PointY="4.9680195622928531" />
+        <EntityTypeShape EntityType="iBRPModel.AD_FUNCTIONS" Width="1.5" PointX="8.1064134873945335" PointY="1.8260943451086498" />
+        <EntityTypeShape EntityType="iBRPModel.AD_MODULE_PERMISSION" Width="1.5" PointX="2.8110034124976973" PointY="3.7770649212305738" />
+        <EntityTypeShape EntityType="iBRPModel.AD_MODULES" Width="1.5" PointX="3.0894116848192228" PointY="26.118657005074741" />
+        <EntityTypeShape EntityType="iBRPModel.AD_PERMISSIONS" Width="1.5" PointX="4.5126676952991014" PointY="21.750104497070474" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

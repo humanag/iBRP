@@ -17,7 +17,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2014 00:09:32</publishTime>
     </File>
     <File Include="bin/iBRP.dll">
-      <publishTime>07/26/2014 00:23:50</publishTime>
+      <publishTime>07/26/2014 19:27:07</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/17/2014 00:09:35</publishTime>
@@ -4106,7 +4106,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2014 00:09:32</publishTime>
     </File>
     <File Include="Scripts/app.js">
-      <publishTime>07/17/2014 00:07:24</publishTime>
+      <publishTime>07/26/2014 18:56:34</publishTime>
     </File>
     <File Include="Scripts/extjs42/.sencha/workspace/codegen">
       <publishTime>07/17/2014 00:07:24</publishTime>
@@ -4121,13 +4121,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2014 00:07:24</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/controller/HomeController.js">
-      <publishTime>07/17/2014 00:07:24</publishTime>
+      <publishTime>07/26/2014 19:07:55</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/controller/KhacCTController.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/controller/KhachHangController.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
+    </File>
+    <File Include="Scripts/extjs42/app/controller/KhoController.js">
+      <publishTime>07/26/2014 18:58:30</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/controller/NganhHangController.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
@@ -4153,6 +4156,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/extjs42/app/model/ModelKhachHang.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
     </File>
+    <File Include="Scripts/extjs42/app/model/ModelKho.js">
+      <publishTime>07/26/2014 18:09:24</publishTime>
+    </File>
     <File Include="Scripts/extjs42/app/model/ModelNganhHang.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
     </File>
@@ -4173,6 +4179,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/extjs42/app/store/StoreKhachHang.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
+    </File>
+    <File Include="Scripts/extjs42/app/store/StoreKho.js">
+      <publishTime>07/26/2014 18:09:57</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/store/StoreNganhHang.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
@@ -4202,7 +4211,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2014 00:07:25</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/view/home/MainMenu.js">
-      <publishTime>07/17/2014 00:07:25</publishTime>
+      <publishTime>07/26/2014 18:46:19</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/view/khacct/FormFilter.js">
       <publishTime>07/17/2014 00:07:25</publishTime>
@@ -4239,6 +4248,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/extjs42/app/view/khachhang/TopMenu.js">
       <publishTime>07/17/2014 00:07:25</publishTime>
+    </File>
+    <File Include="Scripts/extjs42/app/view/kho/FormFilter.js">
+      <publishTime>07/26/2014 19:00:08</publishTime>
+    </File>
+    <File Include="Scripts/extjs42/app/view/kho/FormKho.js">
+      <publishTime>07/26/2014 19:15:20</publishTime>
+    </File>
+    <File Include="Scripts/extjs42/app/view/kho/GirdKho.js">
+      <publishTime>07/26/2014 18:18:47</publishTime>
+    </File>
+    <File Include="Scripts/extjs42/app/view/kho/LayoutKho.js">
+      <publishTime>07/26/2014 18:38:58</publishTime>
+    </File>
+    <File Include="Scripts/extjs42/app/view/kho/TopMenu.js">
+      <publishTime>07/26/2014 18:51:06</publishTime>
     </File>
     <File Include="Scripts/extjs42/app/view/LayoutLoginForm.js">
       <publishTime>07/17/2014 00:07:24</publishTime>
@@ -44339,7 +44363,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2014 00:09:29</publishTime>
     </File>
     <File Include="Scripts/globals.js">
-      <publishTime>07/17/2014 00:09:30</publishTime>
+      <publishTime>07/26/2014 19:01:26</publishTime>
     </File>
     <File Include="Scripts/jquery-1.7.1.js">
       <publishTime>07/17/2014 00:09:30</publishTime>
@@ -44396,7 +44420,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2014 00:09:31</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/26/2014 00:08:17</publishTime>
+      <publishTime>07/26/2014 00:33:19</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutLogin.cshtml">
       <publishTime>07/17/2014 00:09:31</publishTime>
@@ -44408,7 +44432,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2014 00:09:31</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/26/2014 00:24:38</publishTime>
+      <publishTime>07/26/2014 19:30:54</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -120,6 +120,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AD_FUNCTIONS.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD_MODULES.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD_MODULE_PERMISSION.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD_PERMISSIONS.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="AD_USER.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
@@ -127,7 +139,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CHUNGTU.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHUNGTU_CT.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\KhoController.cs" />
     <Compile Include="Controllers\HangHoaController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\KhacCTController.cs" />
@@ -186,6 +205,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>iBRPContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sys\ModulePermission.cs" />
+    <Compile Include="Models\Sys\Permission.cs" />
+    <Compile Include="Models\Sys\Functions.cs" />
+    <Compile Include="Models\Sys\Modules.cs" />
+    <Compile Include="Models\Sys\User.cs" />
+    <Compile Include="Models\Data\Kho.cs" />
     <Compile Include="Models\Data\HangHoa.cs" />
     <Compile Include="Models\Data\NhanVien.cs" />
     <Compile Include="Models\Data\Khac.cs" />
@@ -197,6 +222,9 @@
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="V_DS_KH.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_MAU.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
     <Compile Include="V_DS_NCC.cs">
@@ -215,6 +243,9 @@
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
     <Compile Include="V_DS_PTTT.cs">
+      <DependentUpon>iBRPContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DS_SIZE.cs">
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
     <Compile Include="V_DS_TT_HANGHHOA.cs">
@@ -1557,6 +1588,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\extjs42\.sencha\workspace\plugin.xml" />
+    <Content Include="Scripts\extjs42\app\controller\KhoController.js" />
     <Content Include="Scripts\extjs42\app\controller\HangHoaController.js" />
     <Content Include="Scripts\extjs42\app\controller\NhanVienController.js" />
     <Content Include="Scripts\extjs42\app\controller\KhacCTController.js" />
@@ -1564,6 +1596,7 @@
     <Content Include="Scripts\extjs42\app\controller\NhomController.js" />
     <Content Include="Scripts\extjs42\app\controller\HomeController.js" />
     <Content Include="Scripts\extjs42\app\controller\NganhHangController.js" />
+    <Content Include="Scripts\extjs42\app\model\ModelKho.js" />
     <Content Include="Scripts\extjs42\app\model\ModelHangHoa.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNhanVien.js" />
     <Content Include="Scripts\extjs42\app\model\ModelKhac.js" />
@@ -1572,6 +1605,7 @@
     <Content Include="Scripts\extjs42\app\model\ModelNhom.js" />
     <Content Include="Scripts\extjs42\app\model\ModelHelper.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\store\StoreKho.js" />
     <Content Include="Scripts\extjs42\app\store\StoreHangHoa.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhanVien.js" />
     <Content Include="Scripts\extjs42\app\store\StoreKhac.js" />
@@ -1579,6 +1613,11 @@
     <Content Include="Scripts\extjs42\app\store\StoreKhachHang.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhom.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\view\kho\FormFilter.js" />
+    <Content Include="Scripts\extjs42\app\view\kho\FormKho.js" />
+    <Content Include="Scripts\extjs42\app\view\kho\GirdKho.js" />
+    <Content Include="Scripts\extjs42\app\view\kho\LayoutKho.js" />
+    <Content Include="Scripts\extjs42\app\view\kho\TopMenu.js" />
     <Content Include="Scripts\extjs42\app\view\hanghoa\FormFilter.js" />
     <Content Include="Scripts\extjs42\app\view\hanghoa\FormHangHoa.js" />
     <Content Include="Scripts\extjs42\app\view\hanghoa\GirdHangHoa.js" />

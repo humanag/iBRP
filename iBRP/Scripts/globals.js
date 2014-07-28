@@ -32,6 +32,7 @@ var Globals = {
             main_menu_submenu_dm_nhan_vien: 'DM Nhân Viên',
             main_menu_submenu_dm_khac_ct: 'DM Khác',
             main_menu_submenu_dm_hang_hoa: 'DM Hàng Hóa',
+            main_menu_submenu_dm_kho: 'DM Kho',
             toolbar_them_moi: 'Thêm Mới',
             toolbar_image_them_moi: '../Content/themes/iBRP/images/icons/16/add.png',
             toolbar_chinh_sua: 'Chỉnh Sửa',
@@ -151,6 +152,16 @@ var Globals = {
             gia_ban_sy: 'Giá bán sỹ',
             ghi_chu: 'Ghi chú'
         },
+        Kho: {
+            kho: 'Kho',
+            danh_sach_kho: 'Danh Sách Kho',
+            ma_kho: 'Mã kho',
+            ten_kho: 'Tên kho',
+            dien_thoai: 'Điện thoại',
+            dia_chi: 'Địa chỉ',
+            thu_kho: 'Thủ kho',
+            fax: 'Fax'
+        }
     }
     
 }

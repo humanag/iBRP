@@ -3,7 +3,7 @@
 var Globals = {
     //Define global configs
     Vars: {
-        perItems: 5,
+        perItems: 20,
         lenghtOfMainMenu: 30,
         showError: 2,
         ErrorTypes: {
@@ -26,12 +26,13 @@ var Globals = {
             mainmenu_danh_muc: 'DANH MỤC',
             mainmenu_bao_cao: 'BÁO CÁO',
             mainmenu_tro_giup: 'TRỢ GIÚP',
-            main_menu_submenu_dm_nganhhang: 'DM NGÀNH HÀNG',
-            main_menu_submenu_dm_nhom: 'DM NHÓM',
-            main_menu_submenu_dm_khach_hang: 'DM KHÁCH HÀNG',
-            main_menu_submenu_dm_nhan_vien: 'DM NHÂN VIÊN',
-            main_menu_submenu_dm_khac_ct: 'DM KHÁC',
-            main_menu_submenu_dm_hang_hoa: 'DM HÀNG HÓA',
+            main_menu_submenu_dm_nganhhang: 'DM Ngành Hàng',
+            main_menu_submenu_dm_nhom: 'DM Nhóm',
+            main_menu_submenu_dm_khach_hang: 'DM Khách Hàng',
+            main_menu_submenu_dm_nhan_vien: 'DM Nhân Viên',
+            main_menu_submenu_dm_khac_ct: 'DM Khác',
+            main_menu_submenu_dm_hang_hoa: 'DM Hàng Hóa',
+            main_menu_submenu_dm_kho: 'DM Kho',
             toolbar_them_moi: 'Thêm Mới',
             toolbar_image_them_moi: '../Content/themes/iBRP/images/icons/16/add.png',
             toolbar_chinh_sua: 'Chỉnh Sửa',
@@ -151,6 +152,16 @@ var Globals = {
             gia_ban_sy: 'Giá bán sỹ',
             ghi_chu: 'Ghi chú'
         },
+        Kho: {
+            kho: 'Kho',
+            danh_sach_kho: 'Danh Sách Kho',
+            ma_kho: 'Mã kho',
+            ten_kho: 'Tên kho',
+            dien_thoai: 'Điện thoại',
+            dia_chi: 'Địa chỉ',
+            thu_kho: 'Thủ kho',
+            fax: 'Fax'
+        }
     }
     
 }
