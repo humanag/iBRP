@@ -35,9 +35,6 @@
         store.addListener('load', this.finishedLoadStore, this);
 
         this.control({
-            "#btnKhacCTThemMoi": {
-                click: this.themKhacCT
-            },
             "#btnKhacCTXoa": {
                 click: this.xoaKhacCT
             },
@@ -49,9 +46,6 @@
             },
 
             //Assign event to button on GridKhac grid
-            "#btnKhacThemMoi": {
-                click: this.themKhac
-            },
             "#btnKhacXoa": {
                 click: this.xoaKhac
             },
@@ -129,43 +123,6 @@
         var store = Ext.getStore("StoreKhacCT");
         var grid = this.getGridKhacCT();
         grid.getStore().load();
-    },
-
-    //Events of the button on the GridKhac grid
-    themKhac: function () {
-        if (debug) {
-            console.log('This function will be called when button Them Moi on the GridKhac grid was clicked. [iBRP.controller.KhacCTController.themKhac()]');
-        }
-        var grid = this.getGridKhac();
-        var store = grid.getStore();
-        
-        // Create a model instance
-        var r = Ext.create('iBRP.model.ModelKhac', {
-            MAKHAC: Globals.Langs.KhacCT.ma_khac,
-            TENKHAC: Globals.Langs.KhacCT.ten_khac,
-            PLOAI: "1"
-
-        });
-        store.insert(0, r);
-        rowEditing.startEdit(0, 0);
-    },
-
-    themKhacCT: function () {
-        if (debug) {
-            console.log('This event will be fired when user click on button Them. [iBRP.controller.KhacCTController.themKhacCT()]');
-        }
-        var grid = this.getGridKhacCT();
-        var store = grid.getStore();
-
-        // Create a model instance
-        var r = Ext.create('iBRP.model.ModelKhacCT', {
-                MAKHAC_CT: Globals.Langs.KhacCT.ma_khac_ct,
-                TENKHAC_CT: Globals.Langs.KhacCT.ten_khac_ct,
-            }
-        );
-
-        store.insert(0, r);
-        rowEditingCT.startEdit(0, 0);
     },
 
     xoaKhac: function () {
@@ -428,5 +385,4 @@
         grid.reconfigure();
 
     }
-
 });

@@ -27,12 +27,27 @@ Ext.define("iBRP.view.khacct.GridKhac", {
     plugins: [rowEditing],
     selType: 'rowmodel',
     border: false,
+    height: 625,
     tbar: [
         {
             xtype: 'button',
             id: 'btnKhacThemMoi',
             text: '<span class="buttonOnLayout">' + Globals.Langs.Common.toolbar_them_moi + '<span>', //Thêm Mới
             icon: Globals.Langs.Common.toolbar_image_them_moi,
+            handler: function () {
+                if (debug) {
+                    console.log('This function will be called when button Them Moi on the GridKhac grid was clicked. [iBRP.controller.KhacCTController.themKhac()]');
+                }
+                // Create a model instance
+                var r = Ext.create('iBRP.model.ModelKhac', {
+                    MAKHAC: Globals.Langs.KhacCT.ma_khac,
+                    TENKHAC: Globals.Langs.KhacCT.ten_khac,
+                    PLOAI: "1"
+                });
+                var store = Ext.getStore('StoreKhac');
+                store.insert(0, r);
+                rowEditing.startEdit(r, 0);
+            }
         }, '-', {
             xtype: 'button',
             id: 'btnKhacXoa',
