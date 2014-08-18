@@ -32,6 +32,9 @@
             },
             "#mainMenuDMKho": {
                 click: this.showLayoutKho
+            },
+            "#mainMenuDMPhieuNhap": {
+                click: this.showLayoutPhieuNhap
             }
             
         });
@@ -111,6 +114,15 @@
         //set maxlenght for ma kho input
         att = { maxlength: '3' }; // generate attribute list 
         Ext.get("makho-inputEl").set(att);
+    },
+
+    showLayoutPhieuNhap: function () {
+        if (debug) {
+            console.log('The phieu nhap layout will be shown when user click on the button DM Phieu Nhap on the main menu. [iBRP.controller.HomeController.showLayoutPhieuNhap()]');
+        }
+        //Create and show layout nhan vien
+        var chungtu = Ext.create("iBRP.view.chungtu.LayoutChungTu");
+        chungtu.show();
     }
 
     

@@ -19,7 +19,12 @@ Ext.define('iBRP.view.home.MainMenu', {
             }, '-', {
                 text: Globals.Langs.Common.mainmenu_san_pham,
                 iconCls: 'icon-chart',
-                menu: [{ text: 'Menu 3' }, { text: 'Menu 4' }]
+                menu: [
+                    {
+                        text: Globals.Langs.Common.main_menu_submenu_phieu_nhap,
+                        id: 'mainMenuDMPhieuNhap',
+                    }
+                ]
             }, '-', {
                 text: Globals.Langs.Common.mainmenu_danh_muc,
                 iconCls: 'icon-chart',

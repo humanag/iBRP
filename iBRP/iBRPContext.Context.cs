@@ -72,7 +72,7 @@ public partial class iBRPEntities : DbContext
 
     public DbSet<V_DS_TT_HANGHHOA> V_DS_TT_HANGHHOA { get; set; }
 
-    public DbSet<CHUNGTU> CHUNGTUs { get; set; }
+    public DbSet<CHUNGTU> CHUNGTU { get; set; }
 
     public DbSet<CHUNGTU_CT> CHUNGTU_CT { get; set; }
 

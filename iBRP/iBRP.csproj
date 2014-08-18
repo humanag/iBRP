@@ -146,6 +146,7 @@
       <DependentUpon>iBRPContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ChungTuController.cs" />
     <Compile Include="Controllers\KhoController.cs" />
     <Compile Include="Controllers\HangHoaController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
@@ -205,6 +206,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>iBRPContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data\ChungTu.cs" />
     <Compile Include="Models\Sys\ModulePermission.cs" />
     <Compile Include="Models\Sys\Permission.cs" />
     <Compile Include="Models\Sys\Functions.cs" />
@@ -1588,6 +1590,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\extjs42\.sencha\workspace\plugin.xml" />
+    <Content Include="Scripts\extjs42\app\controller\ChungTuController.js" />
     <Content Include="Scripts\extjs42\app\controller\KhoController.js" />
     <Content Include="Scripts\extjs42\app\controller\HangHoaController.js" />
     <Content Include="Scripts\extjs42\app\controller\NhanVienController.js" />
@@ -1596,6 +1599,8 @@
     <Content Include="Scripts\extjs42\app\controller\NhomController.js" />
     <Content Include="Scripts\extjs42\app\controller\HomeController.js" />
     <Content Include="Scripts\extjs42\app\controller\NganhHangController.js" />
+    <Content Include="Scripts\extjs42\app\model\ModelChungTuCT.js" />
+    <Content Include="Scripts\extjs42\app\model\ModelChungTu.js" />
     <Content Include="Scripts\extjs42\app\model\ModelKho.js" />
     <Content Include="Scripts\extjs42\app\model\ModelHangHoa.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNhanVien.js" />
@@ -1605,6 +1610,8 @@
     <Content Include="Scripts\extjs42\app\model\ModelNhom.js" />
     <Content Include="Scripts\extjs42\app\model\ModelHelper.js" />
     <Content Include="Scripts\extjs42\app\model\ModelNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\store\StoreChungTuCT.js" />
+    <Content Include="Scripts\extjs42\app\store\StoreChungTu.js" />
     <Content Include="Scripts\extjs42\app\store\StoreKho.js" />
     <Content Include="Scripts\extjs42\app\store\StoreHangHoa.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhanVien.js" />
@@ -1613,6 +1620,14 @@
     <Content Include="Scripts\extjs42\app\store\StoreKhachHang.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNhom.js" />
     <Content Include="Scripts\extjs42\app\store\StoreNganhHang.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\LayoutChiTiet.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\GridChungTuCT.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\FormFilter.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\FormChungTu.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\GridChungTu.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\LayoutChungTu.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\LayoutMainGrid.js" />
+    <Content Include="Scripts\extjs42\app\view\chungtu\TopMenu.js" />
     <Content Include="Scripts\extjs42\app\view\kho\FormFilter.js" />
     <Content Include="Scripts\extjs42\app\view\kho\FormKho.js" />
     <Content Include="Scripts\extjs42\app\view\kho\GirdKho.js" />

@@ -33,6 +33,7 @@ var Globals = {
             main_menu_submenu_dm_khac_ct: 'DM Khác',
             main_menu_submenu_dm_hang_hoa: 'DM Hàng Hóa',
             main_menu_submenu_dm_kho: 'DM Kho',
+            main_menu_submenu_phieu_nhap: 'DM Phiếu Nhập',
             toolbar_them_moi: 'Thêm Mới',
             toolbar_image_them_moi: '../Content/themes/iBRP/images/icons/16/add.png',
             toolbar_chinh_sua: 'Chỉnh Sửa',
@@ -161,6 +162,13 @@ var Globals = {
             dia_chi: 'Địa chỉ',
             thu_kho: 'Thủ kho',
             fax: 'Fax'
+        },
+        ChungTu: {
+            chung_tu: 'Chứng từ',
+            danh_sach_chung_tu: 'Danh Sách Chứng Từ',
+            khoa: 'Khóa',
+            so_phieu: 'Số Phiếu',
+            chi_tiet: 'Chi Tiết'
         }
     }
     

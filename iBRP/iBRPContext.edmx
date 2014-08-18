@@ -788,7 +788,7 @@
           <EntitySet Name="V_DS_NV_ORDER" EntityType="iBRPModel.V_DS_NV_ORDER" />
           <EntitySet Name="V_DS_PTTT" EntityType="iBRPModel.V_DS_PTTT" />
           <EntitySet Name="V_DS_TT_HANGHHOA" EntityType="iBRPModel.V_DS_TT_HANGHHOA" />
-          <EntitySet Name="CHUNGTUs" EntityType="iBRPModel.CHUNGTU" />
+          <EntitySet Name="CHUNGTU" EntityType="iBRPModel.CHUNGTU" />
           <EntitySet Name="CHUNGTU_CT" EntityType="iBRPModel.CHUNGTU_CT" />
           <EntitySet Name="V_DS_MAU" EntityType="iBRPModel.V_DS_MAU" />
           <EntitySet Name="V_DS_SIZE" EntityType="iBRPModel.V_DS_SIZE" />
@@ -1618,7 +1618,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CHUNGTUs">
+          <EntitySetMapping Name="CHUNGTU">
             <EntityTypeMapping TypeName="iBRPModel.CHUNGTU">
               <MappingFragment StoreEntitySet="CHUNGTU">
                 <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
